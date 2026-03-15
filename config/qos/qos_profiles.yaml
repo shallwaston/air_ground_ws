@@ -1,0 +1,43 @@
+# Editable root copy of the QoS mapping.
+# ag_bringup/config/qos_profiles.yaml is the installed copy used after colcon build.
+topics:
+  /uav/map/tile:
+    reliability: reliable
+    durability: transient_local
+    history: keep_last
+    depth: 5
+  /uav/targets/current:
+    reliability: reliable
+    durability: transient_local
+    history: keep_last
+    depth: 10
+  /uav/odom:
+    reliability: best_effort
+    durability: volatile
+    history: keep_last
+    depth: 20
+  /tf:
+    reliability: best_effort
+    durability: volatile
+    history: keep_last
+    depth: 50
+  /tf_static:
+    reliability: reliable
+    durability: transient_local
+    history: keep_last
+    depth: 1
+  /system/delay_probe:
+    reliability: reliable
+    durability: volatile
+    history: keep_last
+    depth: 20
+  /system/heartbeat:
+    reliability: reliable
+    durability: volatile
+    history: keep_last
+    depth: 20
+  /system/delay_report:
+    reliability: reliable
+    durability: volatile
+    history: keep_last
+    depth: 20

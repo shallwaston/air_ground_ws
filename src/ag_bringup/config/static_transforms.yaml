@@ -1,0 +1,23 @@
+# Placeholder static transforms for the MVP.
+# Replace these values with measured extrinsics when real hardware arrives.
+transforms:
+  - parent: ugv/odom
+    child: ugv/base_link
+    translation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    rotation_rpy_rad:
+      roll: 0.0
+      pitch: 0.0
+      yaw: 0.0
+  - parent: uav/base_link
+    child: uav/mock_payload
+    translation:
+      x: 0.15
+      y: 0.0
+      z: 0.10
+    rotation_rpy_rad:
+      roll: 0.0
+      pitch: 0.0
+      yaw: 0.0

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  Minimal Fast DDS profile example for this MVP.
+  Discovery Server endpoints are intentionally configured through
+  ROS_DISCOVERY_SERVER=<server_ip>:11811 so the XML stays easy to validate.
+  Transport buffer sizes and network tuning are TODO items for real hardware.
+-->
+<profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+  <participant profile_name="ag_default_participant" is_default_profile="true">
+    <rtps>
+      <name>ag_default_participant</name>
+    </rtps>
+  </participant>
+</profiles>

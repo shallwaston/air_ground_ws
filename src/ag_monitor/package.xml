@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!-- Monitoring and diagnostics nodes for the air-ground communication MVP. -->
+<package format="3">
+  <name>ag_monitor</name>
+  <version>0.1.0</version>
+  <description>Monitoring and diagnostics nodes for the air-ground communication MVP.</description>
+  <maintainer email="dev@example.com">Codex</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <exec_depend>ag_interfaces</exec_depend>
+  <exec_depend>ag_network_tools</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

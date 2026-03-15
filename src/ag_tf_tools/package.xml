@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!-- TF helper nodes for the air-ground communication MVP. -->
+<package format="3">
+  <name>ag_tf_tools</name>
+  <version>0.1.0</version>
+  <description>TF helper nodes and health checks for the air-ground communication MVP.</description>
+  <maintainer email="dev@example.com">Codex</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <exec_depend>ag_network_tools</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

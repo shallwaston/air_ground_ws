@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!-- System-level smoke tests for the air-ground communication MVP. -->
+<package format="3">
+  <name>ag_system_tests</name>
+  <version>0.1.0</version>
+  <description>System-level smoke tests for the air-ground communication MVP.</description>
+  <maintainer email="dev@example.com">Codex</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <exec_depend>ag_bringup</exec_depend>
+  <exec_depend>ag_interfaces</exec_depend>
+  <exec_depend>ag_mock_nodes</exec_depend>
+  <exec_depend>ag_monitor</exec_depend>
+  <exec_depend>ag_tf_tools</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+
+  <test_depend>launch_testing</test_depend>
+  <test_depend>launch_testing_ros</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
