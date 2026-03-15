@@ -1,0 +1,7 @@
+label: hostname
+timestamp: 2026-03-15T22:19:27+08:00
+command: hostname
+
+shallwastonPC
+
+[exit_code] 0

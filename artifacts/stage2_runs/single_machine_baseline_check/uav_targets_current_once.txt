@@ -1,0 +1,6 @@
+label: ros2 topic echo /uav/targets/current --once
+timestamp: 2026-03-15T22:19:38+08:00
+command: timeout 4s ros2 topic echo /uav/targets/current --once
+
+
+[exit_code] 124

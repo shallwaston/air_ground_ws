@@ -1,0 +1,7 @@
+label: ip a
+timestamp: 2026-03-15T22:17:33+08:00
+command: ip a
+
+Cannot open netlink socket: Operation not permitted
+
+[exit_code] 1

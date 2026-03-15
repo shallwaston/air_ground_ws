@@ -1,0 +1,10 @@
+ros_env_summary              OK -> ros_env_summary.txt
+hostname                     OK -> hostname.txt
+date                         OK -> date.txt
+uname -a                     OK -> uname_a.txt
+ip a                         FAILED(rc=1) -> ip_a.txt
+ros2 node list               FAILED(rc=1) -> ros2_node_list.txt
+ros2 topic list              FAILED(rc=1) -> ros2_topic_list.txt
+target_once                  SKIPPED
+uav_odom_hz                  SKIPPED
+uav_map_tile_bw              SKIPPED
