@@ -13,7 +13,11 @@ Base: `e129564eb5de9125209600f63e4112a85338c02f`
 
 The following are unchanged: all `.msg` contracts, topic strings, frame names, launch file names, publisher/subscriber types, launch arguments, and default QoS YAML policies. Only internal liveness timing, stale-heartbeat accounting, lookup of the correct QoS entry, and mock tile calculation are affected.
 
-Known remaining issues: `qos_config` launch arg is not passed into every runtime node; YAML duplicates; no offline-bag timestamp correction; weak-network behavior not yet measured. Avoid changing these during this patch.
+Review follow-up: [runtime optimization review](26_runtime_optimization_review.md) records
+the fixes for mixed clocks, missing heartbeat pruning, paused summary timers,
+launch QoS propagation, and safe shutdown. The two QoS YAML copies are now checked
+for equality by regression tests. Offline-bag timestamp interpretation and
+two-machine weak-network behavior still require separate validation.
 
 ## Acceptance on Ubuntu 24.04 / ROS 2 Jazzy
 

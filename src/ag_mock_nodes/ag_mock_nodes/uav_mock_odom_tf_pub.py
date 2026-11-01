@@ -18,7 +18,6 @@ from ag_network_tools.topic_names import TF_TOPIC
 from ag_network_tools.topic_names import UAV_ODOM_TOPIC
 
 
-
 class UavMockOdomTfPub(Node):
     """A simple circular-motion UAV publisher for MVP bringup."""
 
@@ -72,9 +71,11 @@ class UavMockOdomTfPub(Node):
         odom_msg.pose.pose.position.y = y
         odom_msg.pose.pose.position.z = z
         odom_msg.pose.pose.orientation = orientation
-        odom_msg.twist.twist.linear.x = -self.speed_mps * math.sin(omega * t)
-        odom_msg.twist.twist.linear.y = self.speed_mps * math.cos(omega * t)
-        odom_msg.twist.twist.linear.z = 0.25 * self.vertical_wave_m * math.cos(0.5 * omega * t)
+        # Odometry requires twist in child_frame_id, while pose is in header.frame_id.
+        # The UAV faces the tangent of its circular path, so body velocity is forward.
+        odom_msg.twist.twist.linear.x = self.speed_mps
+        odom_msg.twist.twist.linear.y = 0.0
+        odom_msg.twist.twist.linear.z = 0.5 * omega * self.vertical_wave_m * math.cos(0.5 * omega * t)
         odom_msg.twist.twist.angular.z = omega
         self.odom_pub.publish(odom_msg)
 

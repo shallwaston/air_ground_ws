@@ -14,7 +14,6 @@ from ag_network_tools.topic_names import FRAME_UGV_ODOM
 from ag_network_tools.topic_names import TF_TOPIC
 
 
-
 class FrameAlignmentStub(Node):
     """Placeholder for future map alignment, re-localization, or EKF fusion."""
 

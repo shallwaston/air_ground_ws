@@ -42,11 +42,11 @@ class UavMockTargetPub(Node):
         )
 
     def on_timer(self) -> None:
-        now = self.get_clock().now().to_msg()
-        t = self.get_clock().now().nanoseconds / 1e9 - self.start_time_sec
+        now = self.get_clock().now()
+        t = now.nanoseconds / 1e9 - self.start_time_sec
 
         msg = TargetInfo()
-        msg.header.stamp = now
+        msg.header.stamp = now.to_msg()
         msg.header.frame_id = FRAME_MAP
         msg.target_id = f"mock_target_{self.seq % 4}"
         msg.pose.position.x = self.radius_m * math.cos(0.25 * t)

@@ -8,7 +8,10 @@ from ag_mock_nodes.mock_tile_math import build_mock_tile_layers
 from ag_monitor.health_logic import age_seconds, expired_heartbeat_names
 
 
-@pytest.mark.parametrize("width,height,phase", [(1, 1, 0.0), (3, 5, 1.0), (64, 64, 0.45)])
+@pytest.mark.parametrize("width,height,phase", [
+    (1, 1, 0.0), (3, 5, 1.0), (64, 64, 0.45),
+    (256, 256, -3.2), (7, 2, 10000.15),
+])
 def test_mock_tile_layers_preserve_legacy_values(width, height, phase):
     elevation, traversability = build_mock_tile_layers(width, height, phase)
     assert len(elevation) == len(traversability) == width * height
