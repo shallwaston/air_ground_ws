@@ -2,13 +2,12 @@
 
 from __future__ import annotations
 
-import math
-
 import rclpy
 from ag_interfaces.msg import MapTile
 from geometry_msgs.msg import Quaternion
 from rclpy.node import Node
 
+from ag_mock_nodes.mock_tile_math import build_mock_tile_layers
 from ag_network_tools.qos_profiles import get_qos_profile_for_topic
 from ag_network_tools.topic_names import FRAME_MAP
 from ag_network_tools.topic_names import UAV_MAP_TILE_TOPIC
@@ -65,16 +64,8 @@ class UavMockMapTilePub(Node):
         """Publish one synthetic tile sample."""
         now = self.get_clock().now().to_msg()
         width, height = self.get_effective_dimensions()
-        element_count = width * height
 
-        elevation = []
-        traversability = []
-        for index in range(element_count):
-            row = index // width
-            col = index % width
-            height_value = 0.5 * math.sin(0.07 * row + self.phase) + 0.25 * math.cos(0.11 * col)
-            elevation.append(float(height_value))
-            traversability.append(255 if abs(height_value) < 0.45 else 64)
+        elevation, traversability = build_mock_tile_layers(width, height, self.phase)
 
         msg = MapTile()
         msg.header.stamp = now
