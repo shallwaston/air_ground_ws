@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from ag_network_tools.node_runner import run_node
+
 import rclpy
 from rclpy.node import Node
 
@@ -35,12 +37,4 @@ class Map2p5dBuilderStub(Node):
 
 
 def main(args: list[str] | None = None) -> None:
-    rclpy.init(args=args)
-    node = Map2p5dBuilderStub()
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        node.destroy_node()
-        rclpy.shutdown()
+    run_node(Map2p5dBuilderStub, args)

@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from ag_network_tools.node_runner import run_node
+
 import rclpy
 from ag_interfaces.msg import Heartbeat
 from rclpy.node import Node
@@ -53,12 +55,4 @@ class HeartbeatPub(Node):
 
 
 def main(args: list[str] | None = None) -> None:
-    rclpy.init(args=args)
-    node = HeartbeatPub()
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        node.destroy_node()
-        rclpy.shutdown()
+    run_node(HeartbeatPub, args)

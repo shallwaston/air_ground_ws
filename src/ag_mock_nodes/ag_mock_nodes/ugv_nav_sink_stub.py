@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from ag_network_tools.node_runner import run_node
+
 import rclpy
 from ag_interfaces.msg import MapTile
 from ag_interfaces.msg import TargetInfo
@@ -55,12 +57,4 @@ class UgvNavSinkStub(Node):
 
 
 def main(args: list[str] | None = None) -> None:
-    rclpy.init(args=args)
-    node = UgvNavSinkStub()
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        node.destroy_node()
-        rclpy.shutdown()
+    run_node(UgvNavSinkStub, args)

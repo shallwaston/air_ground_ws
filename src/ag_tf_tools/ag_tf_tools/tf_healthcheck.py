@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from ag_network_tools.node_runner import run_node
+
 import rclpy
 from rclpy.node import Node
 from rclpy.time import Time
@@ -61,17 +63,8 @@ class TfHealthcheck(Node):
 
         if self.one_shot:
             self.get_logger().info("One-shot TF check complete, shutting down.")
-            rclpy.shutdown()
+            rclpy.try_shutdown()
 
 
 def main(args: list[str] | None = None) -> None:
-    rclpy.init(args=args)
-    node = TfHealthcheck()
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        node.destroy_node()
-        if rclpy.ok():
-            rclpy.shutdown()
+    run_node(TfHealthcheck, args)

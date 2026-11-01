@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from ag_network_tools.node_runner import run_node
+
 import rclpy
 from rclpy.node import Node
 
@@ -37,12 +39,4 @@ class Nav2AdapterStub(Node):
 
 
 def main(args: list[str] | None = None) -> None:
-    rclpy.init(args=args)
-    node = Nav2AdapterStub()
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        node.destroy_node()
-        rclpy.shutdown()
+    run_node(Nav2AdapterStub, args)
