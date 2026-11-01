@@ -4,15 +4,15 @@ from __future__ import annotations
 
 from collections import deque
 
-import rclpy
 from ag_interfaces.msg import DelayProbe
+from rclpy.context import Context
 from rclpy.node import Node
 from std_msgs.msg import String
 
+from ag_network_tools.node_runner import run_node
 from ag_network_tools.qos_profiles import get_qos_profile_for_topic
 from ag_network_tools.topic_names import DELAY_PROBE_TOPIC
 from ag_network_tools.topic_names import DELAY_REPORT_TOPIC
-from ag_network_tools.topic_names import HEARTBEAT_TOPIC
 
 
 def stamp_to_ns(stamp) -> int:
@@ -23,8 +23,8 @@ def stamp_to_ns(stamp) -> int:
 class DelayProbeSub(Node):
     """A readable subscriber for measuring end-to-end message latency."""
 
-    def __init__(self) -> None:
-        super().__init__("delay_probe_sub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("delay_probe_sub", context=context)
 
         self.declare_parameter("recent_window", 10)
         self.recent_window = max(1, int(self.get_parameter("recent_window").value))
@@ -39,7 +39,7 @@ class DelayProbeSub(Node):
         self.report_pub = self.create_publisher(
             String,
             DELAY_REPORT_TOPIC,
-            get_qos_profile_for_topic(HEARTBEAT_TOPIC),
+            get_qos_profile_for_topic(DELAY_REPORT_TOPIC),
         )
 
         self.get_logger().info(f"Delay probe subscriber ready: topic={DELAY_PROBE_TOPIC}")
@@ -64,12 +64,4 @@ class DelayProbeSub(Node):
 
 
 def main(args: list[str] | None = None) -> None:
-    rclpy.init(args=args)
-    node = DelayProbeSub()
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        node.destroy_node()
-        rclpy.shutdown()
+    run_node(DelayProbeSub, args)

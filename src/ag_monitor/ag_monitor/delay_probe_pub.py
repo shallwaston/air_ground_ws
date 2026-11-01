@@ -2,10 +2,11 @@
 
 from __future__ import annotations
 
-import rclpy
 from ag_interfaces.msg import DelayProbe
+from rclpy.context import Context
 from rclpy.node import Node
 
+from ag_network_tools.node_runner import run_node
 from ag_network_tools.qos_profiles import get_qos_profile_for_topic
 from ag_network_tools.topic_names import DELAY_PROBE_TOPIC
 
@@ -13,8 +14,8 @@ from ag_network_tools.topic_names import DELAY_PROBE_TOPIC
 class DelayProbePub(Node):
     """A lightweight latency probe publisher."""
 
-    def __init__(self) -> None:
-        super().__init__("delay_probe_pub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("delay_probe_pub", context=context)
 
         self.declare_parameter("frequency_hz", 2.0)
         self.declare_parameter("payload_bytes", 1024)
@@ -46,12 +47,4 @@ class DelayProbePub(Node):
 
 
 def main(args: list[str] | None = None) -> None:
-    rclpy.init(args=args)
-    node = DelayProbePub()
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        node.destroy_node()
-        rclpy.shutdown()
+    run_node(DelayProbePub, args)

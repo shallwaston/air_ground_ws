@@ -1,6 +1,7 @@
 """UAV/client-side bringup for Discovery Server based deployment."""
 
 from launch import LaunchDescription
+from launch.actions import SetEnvironmentVariable
 from launch.actions import DeclareLaunchArgument
 from launch.actions import LogInfo
 from launch.substitutions import LaunchConfiguration
@@ -22,6 +23,7 @@ def generate_launch_description() -> LaunchDescription:
             ),
             LogInfo(msg="UAV/client bringup assumes RMW_IMPLEMENTATION=rmw_fastrtps_cpp is already exported."),
             LogInfo(msg="UAV/client bringup assumes ROS_DISCOVERY_SERVER=<server_ip>:11811 is already exported."),
+            SetEnvironmentVariable("AG_QOS_CONFIG_PATH", qos_config),
             Node(package="ag_monitor", executable="qos_inspector", output="screen", parameters=[{"qos_config_path": qos_config}]),
             Node(package="ag_mock_nodes", executable="uav_mock_odom_tf_pub", output="screen"),
             Node(package="ag_mock_nodes", executable="uav_mock_map_tile_pub", output="screen"),

@@ -2,17 +2,18 @@
 
 from __future__ import annotations
 
-import rclpy
+from rclpy.context import Context
 from rclpy.node import Node
 
+from ag_network_tools.node_runner import run_node
 from ag_network_tools.topic_names import UAV_TARGET_TOPIC
 
 
 class ArmTargetAdapterStub(Node):
     """Log the expected contract for a future arm target adapter."""
 
-    def __init__(self) -> None:
-        super().__init__("arm_target_adapter_stub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("arm_target_adapter_stub", context=context)
 
         # TODO: Replace arm_target_sink_stub.py with a real arm target adapter.
         # TODO: Connect this node to the real arm planning and grasp execution stack later.
@@ -34,12 +35,4 @@ class ArmTargetAdapterStub(Node):
 
 
 def main(args: list[str] | None = None) -> None:
-    rclpy.init(args=args)
-    node = ArmTargetAdapterStub()
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        node.destroy_node()
-        rclpy.shutdown()
+    run_node(ArmTargetAdapterStub, args)

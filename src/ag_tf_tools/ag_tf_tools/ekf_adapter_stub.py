@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 
-import rclpy
+from rclpy.context import Context
 from rclpy.node import Node
 
+from ag_network_tools.node_runner import run_node
 from ag_network_tools.topic_names import FRAME_MAP
 from ag_network_tools.topic_names import FRAME_UGV_ODOM
 from ag_network_tools.topic_names import TF_TOPIC
@@ -13,8 +14,8 @@ from ag_network_tools.topic_names import TF_TOPIC
 class EkfAdapterStub(Node):
     """Log the expected contract for a future EKF adapter."""
 
-    def __init__(self) -> None:
-        super().__init__("ekf_adapter_stub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("ekf_adapter_stub", context=context)
 
         # TODO: Replace frame_alignment_stub.py with a real EKF or localization alignment adapter.
         # TODO: Connect this node to the real fused UGV localization sources later.
@@ -39,12 +40,4 @@ class EkfAdapterStub(Node):
 
 
 def main(args: list[str] | None = None) -> None:
-    rclpy.init(args=args)
-    node = EkfAdapterStub()
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        node.destroy_node()
-        rclpy.shutdown()
+    run_node(EkfAdapterStub, args)

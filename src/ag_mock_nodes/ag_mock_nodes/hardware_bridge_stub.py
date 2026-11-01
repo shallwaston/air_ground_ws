@@ -2,15 +2,17 @@
 
 from __future__ import annotations
 
-import rclpy
+from rclpy.context import Context
 from rclpy.node import Node
 
+
+from ag_network_tools.node_runner import run_node
 
 class HardwareBridgeStub(Node):
     """Log the expected contract for a future hardware bridge."""
 
-    def __init__(self) -> None:
-        super().__init__("hardware_bridge_stub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("hardware_bridge_stub", context=context)
 
         # TODO: Replace the sensor-input side of uav_mock_odom_tf_pub.py and uav_mock_map_tile_pub.py.
         # TODO: Connect this node to real sensors and actuators only after the real hardware interface is known.
@@ -33,12 +35,4 @@ class HardwareBridgeStub(Node):
 
 
 def main(args: list[str] | None = None) -> None:
-    rclpy.init(args=args)
-    node = HardwareBridgeStub()
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        node.destroy_node()
-        rclpy.shutdown()
+    run_node(HardwareBridgeStub, args)

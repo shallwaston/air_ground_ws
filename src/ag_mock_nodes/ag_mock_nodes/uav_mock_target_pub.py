@@ -4,11 +4,12 @@ from __future__ import annotations
 
 import math
 
-import rclpy
 from ag_interfaces.msg import TargetInfo
 from geometry_msgs.msg import Quaternion
+from rclpy.context import Context
 from rclpy.node import Node
 
+from ag_network_tools.node_runner import run_node
 from ag_network_tools.qos_profiles import get_qos_profile_for_topic
 from ag_network_tools.topic_names import FRAME_MAP
 from ag_network_tools.topic_names import UAV_TARGET_TOPIC
@@ -17,8 +18,8 @@ from ag_network_tools.topic_names import UAV_TARGET_TOPIC
 class UavMockTargetPub(Node):
     """Generate simple moving targets for downstream sink stubs."""
 
-    def __init__(self) -> None:
-        super().__init__("uav_mock_target_pub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("uav_mock_target_pub", context=context)
 
         self.declare_parameter("frequency_hz", 1.0)
         self.declare_parameter("radius_m", 3.0)
@@ -42,11 +43,11 @@ class UavMockTargetPub(Node):
         )
 
     def on_timer(self) -> None:
-        now = self.get_clock().now().to_msg()
-        t = self.get_clock().now().nanoseconds / 1e9 - self.start_time_sec
+        now = self.get_clock().now()
+        t = now.nanoseconds / 1e9 - self.start_time_sec
 
         msg = TargetInfo()
-        msg.header.stamp = now
+        msg.header.stamp = now.to_msg()
         msg.header.frame_id = FRAME_MAP
         msg.target_id = f"mock_target_{self.seq % 4}"
         msg.pose.position.x = self.radius_m * math.cos(0.25 * t)
@@ -59,12 +60,4 @@ class UavMockTargetPub(Node):
 
 
 def main(args: list[str] | None = None) -> None:
-    rclpy.init(args=args)
-    node = UavMockTargetPub()
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        node.destroy_node()
-        rclpy.shutdown()
+    run_node(UavMockTargetPub, args)

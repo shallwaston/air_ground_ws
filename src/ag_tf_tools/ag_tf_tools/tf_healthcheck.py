@@ -2,13 +2,14 @@
 
 from __future__ import annotations
 
-import rclpy
+from rclpy.context import Context
 from rclpy.node import Node
 from rclpy.time import Time
 from tf2_ros import Buffer
 from tf2_ros import TransformException
 from tf2_ros import TransformListener
 
+from ag_network_tools.node_runner import request_stop, run_node
 from ag_network_tools.qos_profiles import get_qos_profile_for_topic
 from ag_network_tools.topic_names import FRAME_MAP
 from ag_network_tools.topic_names import FRAME_UAV_BASE
@@ -21,8 +22,8 @@ from ag_network_tools.topic_names import TF_TOPIC
 class TfHealthcheck(Node):
     """Verify that the key frame chains required by the MVP are present."""
 
-    def __init__(self) -> None:
-        super().__init__("tf_healthcheck")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("tf_healthcheck", context=context)
 
         self.declare_parameter("check_period_sec", 5.0)
         self.declare_parameter("one_shot", False)
@@ -61,17 +62,8 @@ class TfHealthcheck(Node):
 
         if self.one_shot:
             self.get_logger().info("One-shot TF check complete, shutting down.")
-            rclpy.shutdown()
+            request_stop(self)
 
 
 def main(args: list[str] | None = None) -> None:
-    rclpy.init(args=args)
-    node = TfHealthcheck()
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        node.destroy_node()
-        if rclpy.ok():
-            rclpy.shutdown()
+    run_node(TfHealthcheck, args)

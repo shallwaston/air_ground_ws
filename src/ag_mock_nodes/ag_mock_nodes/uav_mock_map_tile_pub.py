@@ -2,13 +2,14 @@
 
 from __future__ import annotations
 
-import math
-
-import rclpy
+from ag_network_tools.node_runner import run_node
+from ag_network_tools.node_runner import run_node
 from ag_interfaces.msg import MapTile
 from geometry_msgs.msg import Quaternion
+from rclpy.context import Context
 from rclpy.node import Node
 
+from ag_mock_nodes.mock_tile_math import build_mock_tile_layers
 from ag_network_tools.qos_profiles import get_qos_profile_for_topic
 from ag_network_tools.topic_names import FRAME_MAP
 from ag_network_tools.topic_names import UAV_MAP_TILE_TOPIC
@@ -17,8 +18,8 @@ from ag_network_tools.topic_names import UAV_MAP_TILE_TOPIC
 class UavMockMapTilePub(Node):
     """Generate synthetic 2.5D map tiles for bandwidth and latency tests."""
 
-    def __init__(self) -> None:
-        super().__init__("uav_mock_map_tile_pub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("uav_mock_map_tile_pub", context=context)
 
         self.declare_parameter("frequency_hz", 2.0)
         self.declare_parameter("tile_width", 64)
@@ -65,16 +66,8 @@ class UavMockMapTilePub(Node):
         """Publish one synthetic tile sample."""
         now = self.get_clock().now().to_msg()
         width, height = self.get_effective_dimensions()
-        element_count = width * height
 
-        elevation = []
-        traversability = []
-        for index in range(element_count):
-            row = index // width
-            col = index % width
-            height_value = 0.5 * math.sin(0.07 * row + self.phase) + 0.25 * math.cos(0.11 * col)
-            elevation.append(float(height_value))
-            traversability.append(255 if abs(height_value) < 0.45 else 64)
+        elevation, traversability = build_mock_tile_layers(width, height, self.phase)
 
         msg = MapTile()
         msg.header.stamp = now
@@ -97,12 +90,4 @@ class UavMockMapTilePub(Node):
 
 
 def main(args: list[str] | None = None) -> None:
-    rclpy.init(args=args)
-    node = UavMockMapTilePub()
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        node.destroy_node()
-        rclpy.shutdown()
+    run_node(UavMockMapTilePub, args)

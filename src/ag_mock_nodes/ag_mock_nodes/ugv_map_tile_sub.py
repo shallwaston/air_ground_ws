@@ -4,14 +4,14 @@ from __future__ import annotations
 
 from collections import deque
 
-import rclpy
 from ag_interfaces.msg import MapTile
+from rclpy.context import Context
 from rclpy.node import Node
 from std_msgs.msg import String
 
+from ag_network_tools.node_runner import run_node
 from ag_network_tools.qos_profiles import get_qos_profile_for_topic
 from ag_network_tools.topic_names import DELAY_REPORT_TOPIC
-from ag_network_tools.topic_names import HEARTBEAT_TOPIC
 from ag_network_tools.topic_names import UAV_MAP_TILE_TOPIC
 
 
@@ -23,8 +23,8 @@ def stamp_to_ns(stamp) -> int:
 class UgvMapTileSub(Node):
     """UGV-side receiver for mock map tiles."""
 
-    def __init__(self) -> None:
-        super().__init__("ugv_map_tile_sub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("ugv_map_tile_sub", context=context)
 
         self.declare_parameter("log_every_n", 1)
         self.log_every_n = max(1, int(self.get_parameter("log_every_n").value))
@@ -38,7 +38,7 @@ class UgvMapTileSub(Node):
         self.report_pub = self.create_publisher(
             String,
             DELAY_REPORT_TOPIC,
-            get_qos_profile_for_topic(HEARTBEAT_TOPIC),
+            get_qos_profile_for_topic(DELAY_REPORT_TOPIC),
         )
 
         self.last_receive_ns = None
@@ -79,12 +79,4 @@ class UgvMapTileSub(Node):
 
 
 def main(args: list[str] | None = None) -> None:
-    rclpy.init(args=args)
-    node = UgvMapTileSub()
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        node.destroy_node()
-        rclpy.shutdown()
+    run_node(UgvMapTileSub, args)

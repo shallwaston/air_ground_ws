@@ -2,17 +2,18 @@
 
 from __future__ import annotations
 
-import rclpy
+from rclpy.context import Context
 from rclpy.node import Node
 
+from ag_network_tools.node_runner import run_node
 from ag_network_tools.topic_names import KEY_TOPICS
 
 
 class TopicWatchdog(Node):
     """Print topic discovery information in a beginner-friendly format."""
 
-    def __init__(self) -> None:
-        super().__init__("topic_watchdog")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("topic_watchdog", context=context)
 
         self.declare_parameter("topics", KEY_TOPICS)
         self.declare_parameter("check_period_sec", 5.0)
@@ -27,8 +28,8 @@ class TopicWatchdog(Node):
         discovered = dict(self.get_topic_names_and_types())
         for topic_name in self.topics:
             topic_types = discovered.get(topic_name, [])
-            publisher_count = len(self.get_publishers_info_by_topic(topic_name))
-            subscriber_count = len(self.get_subscriptions_info_by_topic(topic_name))
+            publisher_count = self.count_publishers(topic_name)
+            subscriber_count = self.count_subscribers(topic_name)
 
             if not topic_types:
                 self.get_logger().warning(f"{topic_name}: topic not discovered yet")
@@ -45,12 +46,4 @@ class TopicWatchdog(Node):
 
 
 def main(args: list[str] | None = None) -> None:
-    rclpy.init(args=args)
-    node = TopicWatchdog()
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        node.destroy_node()
-        rclpy.shutdown()
+    run_node(TopicWatchdog, args)

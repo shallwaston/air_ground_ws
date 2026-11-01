@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 
-import rclpy
+from rclpy.context import Context
 from rclpy.node import Node
 
+from ag_network_tools.node_runner import run_node
 from ag_network_tools.qos_profiles import describe_qos_for_topic
 from ag_network_tools.qos_profiles import get_all_topic_configs
 
@@ -12,8 +13,8 @@ from ag_network_tools.qos_profiles import get_all_topic_configs
 class QosInspector(Node):
     """Print the configured QoS strategies at startup."""
 
-    def __init__(self) -> None:
-        super().__init__("qos_inspector")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("qos_inspector", context=context)
 
         self.declare_parameter("qos_config_path", "")
         self.declare_parameter("repeat_period_sec", 0.0)
@@ -33,12 +34,4 @@ class QosInspector(Node):
 
 
 def main(args: list[str] | None = None) -> None:
-    rclpy.init(args=args)
-    node = QosInspector()
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        node.destroy_node()
-        rclpy.shutdown()
+    run_node(QosInspector, args)

@@ -1,0 +1,96 @@
+[INFO] [launch]: All log files can be found below /tmp/air-ground-home/.ros/log/2026-11-01-14-56-38-971770-23eed4bdd6f6-40955
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [qos_inspector-1]: process started with pid [40969]
+[INFO] [uav_mock_odom_tf_pub-2]: process started with pid [40970]
+[INFO] [uav_mock_map_tile_pub-3]: process started with pid [40971]
+[INFO] [uav_mock_target_pub-4]: process started with pid [40972]
+[INFO] [ugv_map_tile_sub-5]: process started with pid [40973]
+[INFO] [ugv_nav_sink_stub-6]: process started with pid [40974]
+[INFO] [arm_target_sink_stub-7]: process started with pid [40975]
+[INFO] [heartbeat_pub-8]: process started with pid [40976]
+[INFO] [heartbeat_pub-9]: process started with pid [40977]
+[INFO] [system_monitor-10]: process started with pid [40978]
+[INFO] [delay_probe_pub-11]: process started with pid [40979]
+[INFO] [delay_probe_sub-12]: process started with pid [40980]
+[INFO] [topic_watchdog-13]: process started with pid [40981]
+[INFO] [frame_alignment_stub-14]: process started with pid [40982]
+[INFO] [static_tf_loader-15]: process started with pid [40983]
+[INFO] [tf_healthcheck-16]: process started with pid [40984]
+[heartbeat_pub-8] [INFO] [1793545000.238839410] [heartbeat_uav_stack]: Heartbeat publisher ready: topic=/system/heartbeat, role=uav, node_name=uav_mock_stack
+[uav_mock_map_tile_pub-3] [INFO] [1793545000.267063677] [uav_mock_map_tile_pub]: Mock map tile publisher ready: topic=/uav/map/tile, frequency=2.00 Hz, effective_tile=64x64, estimated_payload~20480 B
+[frame_alignment_stub-14] [INFO] [1793545000.341344652] [frame_alignment_stub]: Frame alignment stub ready. Replace this with a future EKF or localization alignment module.
+[arm_target_sink_stub-7] [INFO] [1793545000.878654595] [arm_target_sink_stub]: Arm target sink stub ready. Replace this node with a real arm adapter later.
+[topic_watchdog-13] [INFO] [1793545001.036386694] [topic_watchdog]: Topic watchdog ready. It will report missing publishers/subscribers.
+[qos_inspector-1] [INFO] [1793545001.107422079] [qos_inspector]: Configured QoS profiles:
+[qos_inspector-1] [INFO] [1793545001.111520634] [qos_inspector]:   /system/delay_probe: reliability=reliable, durability=volatile, history=keep_last, depth=20
+[qos_inspector-1] [INFO] [1793545001.112805506] [qos_inspector]:   /system/delay_report: reliability=reliable, durability=volatile, history=keep_last, depth=20
+[qos_inspector-1] [INFO] [1793545001.114566751] [qos_inspector]:   /system/heartbeat: reliability=reliable, durability=volatile, history=keep_last, depth=20
+[qos_inspector-1] [INFO] [1793545001.116914185] [qos_inspector]:   /tf: reliability=best_effort, durability=volatile, history=keep_last, depth=50
+[qos_inspector-1] [INFO] [1793545001.118554159] [qos_inspector]:   /tf_static: reliability=reliable, durability=transient_local, history=keep_last, depth=1
+[qos_inspector-1] [INFO] [1793545001.120738213] [qos_inspector]:   /uav/map/tile: reliability=reliable, durability=transient_local, history=keep_last, depth=5
+[qos_inspector-1] [INFO] [1793545001.121359854] [qos_inspector]:   /uav/odom: reliability=best_effort, durability=volatile, history=keep_last, depth=20
+[qos_inspector-1] [INFO] [1793545001.122021234] [qos_inspector]:   /uav/targets/current: reliability=reliable, durability=transient_local, history=keep_last, depth=10
+[heartbeat_pub-9] [INFO] [1793545001.152293213] [heartbeat_ugv_stack]: Heartbeat publisher ready: topic=/system/heartbeat, role=ugv, node_name=ugv_mock_stack
+[delay_probe_pub-11] [INFO] [1793545001.207330477] [delay_probe_pub]: Delay probe publisher ready: topic=/system/delay_probe, payload_bytes=1024
+[ugv_map_tile_sub-5] [INFO] [1793545001.247517863] [ugv_map_tile_sub]: UGV map tile subscriber ready: topic=/uav/map/tile
+[ugv_map_tile_sub-5] [INFO] [1793545001.252136828] [ugv_map_tile_sub]: tile seq=0 size=64x64 rx_hz=0.00 latency_ms=513.36
+[ugv_map_tile_sub-5] [INFO] [1793545001.254077982] [ugv_map_tile_sub]: tile seq=1 size=64x64 rx_hz=252.13 latency_ms=17.40
+[delay_probe_sub-12] [INFO] [1793545001.255254616] [delay_probe_sub]: Delay probe subscriber ready: topic=/system/delay_probe
+[ugv_nav_sink_stub-6] [INFO] [1793545001.410042347] [ugv_nav_sink_stub]: UGV Nav sink stub ready. Replace this node with a future Nav2 adapter.
+[ugv_nav_sink_stub-6] [INFO] [1793545001.415674345] [ugv_nav_sink_stub]: Nav sink stub received map tile seq=0 (64x64).
+[ugv_nav_sink_stub-6] [INFO] [1793545001.416768023] [ugv_nav_sink_stub]: Nav sink stub received map tile seq=1 (64x64).
+[uav_mock_odom_tf_pub-2] [INFO] [1793545001.418036022] [uav_mock_odom_tf_pub]: Mock UAV odom/TF publisher ready: topic=/uav/odom, frequency=30.0 Hz, radius=8.0 m
+[static_tf_loader-15] [INFO] [1793545001.427297989] [static_tf_loader]: Published 2 static transform(s) from /workspace/air_ground_ws/install/ag_bringup/share/ag_bringup/config/static_transforms.yaml
+[uav_mock_target_pub-4] [INFO] [1793545001.439360735] [uav_mock_target_pub]: Mock target publisher ready: topic=/uav/targets/current, frequency=1.00 Hz
+[system_monitor-10] [INFO] [1793545001.453427844] [system_monitor]: System monitor ready. It will warn when key topics go quiet.
+[delay_probe_sub-12] [INFO] [1793545001.664657473] [delay_probe_sub]: probe seq=0 payload_bytes=1024 latency_ms=0.58 mean_ms=0.58 max_ms=0.58 recent=[0.58]
+[ugv_nav_sink_stub-6] [INFO] [1793545001.739476710] [ugv_nav_sink_stub]: Nav sink stub received map tile seq=2 (64x64).
+[ugv_map_tile_sub-5] [INFO] [1793545001.739868218] [ugv_map_tile_sub]: tile seq=2 size=64x64 rx_hz=2.06 latency_ms=3.33
+[tf_healthcheck-16] [INFO] [1793545001.869573847] [tf_healthcheck]: TF healthcheck ready.
+[delay_probe_sub-12] [INFO] [1793545002.166096881] [delay_probe_sub]: probe seq=1 payload_bytes=1024 latency_ms=1.30 mean_ms=0.94 max_ms=1.30 recent=[0.58, 1.30]
+[ugv_nav_sink_stub-6] [INFO] [1793545002.238923502] [ugv_nav_sink_stub]: Nav sink stub received map tile seq=3 (64x64).
+[ugv_map_tile_sub-5] [INFO] [1793545002.239682683] [ugv_map_tile_sub]: tile seq=3 size=64x64 rx_hz=2.00 latency_ms=3.18
+[arm_target_sink_stub-7] [INFO] [1793545002.418784850] [arm_target_sink_stub]: 收到抓取目标: id=mock_target_0, x=2.91, y=0.74, confidence=0.88
+[ugv_nav_sink_stub-6] [INFO] [1793545002.419145817] [ugv_nav_sink_stub]: Nav sink stub received target mock_target_0 with confidence=0.88.
+[delay_probe_sub-12] [INFO] [1793545002.665377205] [delay_probe_sub]: probe seq=2 payload_bytes=1024 latency_ms=1.35 mean_ms=1.08 max_ms=1.35 recent=[0.58, 1.30, 1.35]
+[ugv_nav_sink_stub-6] [INFO] [1793545002.738098116] [ugv_nav_sink_stub]: Nav sink stub received map tile seq=4 (64x64).
+[ugv_map_tile_sub-5] [INFO] [1793545002.738674915] [ugv_map_tile_sub]: tile seq=4 size=64x64 rx_hz=2.01 latency_ms=1.56
+[delay_probe_sub-12] [INFO] [1793545003.165581140] [delay_probe_sub]: probe seq=3 payload_bytes=1024 latency_ms=1.10 mean_ms=1.08 max_ms=1.35 recent=[0.58, 1.30, 1.35, 1.10]
+[ugv_nav_sink_stub-6] [INFO] [1793545003.239997772] [ugv_nav_sink_stub]: Nav sink stub received map tile seq=5 (64x64).
+[ugv_map_tile_sub-5] [INFO] [1793545003.241449379] [ugv_map_tile_sub]: tile seq=5 size=64x64 rx_hz=1.99 latency_ms=4.54
+[system_monitor-10] [INFO] [1793545003.388961613] [system_monitor]: System summary | /system/heartbeat=0.22s | /uav/odom=0.02s | /uav/map/tile=0.15s | /uav/targets/current=0.97s | /system/delay_probe=0.22s | heartbeats=2 | latest_delay_report=tile seq=5 size=64x64 rx_hz=1.99 latency_ms=4.54
+[arm_target_sink_stub-7] [INFO] [1793545003.418655336] [arm_target_sink_stub]: 收到抓取目标: id=mock_target_1, x=2.63, y=1.44, confidence=0.91
+[ugv_nav_sink_stub-6] [INFO] [1793545003.419589340] [ugv_nav_sink_stub]: Nav sink stub received target mock_target_1 with confidence=0.91.
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [tf_healthcheck-16]: sending signal 'SIGINT' to process[tf_healthcheck-16]
+[INFO] [static_tf_loader-15]: sending signal 'SIGINT' to process[static_tf_loader-15]
+[INFO] [frame_alignment_stub-14]: sending signal 'SIGINT' to process[frame_alignment_stub-14]
+[INFO] [topic_watchdog-13]: sending signal 'SIGINT' to process[topic_watchdog-13]
+[INFO] [delay_probe_sub-12]: sending signal 'SIGINT' to process[delay_probe_sub-12]
+[INFO] [delay_probe_pub-11]: sending signal 'SIGINT' to process[delay_probe_pub-11]
+[INFO] [system_monitor-10]: sending signal 'SIGINT' to process[system_monitor-10]
+[INFO] [heartbeat_pub-9]: sending signal 'SIGINT' to process[heartbeat_pub-9]
+[INFO] [heartbeat_pub-8]: sending signal 'SIGINT' to process[heartbeat_pub-8]
+[INFO] [arm_target_sink_stub-7]: sending signal 'SIGINT' to process[arm_target_sink_stub-7]
+[INFO] [ugv_nav_sink_stub-6]: sending signal 'SIGINT' to process[ugv_nav_sink_stub-6]
+[INFO] [ugv_map_tile_sub-5]: sending signal 'SIGINT' to process[ugv_map_tile_sub-5]
+[INFO] [uav_mock_target_pub-4]: sending signal 'SIGINT' to process[uav_mock_target_pub-4]
+[INFO] [uav_mock_map_tile_pub-3]: sending signal 'SIGINT' to process[uav_mock_map_tile_pub-3]
+[INFO] [uav_mock_odom_tf_pub-2]: sending signal 'SIGINT' to process[uav_mock_odom_tf_pub-2]
+[INFO] [qos_inspector-1]: sending signal 'SIGINT' to process[qos_inspector-1]
+[INFO] [ugv_nav_sink_stub-6]: process has finished cleanly [pid 40974]
+[INFO] [delay_probe_pub-11]: process has finished cleanly [pid 40979]
+[INFO] [uav_mock_odom_tf_pub-2]: process has finished cleanly [pid 40970]
+[INFO] [static_tf_loader-15]: process has finished cleanly [pid 40983]
+[INFO] [arm_target_sink_stub-7]: process has finished cleanly [pid 40975]
+[INFO] [frame_alignment_stub-14]: process has finished cleanly [pid 40982]
+[INFO] [ugv_map_tile_sub-5]: process has finished cleanly [pid 40973]
+[INFO] [uav_mock_map_tile_pub-3]: process has finished cleanly [pid 40971]
+[INFO] [delay_probe_sub-12]: process has finished cleanly [pid 40980]
+[INFO] [tf_healthcheck-16]: process has finished cleanly [pid 40984]
+[INFO] [heartbeat_pub-8]: process has finished cleanly [pid 40976]
+[INFO] [heartbeat_pub-9]: process has finished cleanly [pid 40977]
+[INFO] [uav_mock_target_pub-4]: process has finished cleanly [pid 40972]
+[INFO] [qos_inspector-1]: process has finished cleanly [pid 40969]
+[INFO] [topic_watchdog-13]: process has finished cleanly [pid 40981]
+[INFO] [system_monitor-10]: process has finished cleanly [pid 40978]

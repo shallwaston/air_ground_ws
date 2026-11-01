@@ -5,6 +5,7 @@ from __future__ import annotations
 import importlib.util
 import os
 from pathlib import Path
+import pytest
 
 from launch import LaunchDescription
 from launch import LaunchService
@@ -36,9 +37,13 @@ def load_launch_module(launch_file: Path):
     return module
 
 
-def test_single_machine_launch_description_loads() -> None:
+@pytest.mark.parametrize('filename', [
+    'single_machine_mock', 'dual_machine_client', 'dual_machine_server',
+    'qos_stress_test', 'rosbag_replay_test',
+])
+def test_single_machine_launch_description_loads(filename) -> None:
     configure_launch_logging_env()
-    launch_file = workspace_root() / "src" / "ag_bringup" / "launch" / "single_machine_mock.launch.py"
+    launch_file = workspace_root() / 'src' / 'ag_bringup' / 'launch' / f'{filename}.launch.py'
     module = load_launch_module(launch_file)
     launch_description = module.generate_launch_description()
 

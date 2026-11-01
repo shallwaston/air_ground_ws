@@ -4,13 +4,14 @@ from __future__ import annotations
 
 import math
 
-import rclpy
-from geometry_msgs.msg import Quaternion
 from geometry_msgs.msg import TransformStamped
 from nav_msgs.msg import Odometry
+from rclpy.context import Context
 from rclpy.node import Node
 from tf2_ros import TransformBroadcaster
 
+from ag_network_tools.node_runner import run_node
+from ag_network_tools.transforms import quaternion_from_euler
 from ag_network_tools.qos_profiles import get_qos_profile_for_topic
 from ag_network_tools.topic_names import FRAME_MAP
 from ag_network_tools.topic_names import FRAME_UAV_BASE
@@ -18,29 +19,11 @@ from ag_network_tools.topic_names import TF_TOPIC
 from ag_network_tools.topic_names import UAV_ODOM_TOPIC
 
 
-def quaternion_from_euler(roll: float, pitch: float, yaw: float) -> Quaternion:
-    """Convert Euler angles to a ROS quaternion."""
-    qx = math.sin(roll / 2.0) * math.cos(pitch / 2.0) * math.cos(yaw / 2.0) - math.cos(roll / 2.0) * math.sin(
-        pitch / 2.0
-    ) * math.sin(yaw / 2.0)
-    qy = math.cos(roll / 2.0) * math.sin(pitch / 2.0) * math.cos(yaw / 2.0) + math.sin(roll / 2.0) * math.cos(
-        pitch / 2.0
-    ) * math.sin(yaw / 2.0)
-    qz = math.cos(roll / 2.0) * math.cos(pitch / 2.0) * math.sin(yaw / 2.0) - math.sin(roll / 2.0) * math.sin(
-        pitch / 2.0
-    ) * math.cos(yaw / 2.0)
-    qw = math.cos(roll / 2.0) * math.cos(pitch / 2.0) * math.cos(yaw / 2.0) + math.sin(roll / 2.0) * math.sin(
-        pitch / 2.0
-    ) * math.sin(yaw / 2.0)
-
-    return Quaternion(x=qx, y=qy, z=qz, w=qw)
-
-
 class UavMockOdomTfPub(Node):
     """A simple circular-motion UAV publisher for MVP bringup."""
 
-    def __init__(self) -> None:
-        super().__init__("uav_mock_odom_tf_pub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("uav_mock_odom_tf_pub", context=context)
 
         self.declare_parameter("frequency_hz", 30.0)
         self.declare_parameter("radius_m", 8.0)
@@ -89,9 +72,11 @@ class UavMockOdomTfPub(Node):
         odom_msg.pose.pose.position.y = y
         odom_msg.pose.pose.position.z = z
         odom_msg.pose.pose.orientation = orientation
-        odom_msg.twist.twist.linear.x = -self.speed_mps * math.sin(omega * t)
-        odom_msg.twist.twist.linear.y = self.speed_mps * math.cos(omega * t)
-        odom_msg.twist.twist.linear.z = 0.25 * self.vertical_wave_m * math.cos(0.5 * omega * t)
+        # Odometry requires twist in child_frame_id, while pose is in header.frame_id.
+        # The UAV faces the tangent of its circular path, so body velocity is forward.
+        odom_msg.twist.twist.linear.x = self.speed_mps
+        odom_msg.twist.twist.linear.y = 0.0
+        odom_msg.twist.twist.linear.z = 0.5 * omega * self.vertical_wave_m * math.cos(0.5 * omega * t)
         odom_msg.twist.twist.angular.z = omega
         self.odom_pub.publish(odom_msg)
 
@@ -107,12 +92,4 @@ class UavMockOdomTfPub(Node):
 
 
 def main(args: list[str] | None = None) -> None:
-    rclpy.init(args=args)
-    node = UavMockOdomTfPub()
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        node.destroy_node()
-        rclpy.shutdown()
+    run_node(UavMockOdomTfPub, args)

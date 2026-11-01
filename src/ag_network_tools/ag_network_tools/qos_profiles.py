@@ -8,6 +8,8 @@ defaults keep the mock system runnable.
 from __future__ import annotations
 
 from copy import deepcopy
+from functools import lru_cache
+import os
 from pathlib import Path
 from typing import Any, Dict, Optional
 
@@ -86,7 +88,10 @@ def _to_reliability(name: str) -> ReliabilityPolicy:
         "reliable": ReliabilityPolicy.RELIABLE,
         "best_effort": ReliabilityPolicy.BEST_EFFORT,
     }
-    return mapping.get(str(name).lower(), ReliabilityPolicy.RELIABLE)
+    try:
+        return mapping[str(name).lower()]
+    except KeyError as exc:
+        raise ValueError(f'Unknown QoS reliability: {name!r}') from exc
 
 
 def _to_durability(name: str) -> DurabilityPolicy:
@@ -94,7 +99,10 @@ def _to_durability(name: str) -> DurabilityPolicy:
         "volatile": DurabilityPolicy.VOLATILE,
         "transient_local": DurabilityPolicy.TRANSIENT_LOCAL,
     }
-    return mapping.get(str(name).lower(), DurabilityPolicy.VOLATILE)
+    try:
+        return mapping[str(name).lower()]
+    except KeyError as exc:
+        raise ValueError(f'Unknown QoS durability: {name!r}') from exc
 
 
 def _to_history(name: str) -> HistoryPolicy:
@@ -102,24 +110,34 @@ def _to_history(name: str) -> HistoryPolicy:
         "keep_last": HistoryPolicy.KEEP_LAST,
         "keep_all": HistoryPolicy.KEEP_ALL,
     }
-    return mapping.get(str(name).lower(), HistoryPolicy.KEEP_LAST)
+    try:
+        return mapping[str(name).lower()]
+    except KeyError as exc:
+        raise ValueError(f'Unknown QoS history: {name!r}') from exc
 
 
 def profile_from_dict(data: Dict[str, Any]) -> QoSProfile:
     """Construct a QoSProfile from a plain dictionary."""
-    profile = QoSProfile(depth=int(data.get("depth", 10)))
-    profile.reliability = _to_reliability(data.get("reliability", "reliable"))
-    profile.durability = _to_durability(data.get("durability", "volatile"))
-    profile.history = _to_history(data.get("history", "keep_last"))
-    return profile
+    depth = data.get('depth', 10)
+    if isinstance(depth, bool) or not isinstance(depth, int):
+        raise ValueError('QoS depth must be an integer')
+    history = _to_history(data.get('history', 'keep_last'))
+    if depth < 0 or (history == HistoryPolicy.KEEP_LAST and depth == 0):
+        raise ValueError('QoS depth must be positive for keep_last and nonnegative for keep_all')
+    return QoSProfile(
+        depth=depth, history=history,
+        reliability=_to_reliability(data.get('reliability', 'reliable')),
+        durability=_to_durability(data.get('durability', 'volatile')))
 
 
 def resolve_qos_config_path(preferred_path: Optional[str] = None) -> Optional[Path]:
     """Return the best available QoS config path."""
+    preferred_path = preferred_path or os.environ.get('AG_QOS_CONFIG_PATH')
     if preferred_path:
         candidate = Path(preferred_path).expanduser()
-        if candidate.exists():
+        if candidate.is_file():
             return candidate
+        raise FileNotFoundError(f'QoS config not found: {candidate}')
 
     try:
         share_dir = Path(get_package_share_directory("ag_bringup"))
@@ -136,24 +154,39 @@ def resolve_qos_config_path(preferred_path: Optional[str] = None) -> Optional[Pa
     return None
 
 
-def load_qos_config(preferred_path: Optional[str] = None) -> Dict[str, Dict[str, Any]]:
-    """Load the YAML QoS mapping or fall back to built-in defaults."""
-    path = resolve_qos_config_path(preferred_path)
-    if path is None:
-        return deepcopy(DEFAULT_QOS_CONFIG)
-
+@lru_cache(maxsize=16)
+def _load_qos_config(path: Path, mtime_ns: int, size: int) -> Dict[str, Dict[str, Any]]:
+    """Cache parsed settings, invalidating on path/mtime/size changes."""
     with path.open("r", encoding="utf-8") as stream:
-        parsed = yaml.safe_load(stream) or {}
-
-    topics = parsed.get("topics")
-    if not isinstance(topics, dict):
+        parsed = yaml.safe_load(stream)
+    if parsed is None:
         return deepcopy(DEFAULT_QOS_CONFIG)
+    if not isinstance(parsed, dict):
+        raise ValueError(f'QoS config must be a mapping: {path}')
+
+    topics = parsed.get("topics", {})
+    if not isinstance(topics, dict):
+        raise ValueError(f'QoS topics must be a mapping: {path}')
 
     merged = deepcopy(DEFAULT_QOS_CONFIG)
     for topic_name, profile in topics.items():
-        if isinstance(profile, dict):
-            merged["topics"][_normalize_topic_name(topic_name)] = profile
+        if not isinstance(topic_name, str) or not isinstance(profile, dict):
+            raise ValueError(f'Invalid QoS topic entry: {topic_name!r} in {path}')
+        normalized = _normalize_topic_name(topic_name)
+        settings = merged['topics'].setdefault(normalized, {})
+        settings.update(profile)
+        profile_from_dict(settings)  # Fail before creating incompatible endpoints.
     return merged
+
+
+def load_qos_config(preferred_path: Optional[str] = None) -> Dict[str, Dict[str, Any]]:
+    """Load settings, returning a private copy so callers cannot corrupt the cache."""
+    path = resolve_qos_config_path(preferred_path)
+    if path is None:
+        return deepcopy(DEFAULT_QOS_CONFIG)
+    path = path.resolve()
+    stat = path.stat()
+    return deepcopy(_load_qos_config(path, stat.st_mtime_ns, stat.st_size))
 
 
 def get_qos_profile_for_topic(topic_name: str, preferred_path: Optional[str] = None) -> QoSProfile:

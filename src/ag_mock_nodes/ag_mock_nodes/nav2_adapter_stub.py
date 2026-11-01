@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 
-import rclpy
+from rclpy.context import Context
 from rclpy.node import Node
 
+from ag_network_tools.node_runner import run_node
 from ag_network_tools.topic_names import UAV_MAP_TILE_TOPIC
 from ag_network_tools.topic_names import UAV_TARGET_TOPIC
 
@@ -12,8 +13,8 @@ from ag_network_tools.topic_names import UAV_TARGET_TOPIC
 class Nav2AdapterStub(Node):
     """Log the expected contract for a future Nav2 bridge."""
 
-    def __init__(self) -> None:
-        super().__init__("nav2_adapter_stub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("nav2_adapter_stub", context=context)
 
         # TODO: Replace ugv_nav_sink_stub.py with a real Nav2 adapter.
         # TODO: Connect this node to Nav2 costmap, planning, and localization glue code later.
@@ -37,12 +38,4 @@ class Nav2AdapterStub(Node):
 
 
 def main(args: list[str] | None = None) -> None:
-    rclpy.init(args=args)
-    node = Nav2AdapterStub()
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        node.destroy_node()
-        rclpy.shutdown()
+    run_node(Nav2AdapterStub, args)

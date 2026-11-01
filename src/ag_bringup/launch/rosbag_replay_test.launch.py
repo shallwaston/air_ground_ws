@@ -1,6 +1,7 @@
 """Bring up sink nodes and optionally replay a rosbag for validation."""
 
 from launch import LaunchDescription
+from launch.actions import SetEnvironmentVariable
 from launch.actions import DeclareLaunchArgument
 from launch.actions import ExecuteProcess
 from launch.actions import LogInfo
@@ -43,6 +44,7 @@ def generate_launch_description() -> LaunchDescription:
                 cmd=["ros2", "bag", "play", bag_path, "--clock"],
                 output="screen",
             ),
+            SetEnvironmentVariable("AG_QOS_CONFIG_PATH", qos_config),
             Node(package="ag_monitor", executable="qos_inspector", output="screen", parameters=[{"qos_config_path": qos_config}]),
             Node(package="ag_mock_nodes", executable="ugv_map_tile_sub", output="screen"),
             Node(package="ag_mock_nodes", executable="ugv_nav_sink_stub", output="screen"),
