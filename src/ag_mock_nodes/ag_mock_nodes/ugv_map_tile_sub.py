@@ -13,7 +13,6 @@ from std_msgs.msg import String
 
 from ag_network_tools.qos_profiles import get_qos_profile_for_topic
 from ag_network_tools.topic_names import DELAY_REPORT_TOPIC
-from ag_network_tools.topic_names import HEARTBEAT_TOPIC
 from ag_network_tools.topic_names import UAV_MAP_TILE_TOPIC
 
 
@@ -40,7 +39,7 @@ class UgvMapTileSub(Node):
         self.report_pub = self.create_publisher(
             String,
             DELAY_REPORT_TOPIC,
-            get_qos_profile_for_topic(HEARTBEAT_TOPIC),
+            get_qos_profile_for_topic(DELAY_REPORT_TOPIC),
         )
 
         self.last_receive_ns = None

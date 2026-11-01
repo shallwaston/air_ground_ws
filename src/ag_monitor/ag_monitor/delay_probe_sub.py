@@ -14,7 +14,6 @@ from std_msgs.msg import String
 from ag_network_tools.qos_profiles import get_qos_profile_for_topic
 from ag_network_tools.topic_names import DELAY_PROBE_TOPIC
 from ag_network_tools.topic_names import DELAY_REPORT_TOPIC
-from ag_network_tools.topic_names import HEARTBEAT_TOPIC
 
 
 def stamp_to_ns(stamp) -> int:
@@ -41,7 +40,7 @@ class DelayProbeSub(Node):
         self.report_pub = self.create_publisher(
             String,
             DELAY_REPORT_TOPIC,
-            get_qos_profile_for_topic(HEARTBEAT_TOPIC),
+            get_qos_profile_for_topic(DELAY_REPORT_TOPIC),
         )
 
         self.get_logger().info(f"Delay probe subscriber ready: topic={DELAY_PROBE_TOPIC}")
