@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from ag_interfaces.msg import Heartbeat
+from rclpy.context import Context
 from rclpy.node import Node
 
 from ag_network_tools.node_runner import run_node
@@ -13,8 +14,8 @@ from ag_network_tools.topic_names import HEARTBEAT_TOPIC
 class HeartbeatPub(Node):
     """Publish simple liveness messages for beginners and system monitors."""
 
-    def __init__(self) -> None:
-        super().__init__("heartbeat_pub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("heartbeat_pub", context=context)
 
         self.declare_parameter("frequency_hz", 1.0)
         self.declare_parameter("node_name", self.get_name())

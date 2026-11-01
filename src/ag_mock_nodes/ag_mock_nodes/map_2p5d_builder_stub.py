@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from rclpy.context import Context
 from rclpy.node import Node
 
 from ag_network_tools.node_runner import run_node
@@ -12,8 +13,8 @@ from ag_network_tools.topic_names import UAV_ODOM_TOPIC
 class Map2p5dBuilderStub(Node):
     """Log the expected contract for a future 2.5D map builder."""
 
-    def __init__(self) -> None:
-        super().__init__("map_2p5d_builder_stub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("map_2p5d_builder_stub", context=context)
 
         # TODO: Replace uav_mock_map_tile_pub.py with a real 2.5D map builder adapter.
         # TODO: Connect this node to the real mapping stack once field sensor topics are ready.

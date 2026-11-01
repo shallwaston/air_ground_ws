@@ -1,0 +1,84 @@
+Starting >>> ag_network_tools
+Starting >>> ag_interfaces
+Finished <<< ag_interfaces [0.36s]
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+cachedir: /workspace/air_ground_ws/build/ag_network_tools/.pytest_cache
+rootdir: /workspace/air_ground_ws/src/ag_network_tools
+plugins: ament-copyright-0.17.5, ament-flake8-0.17.5, ament-xmllint-0.17.5, launch-testing-ros-0.26.13, launch-testing-3.4.12, ament-pep257-0.17.5, ament-lint-0.17.5, colcon-core-0.21.3
+collected 0 items
+
+- generated xml file: /workspace/air_ground_ws/build/ag_network_tools/pytest.xml -
+============================ no tests ran in 0.01s =============================
+Finished <<< ag_network_tools [0.95s]
+Starting >>> ag_mock_nodes
+Starting >>> ag_monitor
+Starting >>> ag_tf_tools
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+cachedir: /workspace/air_ground_ws/build/ag_mock_nodes/.pytest_cache
+rootdir: /workspace/air_ground_ws/src/ag_mock_nodes
+plugins: ament-copyright-0.17.5, ament-flake8-0.17.5, ament-xmllint-0.17.5, launch-testing-ros-0.26.13, launch-testing-3.4.12, ament-pep257-0.17.5, ament-lint-0.17.5, colcon-core-0.21.3
+collected 0 items
+
+- generated xml file: /workspace/air_ground_ws/build/ag_mock_nodes/pytest.xml --
+============================ no tests ran in 0.02s =============================
+Finished <<< ag_mock_nodes [1.05s]
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+cachedir: /workspace/air_ground_ws/build/ag_tf_tools/.pytest_cache
+rootdir: /workspace/air_ground_ws/src/ag_tf_tools
+plugins: ament-copyright-0.17.5, ament-flake8-0.17.5, ament-xmllint-0.17.5, launch-testing-ros-0.26.13, launch-testing-3.4.12, ament-pep257-0.17.5, ament-lint-0.17.5, colcon-core-0.21.3
+collected 0 items
+
+-- generated xml file: /workspace/air_ground_ws/build/ag_tf_tools/pytest.xml ---
+============================ no tests ran in 0.01s =============================
+Finished <<< ag_tf_tools [1.33s]
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+cachedir: /workspace/air_ground_ws/build/ag_monitor/.pytest_cache
+rootdir: /workspace/air_ground_ws/src/ag_monitor
+plugins: ament-copyright-0.17.5, ament-flake8-0.17.5, ament-xmllint-0.17.5, launch-testing-ros-0.26.13, launch-testing-3.4.12, ament-pep257-0.17.5, ament-lint-0.17.5, colcon-core-0.21.3
+collected 0 items
+
+--- generated xml file: /workspace/air_ground_ws/build/ag_monitor/pytest.xml ---
+============================ no tests ran in 0.01s =============================
+Finished <<< ag_monitor [1.47s]
+Starting >>> ag_bringup
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+cachedir: /workspace/air_ground_ws/build/ag_bringup/.pytest_cache
+rootdir: /workspace/air_ground_ws/src/ag_bringup
+plugins: ament-copyright-0.17.5, ament-flake8-0.17.5, ament-xmllint-0.17.5, launch-testing-ros-0.26.13, launch-testing-3.4.12, ament-pep257-0.17.5, ament-lint-0.17.5, colcon-core-0.21.3
+collected 0 items
+
+--- generated xml file: /workspace/air_ground_ws/build/ag_bringup/pytest.xml ---
+============================ no tests ran in 0.01s =============================
+Finished <<< ag_bringup [1.41s]
+Starting >>> ag_system_tests
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+cachedir: /workspace/air_ground_ws/build/ag_system_tests/.pytest_cache
+rootdir: /workspace/air_ground_ws/src/ag_system_tests
+plugins: ament-copyright-0.17.5, ament-flake8-0.17.5, ament-xmllint-0.17.5, launch-testing-ros-0.26.13, launch-testing-3.4.12, ament-pep257-0.17.5, ament-lint-0.17.5, colcon-core-0.21.3
+collected 194 items
+
+test/test_imports.py .                                                   [  0%]
+test/test_launch_smoke.py .......                                        [  4%]
+test/test_message_contracts.py .....                                     [  6%]
+test/test_node_shutdown.py ............................................. [ 29%]
+[Processing: ag_system_tests]
+........................................................................ [ 67%]
+[Processing: ag_system_tests]
+........................                                                 [ 79%]
+[Processing: ag_system_tests]
+test/test_odometry_semantics.py ...                                      [ 80%]
+test/test_runtime_regressions.py ..........................              [ 94%]
+test/test_safe_optimization_logic.py .........                           [ 98%]
+test/test_single_machine_integration.py ..                               [100%]
+
+- generated xml file: /workspace/air_ground_ws/build/ag_system_tests/pytest.xml -
+======================= 194 passed in 106.54s (0:01:46) ========================
+Finished <<< ag_system_tests [1min 48s]
+
+Summary: 7 packages finished [1min 52s]

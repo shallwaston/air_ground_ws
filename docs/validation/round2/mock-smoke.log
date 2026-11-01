@@ -1,0 +1,2 @@
+PASS: live messages {'/uav/map/tile': 6, '/system/heartbeat': 5, '/uav/odom': 32, '/uav/targets/current': 2, '/system/delay_probe': 2}; valid map payload; all 3 TF chains available
+PASS: launch exit code 0

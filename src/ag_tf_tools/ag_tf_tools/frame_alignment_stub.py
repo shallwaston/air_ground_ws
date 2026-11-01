@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from geometry_msgs.msg import TransformStamped
+from rclpy.context import Context
 from rclpy.node import Node
 from tf2_ros import TransformBroadcaster
 
@@ -17,8 +18,8 @@ from ag_network_tools.topic_names import TF_TOPIC
 class FrameAlignmentStub(Node):
     """Placeholder for future map alignment, re-localization, or EKF fusion."""
 
-    def __init__(self) -> None:
-        super().__init__("frame_alignment_stub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("frame_alignment_stub", context=context)
 
         self.declare_parameter("frequency_hz", 10.0)
         self.declare_parameter("x", 0.0)

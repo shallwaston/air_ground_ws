@@ -1,0 +1,721 @@
+{
+  "base_commit": "0143ffbcf5a78e55cde9d963fcf244084e7cb555",
+  "rclpy_package": "7.1.12-1noble.20260912.162354",
+  "pytest": {
+    "passed": 194,
+    "domain": 72
+  },
+  "colcon": {
+    "packages_built": 7,
+    "tests": 194,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "domain": 73
+  },
+  "mock": {
+    "domain": 74,
+    "clean_process_exits": 16,
+    "launch_exit_code": 0,
+    "tf_chains": 3
+  },
+  "stress": {
+    "passed": 238,
+    "deselected": 57,
+    "domain": 75,
+    "phase_repetitions_per_signal": 10
+  },
+  "cleanup_records": {
+    "full_pytest": 136,
+    "stress": 238,
+    "max_remaining_handles": 0,
+    "all_owned_contexts_closed": true,
+    "all_python_handlers_restored": true,
+    "normal_signaled_processes": 364,
+    "expected_failure_processes": 10
+  },
+  "installed_console_entrypoints": {
+    "ag_mock_nodes:arm_target_adapter_stub": {
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    },
+    "ag_mock_nodes:arm_target_sink_stub": {
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    },
+    "ag_mock_nodes:ugv_map_tile_sub": {
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    },
+    "ag_mock_nodes:ugv_nav_sink_stub": {
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    },
+    "ag_monitor:delay_probe_pub": {
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    },
+    "ag_monitor:delay_probe_sub": {
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    },
+    "ag_monitor:qos_inspector": {
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    },
+    "ag_monitor:system_monitor": {
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    },
+    "ag_monitor:topic_watchdog": {
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    },
+    "ag_tf_tools:ekf_adapter_stub": {
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    },
+    "ag_tf_tools:frame_alignment_stub": {
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    },
+    "ag_tf_tools:static_tf_loader": {
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    },
+    "ag_mock_nodes:fastlio2_adapter_stub": {
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    },
+    "ag_tf_tools:tf_healthcheck": {
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    },
+    "ag_mock_nodes:hardware_bridge_stub": {
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    },
+    "ag_mock_nodes:heartbeat_pub": {
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    },
+    "ag_mock_nodes:map_2p5d_builder_stub": {
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    },
+    "ag_mock_nodes:nav2_adapter_stub": {
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    },
+    "ag_mock_nodes:uav_mock_map_tile_pub": {
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    },
+    "ag_mock_nodes:uav_mock_odom_tf_pub": {
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    },
+    "ag_mock_nodes:uav_mock_target_pub": {
+      "SIGTERM": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      },
+      "SIGINT": {
+        "exit_code": 0,
+        "remaining_handles": 0,
+        "context_closed": true,
+        "order": [
+          "executor",
+          "node",
+          "context"
+        ]
+      }
+    }
+  },
+  "stress_phase_signal_counts": {
+    "node-init-before": {
+      "SIGINT+SIGINT+SIGINT+SIGINT+SIGINT": 1,
+      "SIGINT+SIGTERM+SIGINT+SIGTERM+SIGTERM": 1,
+      "SIGTERM+SIGTERM+SIGTERM+SIGTERM+SIGTERM": 1,
+      "SIGINT": 10,
+      "SIGTERM": 10
+    },
+    "timer": {
+      "SIGINT+SIGINT+SIGINT+SIGINT+SIGINT": 1,
+      "SIGINT+SIGTERM+SIGINT+SIGTERM+SIGTERM": 1,
+      "SIGTERM+SIGTERM+SIGTERM+SIGTERM+SIGTERM": 1,
+      "SIGINT": 10,
+      "SIGTERM": 10
+    },
+    "node-destroy": {
+      "SIGTERM+SIGTERM+SIGTERM+SIGTERM+SIGTERM": 1,
+      "SIGINT+SIGTERM+SIGINT+SIGTERM+SIGTERM": 1,
+      "SIGINT+SIGINT+SIGINT+SIGINT+SIGINT": 1,
+      "SIGINT": 10,
+      "SIGTERM": 10
+    },
+    "context-shutdown": {
+      "SIGTERM+SIGTERM+SIGTERM+SIGTERM+SIGTERM": 1,
+      "SIGINT+SIGTERM+SIGINT+SIGTERM+SIGTERM": 1,
+      "SIGINT+SIGINT+SIGINT+SIGINT+SIGINT": 1,
+      "SIGINT": 10,
+      "SIGTERM": 10
+    },
+    "map": {
+      "SIGINT+SIGTERM+SIGINT+SIGTERM+SIGTERM": 1,
+      "SIGINT+SIGINT+SIGINT+SIGINT+SIGINT": 1,
+      "SIGTERM+SIGTERM+SIGTERM+SIGTERM+SIGTERM": 1,
+      "SIGINT": 10,
+      "SIGTERM": 10
+    },
+    "static-load": {
+      "SIGINT+SIGTERM+SIGINT+SIGTERM+SIGTERM": 1,
+      "SIGINT+SIGINT+SIGINT+SIGINT+SIGINT": 1,
+      "SIGTERM+SIGTERM+SIGTERM+SIGTERM+SIGTERM": 1,
+      "SIGINT": 10,
+      "SIGTERM": 10
+    },
+    "context-init-before": {
+      "SIGINT": 10,
+      "SIGTERM": 10
+    },
+    "context-init-after": {
+      "SIGINT": 10,
+      "SIGTERM": 10
+    },
+    "executor-init": {
+      "SIGINT": 10,
+      "SIGTERM": 10
+    },
+    "node-init-after": {
+      "SIGINT": 10,
+      "SIGTERM": 10
+    },
+    "wait": {
+      "SIGINT": 10,
+      "SIGTERM": 10
+    }
+  },
+  "expected_failure_cleanup": [
+    {
+      "case": "context-fail-before",
+      "exit_code": 1,
+      "propagated_error": "UnknownROSArgsError",
+      "remaining_handles": 0,
+      "order": [
+        "context"
+      ]
+    },
+    {
+      "case": "context-fail-after",
+      "exit_code": 1,
+      "propagated_error": "ValueError",
+      "remaining_handles": 0,
+      "order": [
+        "context"
+      ]
+    },
+    {
+      "case": "executor-fail",
+      "exit_code": 1,
+      "propagated_error": "ValueError",
+      "remaining_handles": 0,
+      "order": [
+        "context"
+      ]
+    },
+    {
+      "case": "node-base-fail",
+      "exit_code": 1,
+      "propagated_error": "ValueError",
+      "remaining_handles": 0,
+      "order": [
+        "executor",
+        "node",
+        "context"
+      ]
+    },
+    {
+      "case": "constructor-fail",
+      "exit_code": 1,
+      "propagated_error": "ValueError",
+      "remaining_handles": 0,
+      "order": [
+        "executor",
+        "node",
+        "context"
+      ]
+    },
+    {
+      "case": "callback-fail",
+      "exit_code": 1,
+      "propagated_error": "ValueError",
+      "remaining_handles": 0,
+      "order": [
+        "executor",
+        "node",
+        "context"
+      ]
+    },
+    {
+      "case": "callback-rcl",
+      "exit_code": 1,
+      "propagated_error": "RCLError",
+      "remaining_handles": 0,
+      "order": [
+        "executor",
+        "node",
+        "context"
+      ]
+    },
+    {
+      "case": "callback-rcl-closed",
+      "exit_code": 1,
+      "propagated_error": "RCLError",
+      "remaining_handles": 0,
+      "order": [
+        "executor",
+        "node",
+        "context"
+      ]
+    },
+    {
+      "case": "cleanup-fail",
+      "exit_code": 1,
+      "propagated_error": "ExceptionGroup",
+      "remaining_handles": 0,
+      "order": [
+        "executor",
+        "node",
+        "context"
+      ]
+    },
+    {
+      "case": "cleanup-fail-before",
+      "exit_code": 1,
+      "propagated_error": "ExceptionGroup",
+      "remaining_handles": 0,
+      "order": [
+        "executor",
+        "node",
+        "context"
+      ]
+    }
+  ],
+  "source_sha256": {
+    "src/ag_mock_nodes/ag_mock_nodes/arm_target_adapter_stub.py": "a0dbde8b3e2c5c4c5fe1f5a8cc7eeab26cbb8450b96467b9083bb61065593e3f",
+    "src/ag_mock_nodes/ag_mock_nodes/arm_target_sink_stub.py": "7217e53083b7a92c60fa0ee900284a662894fd5b1fa2ed0258e9887119a8ddd3",
+    "src/ag_mock_nodes/ag_mock_nodes/fastlio2_adapter_stub.py": "aad538a1b237594cf9ac3f2cff17bc006129f1e631347017a8da081aeb83bce0",
+    "src/ag_mock_nodes/ag_mock_nodes/hardware_bridge_stub.py": "8234838ad1c6f9ebb4c1e2ee82133534a9ed3b1706b9c4c50f2f9fe7b51a1a79",
+    "src/ag_mock_nodes/ag_mock_nodes/heartbeat_pub.py": "ced183b0cbe327cbd400502ecb6b2dbea539322a750179276da35999e7a7b79c",
+    "src/ag_mock_nodes/ag_mock_nodes/map_2p5d_builder_stub.py": "2f96e7d4def442161040d1e44bb5e9a788735ea8714fe04f0140bba4c0396c27",
+    "src/ag_mock_nodes/ag_mock_nodes/nav2_adapter_stub.py": "224d7b76862fe4ce8dabb41c5dabe56424e48d70f24767f4216ce9ef1974aa5b",
+    "src/ag_mock_nodes/ag_mock_nodes/uav_mock_map_tile_pub.py": "bc5fd970d9f3dbd9014a1b05a5b08f745da91218b3a1fe76218400598ab0175a",
+    "src/ag_mock_nodes/ag_mock_nodes/uav_mock_odom_tf_pub.py": "d6d6ebbf1020c40cef46ade77bd8ad2ebc293566ad838701ece2d0168d661c16",
+    "src/ag_mock_nodes/ag_mock_nodes/uav_mock_target_pub.py": "7d0cf86f0693a75a8135ac95ee5361fc9bf3699de111fa6e16359290323a7c93",
+    "src/ag_mock_nodes/ag_mock_nodes/ugv_map_tile_sub.py": "a7c90a6ecad6b6419d5f55689bf7b251e3bd9d48636139bfe3d4f5b4a619615b",
+    "src/ag_mock_nodes/ag_mock_nodes/ugv_nav_sink_stub.py": "c2c2947f66e2c189ea4908caeb2e98892f9bfb2f1ac3e205d81293c725ecc582",
+    "src/ag_monitor/ag_monitor/delay_probe_pub.py": "48f4987636c246f1612c6cd757f698d0b88bf766405fc3dedb343f7ba43d8569",
+    "src/ag_monitor/ag_monitor/delay_probe_sub.py": "3949814fb10980fc9e3262e905bfe14b88bf0e0245e12752d7100e630b69ab3c",
+    "src/ag_monitor/ag_monitor/qos_inspector.py": "cd3237cecd183835d8caa3baab99f8e25385bfa01a9641434b5c264f511ca0fd",
+    "src/ag_monitor/ag_monitor/system_monitor.py": "28cf92b32e9f7b36a0ead7ea89b130b24ece611bbb7f0f9f874710d27307422f",
+    "src/ag_monitor/ag_monitor/topic_watchdog.py": "7fffdcbdf7a856fefa9815bb73387701ebeea648bf98c2993586a14352d41654",
+    "src/ag_network_tools/ag_network_tools/node_runner.py": "4e40cc83dd32d6c525d3774be4d6ba0d1221001902c629b411268045599974f4",
+    "src/ag_system_tests/test/shutdown_probe.py": "c95156f2b922a87cb2390c847177e0171e7c9d7664ff1776fd572a9b299930cf",
+    "src/ag_system_tests/test/test_node_shutdown.py": "f5fad964982c02a70752099a0fee08ec4a7db36c5c6daab74fc9042bed4b122a",
+    "src/ag_tf_tools/ag_tf_tools/ekf_adapter_stub.py": "79bee6fc3bf805a80a4b9d80d73da9ae57ed5858605cf5b704007c1b91924028",
+    "src/ag_tf_tools/ag_tf_tools/frame_alignment_stub.py": "3c42dc003c4533a96ebefcf2a835f21da9383623b47eaceeb26062c3ebe0d1f0",
+    "src/ag_tf_tools/ag_tf_tools/static_tf_loader.py": "40764145f271412d4742be829e1e02b1f250714048cede901eabc07af918d335",
+    "src/ag_tf_tools/ag_tf_tools/tf_healthcheck.py": "e67de41db79105e4da30ed1afa344237ba6e336d072e92a77f0c109f6076b64c"
+  },
+  "raw_log_sha256": {
+    "mock-launch.log": "c8476cd16f92401236986c659e5ee359590507c27045dc5d1effdf3de9aba40d",
+    "pytest.log": "31c9b252e7c6bbf2930b218ff94efe86fdaa5b210f2d2d559a6e5415fc1f86df",
+    "test-result.log": "11144f42bb5d9a50280321be00ffa394796e5c259fb2f63cb1c0e4346382c85b",
+    "colcon-test.log": "e0911c12cbf7bd6916402450752fd9f1b59fdad2d29ad3bea286f37732cd8d18",
+    "stress.log": "c495af09a5707f4f36ac9dcf56fa2c81df4110a57fc1cfbfd54874566092eba6",
+    "foreign-executor.log": "a9a097e1fc6f4e7cbccc404440b781f04eb7523f7ecdb445054ea7840f486c1c",
+    "colcon-build.log": "191e5bf858c3e6359472428560e3dea267f7b3688a4409d3694f901c0d824183",
+    "mock-smoke.log": "f0af9b17d4e54c8d0cb899e0879490a8e3d0e81f366f98d48a5bba43fe3038d8"
+  },
+  "not_executed": [
+    "two-machine",
+    "hardware",
+    "other RMWs",
+    "other ROS distributions"
+  ],
+  "foreign_executor": {
+    "domain": 76,
+    "modes": [
+      "NO",
+      "ALL"
+    ],
+    "passed": 2
+  }
+}

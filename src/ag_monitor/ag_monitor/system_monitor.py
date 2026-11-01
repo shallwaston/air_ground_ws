@@ -10,6 +10,7 @@ from ag_interfaces.msg import Heartbeat
 from ag_interfaces.msg import MapTile
 from ag_interfaces.msg import TargetInfo
 from nav_msgs.msg import Odometry
+from rclpy.context import Context
 from rclpy.node import Node
 from rclpy.clock import Clock, ClockType
 from std_msgs.msg import String
@@ -28,8 +29,8 @@ from ag_network_tools.topic_names import UAV_TARGET_TOPIC
 class SystemMonitor(Node):
     """Print a readable summary of overall MVP health."""
 
-    def __init__(self) -> None:
-        super().__init__("system_monitor")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("system_monitor", context=context)
 
         self.declare_parameter("timeout_sec", 5.0)
         self.declare_parameter("summary_period_sec", 2.0)

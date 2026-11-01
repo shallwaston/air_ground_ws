@@ -6,6 +6,7 @@ import math
 
 from ag_interfaces.msg import TargetInfo
 from geometry_msgs.msg import Quaternion
+from rclpy.context import Context
 from rclpy.node import Node
 
 from ag_network_tools.node_runner import run_node
@@ -17,8 +18,8 @@ from ag_network_tools.topic_names import UAV_TARGET_TOPIC
 class UavMockTargetPub(Node):
     """Generate simple moving targets for downstream sink stubs."""
 
-    def __init__(self) -> None:
-        super().__init__("uav_mock_target_pub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("uav_mock_target_pub", context=context)
 
         self.declare_parameter("frequency_hz", 1.0)
         self.declare_parameter("radius_m", 3.0)

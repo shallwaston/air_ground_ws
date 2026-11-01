@@ -6,6 +6,7 @@ from ag_network_tools.node_runner import run_node
 from ag_network_tools.node_runner import run_node
 from ag_interfaces.msg import MapTile
 from geometry_msgs.msg import Quaternion
+from rclpy.context import Context
 from rclpy.node import Node
 
 from ag_mock_nodes.mock_tile_math import build_mock_tile_layers
@@ -17,8 +18,8 @@ from ag_network_tools.topic_names import UAV_MAP_TILE_TOPIC
 class UavMockMapTilePub(Node):
     """Generate synthetic 2.5D map tiles for bandwidth and latency tests."""
 
-    def __init__(self) -> None:
-        super().__init__("uav_mock_map_tile_pub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("uav_mock_map_tile_pub", context=context)
 
         self.declare_parameter("frequency_hz", 2.0)
         self.declare_parameter("tile_width", 64)

@@ -6,6 +6,7 @@ import math
 
 from geometry_msgs.msg import TransformStamped
 from nav_msgs.msg import Odometry
+from rclpy.context import Context
 from rclpy.node import Node
 from tf2_ros import TransformBroadcaster
 
@@ -21,8 +22,8 @@ from ag_network_tools.topic_names import UAV_ODOM_TOPIC
 class UavMockOdomTfPub(Node):
     """A simple circular-motion UAV publisher for MVP bringup."""
 
-    def __init__(self) -> None:
-        super().__init__("uav_mock_odom_tf_pub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("uav_mock_odom_tf_pub", context=context)
 
         self.declare_parameter("frequency_hz", 30.0)
         self.declare_parameter("radius_m", 8.0)

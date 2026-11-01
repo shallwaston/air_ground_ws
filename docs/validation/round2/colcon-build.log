@@ -1,0 +1,20 @@
+[build_ws] workspace: /workspace/air_ground_ws
+[build_ws] running: colcon build --symlink-install --parallel-workers 2
+Starting >>> ag_network_tools
+Starting >>> ag_interfaces
+Finished <<< ag_interfaces [1.50s]
+Finished <<< ag_network_tools [2.50s]
+Starting >>> ag_mock_nodes
+Starting >>> ag_monitor
+Finished <<< ag_mock_nodes [3.68s]
+Finished <<< ag_monitor [3.70s]
+Starting >>> ag_tf_tools
+Finished <<< ag_tf_tools [2.72s]
+Starting >>> ag_bringup
+Finished <<< ag_bringup [1.92s]
+Starting >>> ag_system_tests
+Finished <<< ag_system_tests [2.14s]
+
+Summary: 7 packages finished [13.2s]
+[build_ws] Build succeeded.
+[build_ws] Next step: source install/setup.bash or run 'source scripts/source_ws.sh'.

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from ag_interfaces.msg import MapTile
 from ag_interfaces.msg import TargetInfo
+from rclpy.context import Context
 from rclpy.node import Node
 
 from ag_network_tools.node_runner import run_node
@@ -15,8 +16,8 @@ from ag_network_tools.topic_names import UAV_TARGET_TOPIC
 class UgvNavSinkStub(Node):
     """A minimal sink that confirms the UGV side is receiving useful inputs."""
 
-    def __init__(self) -> None:
-        super().__init__("ugv_nav_sink_stub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("ugv_nav_sink_stub", context=context)
 
         self.latest_tile_seq = None
         self.latest_target_id = "none"

@@ -1,5 +1,10 @@
 # 第一轮运行时优化：只读合并前审查
 
+> 第二轮处理状态：H1 已实施协作式停止修复并完成本轮回归，待重新独立审查。
+> 完整 pytest / colcon 均为 194 项通过，十轮信号压力测试为 238 项通过。
+> 实现、适用边界、资源清理和原始日志见 [第二轮记录](28_sigterm_lifecycle_round2.md)。
+> 以下结论、位置及失败证据按原审查基线 0143ffb 保留，不代表修复后的当前结论。
+
 ## 结论与审查边界
 
 **当前不建议合并 PR #2。应先修复 HIGH H1 的 SIGTERM 退出竞态，并补充相关时序测试。**
@@ -55,6 +60,10 @@ colcon --log-base /workspace/.air-ground-audit/fresh/log build \
 
 ### H1：SIGTERM 关闭上下文后，执行器创建和活动回调仍可能操作该上下文
 
+**第二轮状态：已修复并完成本轮回归，待独立复审。** 显式 Context/Executor、禁用
+runner 的原生信号关闭、协作式停止和有序清理替代了按 traceback 过滤 RCLError。
+下列原始反例和自然失败记录完整保留；最新证据见 docs/28 及 validation/round2。
+
 - **位置**：`src/ag_network_tools/ag_network_tools/node_runner.py` 第 19、22、23、26、32、39 行；`src/ag_mock_nodes/ag_mock_nodes/uav_mock_map_tile_pub.py` 第 69、85 行；`src/ag_tf_tools/ag_tf_tools/static_tf_loader.py` 第 35、38 行。所有 21 个 main 均委托该入口。
 - **性质**：核心退出缺陷没有完整修复；新增的异常过滤只覆盖一个窗口，不是 21 个节点已实现无竞态退出的证明。
 - **原因**：Jazzy 的原生信号处理可异步关闭 context。过滤仅接受最末 traceback 函数名为 `_wait_for_ready_callbacks` 的 RCLError。创建全局执行器的 guard condition、发布地图或发送静态 TF 时发生的相同关闭竞争会被重新抛出。`try_shutdown()` 只解决重复关闭，不能解决继续使用已关闭上下文。
@@ -66,6 +75,10 @@ colcon --log-base /workspace/.air-ground-audit/fresh/log build \
 ## MEDIUM
 
 ### M1：factory 部分构造失败后，节点没有被入口显式销毁
+
+**第二轮相关处理：** 为满足 H1 的初始化/异常清理要求，加入对象预分配、部分构造
+实体回收和清理失败后的继续释放；被测 ROS 句柄已显式失效，不依赖 GC。
+原审查证据保留如下；Python 包装对象仍按正常 GC 生命周期管理。
 
 - **位置**：`node_runner.py` 第 20、22、36 行；`src/ag_system_tests/test/test_node_shutdown.py` 第 61–67 行；`static_tf_loader.py` 第 29–35 行。
 - **原因/性质**：`node = factory()` 只有返回后才赋值。子类在 `super().__init__()`、创建实体之后抛错时，入口看到的 node 仍是 None。当前安装版 `Context.try_shutdown()` 不会遍历并销毁这些节点。现有构造失败测试在创建 Node 前就抛错，只证明 context 被关闭。

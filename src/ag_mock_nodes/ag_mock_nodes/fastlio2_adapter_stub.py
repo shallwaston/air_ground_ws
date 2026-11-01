@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from rclpy.context import Context
 from rclpy.node import Node
 
 from ag_network_tools.node_runner import run_node
@@ -12,8 +13,8 @@ from ag_network_tools.topic_names import UAV_ODOM_TOPIC
 class Fastlio2AdapterStub(Node):
     """Log the expected contract for a future FAST-LIO2 adapter."""
 
-    def __init__(self) -> None:
-        super().__init__("fastlio2_adapter_stub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("fastlio2_adapter_stub", context=context)
 
         # TODO: Replace uav_mock_odom_tf_pub.py with a real FAST-LIO2 adapter.
         # TODO: Connect this node to the real FAST-LIO2 output pipeline on target hardware.

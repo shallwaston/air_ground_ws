@@ -5,6 +5,7 @@ from __future__ import annotations
 from collections import deque
 
 from ag_interfaces.msg import DelayProbe
+from rclpy.context import Context
 from rclpy.node import Node
 from std_msgs.msg import String
 
@@ -22,8 +23,8 @@ def stamp_to_ns(stamp) -> int:
 class DelayProbeSub(Node):
     """A readable subscriber for measuring end-to-end message latency."""
 
-    def __init__(self) -> None:
-        super().__init__("delay_probe_sub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("delay_probe_sub", context=context)
 
         self.declare_parameter("recent_window", 10)
         self.recent_window = max(1, int(self.get_parameter("recent_window").value))

@@ -5,6 +5,7 @@ from __future__ import annotations
 from collections import deque
 
 from ag_interfaces.msg import MapTile
+from rclpy.context import Context
 from rclpy.node import Node
 from std_msgs.msg import String
 
@@ -22,8 +23,8 @@ def stamp_to_ns(stamp) -> int:
 class UgvMapTileSub(Node):
     """UGV-side receiver for mock map tiles."""
 
-    def __init__(self) -> None:
-        super().__init__("ugv_map_tile_sub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("ugv_map_tile_sub", context=context)
 
         self.declare_parameter("log_every_n", 1)
         self.log_every_n = max(1, int(self.get_parameter("log_every_n").value))

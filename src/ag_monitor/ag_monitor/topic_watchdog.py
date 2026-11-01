@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from rclpy.context import Context
 from rclpy.node import Node
 
 from ag_network_tools.node_runner import run_node
@@ -11,8 +12,8 @@ from ag_network_tools.topic_names import KEY_TOPICS
 class TopicWatchdog(Node):
     """Print topic discovery information in a beginner-friendly format."""
 
-    def __init__(self) -> None:
-        super().__init__("topic_watchdog")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("topic_watchdog", context=context)
 
         self.declare_parameter("topics", KEY_TOPICS)
         self.declare_parameter("check_period_sec", 5.0)

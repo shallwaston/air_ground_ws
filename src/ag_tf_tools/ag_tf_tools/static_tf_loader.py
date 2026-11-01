@@ -8,6 +8,7 @@ from pathlib import Path
 import yaml
 from ament_index_python.packages import get_package_share_directory
 from geometry_msgs.msg import TransformStamped
+from rclpy.context import Context
 from rclpy.node import Node
 from tf2_ros import StaticTransformBroadcaster
 
@@ -25,8 +26,8 @@ def default_config_path() -> str:
 class StaticTfLoader(Node):
     """Read a YAML file and broadcast each listed static transform."""
 
-    def __init__(self) -> None:
-        super().__init__("static_tf_loader")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("static_tf_loader", context=context)
 
         self.declare_parameter("config_path", default_config_path())
         self.config_path = str(self.get_parameter("config_path").value)

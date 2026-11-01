@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from ag_interfaces.msg import DelayProbe
+from rclpy.context import Context
 from rclpy.node import Node
 
 from ag_network_tools.node_runner import run_node
@@ -13,8 +14,8 @@ from ag_network_tools.topic_names import DELAY_PROBE_TOPIC
 class DelayProbePub(Node):
     """A lightweight latency probe publisher."""
 
-    def __init__(self) -> None:
-        super().__init__("delay_probe_pub")
+    def __init__(self, *, context: Context | None = None) -> None:
+        super().__init__("delay_probe_pub", context=context)
 
         self.declare_parameter("frequency_hz", 2.0)
         self.declare_parameter("payload_bytes", 1024)
