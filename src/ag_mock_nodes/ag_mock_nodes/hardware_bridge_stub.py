@@ -2,11 +2,10 @@
 
 from __future__ import annotations
 
-from ag_network_tools.node_runner import run_node
-
-import rclpy
 from rclpy.node import Node
 
+
+from ag_network_tools.node_runner import run_node
 
 class HardwareBridgeStub(Node):
     """Log the expected contract for a future hardware bridge."""

@@ -2,11 +2,9 @@
 
 from __future__ import annotations
 
-from ag_network_tools.node_runner import run_node
-
-import rclpy
 from rclpy.node import Node
 
+from ag_network_tools.node_runner import run_node
 from ag_network_tools.topic_names import UAV_MAP_TILE_TOPIC
 from ag_network_tools.topic_names import UAV_ODOM_TOPIC
 

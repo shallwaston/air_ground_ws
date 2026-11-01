@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-from ag_network_tools.node_runner import run_node
-
 import rclpy
 from rclpy.node import Node
 from rclpy.time import Time
@@ -11,6 +9,7 @@ from tf2_ros import Buffer
 from tf2_ros import TransformException
 from tf2_ros import TransformListener
 
+from ag_network_tools.node_runner import run_node
 from ag_network_tools.qos_profiles import get_qos_profile_for_topic
 from ag_network_tools.topic_names import FRAME_MAP
 from ag_network_tools.topic_names import FRAME_UAV_BASE

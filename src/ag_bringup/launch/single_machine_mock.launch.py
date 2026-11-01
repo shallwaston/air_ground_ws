@@ -1,6 +1,7 @@
 """Single-machine loopback bringup for the air-ground communication MVP."""
 
 from launch import LaunchDescription
+from launch.actions import SetEnvironmentVariable
 from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration
 from launch.substitutions import PathJoinSubstitution
@@ -28,6 +29,7 @@ def generate_launch_description() -> LaunchDescription:
                 ),
                 description="Static transform YAML for placeholder extrinsics.",
             ),
+            SetEnvironmentVariable("AG_QOS_CONFIG_PATH", qos_config),
             Node(package="ag_monitor", executable="qos_inspector", output="screen", parameters=[{"qos_config_path": qos_config}]),
             Node(package="ag_mock_nodes", executable="uav_mock_odom_tf_pub", output="screen"),
             Node(package="ag_mock_nodes", executable="uav_mock_map_tile_pub", output="screen"),

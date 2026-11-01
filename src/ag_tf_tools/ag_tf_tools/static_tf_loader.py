@@ -2,37 +2,19 @@
 
 from __future__ import annotations
 
-from ag_network_tools.node_runner import run_node
-
 import math
 from pathlib import Path
 
-import rclpy
 import yaml
 from ament_index_python.packages import get_package_share_directory
-from geometry_msgs.msg import Quaternion
 from geometry_msgs.msg import TransformStamped
 from rclpy.node import Node
 from tf2_ros import StaticTransformBroadcaster
 
-
-def quaternion_from_euler(roll: float, pitch: float, yaw: float) -> Quaternion:
-    """Convert Euler angles to a ROS quaternion."""
-    qx = math.sin(roll / 2.0) * math.cos(pitch / 2.0) * math.cos(yaw / 2.0) - math.cos(roll / 2.0) * math.sin(
-        pitch / 2.0
-    ) * math.sin(yaw / 2.0)
-    qy = math.cos(roll / 2.0) * math.sin(pitch / 2.0) * math.cos(yaw / 2.0) + math.sin(roll / 2.0) * math.cos(
-        pitch / 2.0
-    ) * math.sin(yaw / 2.0)
-    qz = math.cos(roll / 2.0) * math.cos(pitch / 2.0) * math.sin(yaw / 2.0) - math.sin(roll / 2.0) * math.sin(
-        pitch / 2.0
-    ) * math.cos(yaw / 2.0)
-    qw = math.cos(roll / 2.0) * math.cos(pitch / 2.0) * math.cos(yaw / 2.0) + math.sin(roll / 2.0) * math.sin(
-        pitch / 2.0
-    ) * math.sin(yaw / 2.0)
-
-    return Quaternion(x=qx, y=qy, z=qz, w=qw)
-
+from ag_network_tools.node_runner import run_node
+from ag_network_tools.qos_profiles import get_qos_profile_for_topic
+from ag_network_tools.topic_names import TF_STATIC_TOPIC
+from ag_network_tools.transforms import quaternion_from_euler
 
 def default_config_path() -> str:
     """Locate the packaged sample static transform YAML."""
@@ -48,7 +30,8 @@ class StaticTfLoader(Node):
 
         self.declare_parameter("config_path", default_config_path())
         self.config_path = str(self.get_parameter("config_path").value)
-        self.broadcaster = StaticTransformBroadcaster(self)
+        self.broadcaster = StaticTransformBroadcaster(
+            self, qos=get_qos_profile_for_topic(TF_STATIC_TOPIC))
         self.transforms = self.load_transforms(self.config_path)
 
         if self.transforms:
@@ -66,17 +49,43 @@ class StaticTfLoader(Node):
             return []
 
         with path.open("r", encoding="utf-8") as stream:
-            parsed = yaml.safe_load(stream) or {}
+            parsed = yaml.safe_load(stream)
+        if parsed is None:
+            parsed = {}
+        if not isinstance(parsed, dict) or not isinstance(parsed.get('transforms', []), list):
+            raise ValueError('Static TF config must contain a transforms list')
 
         transforms = []
+        parents = {}
         now = self.get_clock().now().to_msg()
         for entry in parsed.get("transforms", []):
+            if not isinstance(entry, dict):
+                raise ValueError('Each static transform must be a mapping')
+            parent, child = entry.get('parent'), entry.get('child')
+            if (not isinstance(parent, str) or not isinstance(child, str)
+                    or not parent or not child or parent == child
+                    or parent.startswith('/') or child.startswith('/')):
+                raise ValueError('TF frames must be nonempty, distinct names without leading slashes')
+            if child in parents:
+                raise ValueError(f'Duplicate static TF child: {child}')
+            parents[child] = parent
+            ancestor = parent
+            while ancestor in parents:
+                if ancestor == child:
+                    raise ValueError(f'Static TF cycle involving {child}')
+                ancestor = parents[ancestor]
             msg = TransformStamped()
             msg.header.stamp = now
             msg.header.frame_id = entry.get("parent", "")
             msg.child_frame_id = entry.get("child", "")
             translation = entry.get("translation", {})
             rotation = entry.get("rotation_rpy_rad", {})
+            if not isinstance(translation, dict) or not isinstance(rotation, dict):
+                raise ValueError('TF translation and rotation must be mappings')
+            values = [float(translation.get(axis, 0.0)) for axis in ('x', 'y', 'z')]
+            values += [float(rotation.get(axis, 0.0)) for axis in ('roll', 'pitch', 'yaw')]
+            if not all(math.isfinite(value) for value in values):
+                raise ValueError('TF coordinates must be finite')
             msg.transform.translation.x = float(translation.get("x", 0.0))
             msg.transform.translation.y = float(translation.get("y", 0.0))
             msg.transform.translation.z = float(translation.get("z", 0.0))

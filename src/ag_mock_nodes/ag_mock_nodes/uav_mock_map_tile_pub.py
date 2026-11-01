@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from ag_network_tools.node_runner import run_node
-import rclpy
+from ag_network_tools.node_runner import run_node
 from ag_interfaces.msg import MapTile
 from geometry_msgs.msg import Quaternion
 from rclpy.node import Node

@@ -11,6 +11,7 @@ import pytest
 import rclpy
 from rclpy.context import Context
 from rclpy.node import Node
+from rclpy.impl.implementation_singleton import rclpy_implementation
 
 from ag_network_tools.node_runner import run_node
 
@@ -76,5 +77,20 @@ def test_callback_failure_is_not_suppressed():
             raise ValueError('callback defect')
 
     with pytest.raises(ValueError, match='callback defect'):
+        run_node(BrokenNode, args=[])
+    assert not rclpy.ok()
+
+
+def test_rcl_callback_failure_after_shutdown_is_not_suppressed():
+    class BrokenNode(Node):
+        def __init__(self):
+            super().__init__('broken_rcl_callback')
+            self.create_timer(0.01, self.fail)
+
+        def fail(self):
+            rclpy.try_shutdown()
+            raise rclpy_implementation.RCLError('real callback defect')
+
+    with pytest.raises(rclpy_implementation.RCLError, match='real callback defect'):
         run_node(BrokenNode, args=[])
     assert not rclpy.ok()

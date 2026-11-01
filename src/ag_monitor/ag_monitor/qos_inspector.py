@@ -2,11 +2,9 @@
 
 from __future__ import annotations
 
-from ag_network_tools.node_runner import run_node
-
-import rclpy
 from rclpy.node import Node
 
+from ag_network_tools.node_runner import run_node
 from ag_network_tools.qos_profiles import describe_qos_for_topic
 from ag_network_tools.qos_profiles import get_all_topic_configs
 

@@ -23,10 +23,13 @@ def run_node(factory: Callable[[], Node], args: list[str] | None = None) -> None
         rclpy.spin(node)
     except (KeyboardInterrupt, ExternalShutdownException):
         pass
-    except rclpy_implementation.RCLError:
+    except rclpy_implementation.RCLError as exc:
         # The signal-handler thread can close the context while the executor is
         # building its wait set. Do not suppress RCL failures in a live context.
-        if rclpy.ok():
+        traceback = exc.__traceback__
+        while traceback.tb_next is not None:
+            traceback = traceback.tb_next
+        if rclpy.ok() or traceback.tb_frame.f_code.co_name != '_wait_for_ready_callbacks':
             raise
     finally:
         try:

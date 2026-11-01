@@ -2,11 +2,9 @@
 
 from __future__ import annotations
 
-from ag_network_tools.node_runner import run_node
-
-import rclpy
 from rclpy.node import Node
 
+from ag_network_tools.node_runner import run_node
 from ag_network_tools.topic_names import KEY_TOPICS
 
 
@@ -29,8 +27,8 @@ class TopicWatchdog(Node):
         discovered = dict(self.get_topic_names_and_types())
         for topic_name in self.topics:
             topic_types = discovered.get(topic_name, [])
-            publisher_count = len(self.get_publishers_info_by_topic(topic_name))
-            subscriber_count = len(self.get_subscriptions_info_by_topic(topic_name))
+            publisher_count = self.count_publishers(topic_name)
+            subscriber_count = self.count_subscribers(topic_name)
 
             if not topic_types:
                 self.get_logger().warning(f"{topic_name}: topic not discovered yet")

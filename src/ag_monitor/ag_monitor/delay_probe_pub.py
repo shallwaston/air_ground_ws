@@ -2,12 +2,10 @@
 
 from __future__ import annotations
 
-from ag_network_tools.node_runner import run_node
-
-import rclpy
 from ag_interfaces.msg import DelayProbe
 from rclpy.node import Node
 
+from ag_network_tools.node_runner import run_node
 from ag_network_tools.qos_profiles import get_qos_profile_for_topic
 from ag_network_tools.topic_names import DELAY_PROBE_TOPIC
 

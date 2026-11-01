@@ -2,21 +2,20 @@
 
 from __future__ import annotations
 
-from ag_network_tools.node_runner import run_node
-
 from typing import Dict
 from time import monotonic_ns
 
-import rclpy
 from ag_interfaces.msg import DelayProbe
 from ag_interfaces.msg import Heartbeat
 from ag_interfaces.msg import MapTile
 from ag_interfaces.msg import TargetInfo
 from nav_msgs.msg import Odometry
 from rclpy.node import Node
+from rclpy.clock import Clock, ClockType
 from std_msgs.msg import String
 
 from ag_monitor.health_logic import age_seconds, expired_heartbeat_names
+from ag_network_tools.node_runner import run_node
 from ag_network_tools.qos_profiles import get_qos_profile_for_topic
 from ag_network_tools.topic_names import DELAY_PROBE_TOPIC
 from ag_network_tools.topic_names import DELAY_REPORT_TOPIC
@@ -79,7 +78,10 @@ class SystemMonitor(Node):
             self.on_delay_report,
             get_qos_profile_for_topic(DELAY_REPORT_TOPIC),
         )
-        self.create_timer(summary_period_sec, self.print_summary)
+        # Arrival liveness must continue to run while /clock is paused or reset.
+        self.summary_clock = Clock(clock_type=ClockType.STEADY_TIME)
+        self.summary_timer = self.create_timer(
+            summary_period_sec, self.print_summary, clock=self.summary_clock)
 
         self.get_logger().info("System monitor ready. It will warn when key topics go quiet.")
 
@@ -87,15 +89,22 @@ class SystemMonitor(Node):
         self.last_seen_ns[topic_name] = monotonic_ns()
 
     def on_heartbeat(self, msg: Heartbeat) -> None:
-        self.mark_seen(HEARTBEAT_TOPIC)
+        now_ns = monotonic_ns()
+        self.last_seen_ns[HEARTBEAT_TOPIC] = now_ns
         self.heartbeats[msg.node_name] = f"role={msg.role}, status={msg.status}, detail={msg.detail}"
-        self.heartbeat_last_seen_ns[msg.node_name] = monotonic_ns()
+        self.heartbeat_last_seen_ns[msg.node_name] = now_ns
 
     def on_delay_report(self, msg: String) -> None:
         self.latest_delay_report = msg.data
 
     def print_summary(self) -> None:
-        now_ns = self.get_clock().now().nanoseconds
+        now_ns = monotonic_ns()
+        expired = expired_heartbeat_names(self.heartbeat_last_seen_ns, now_ns, self.timeout_sec)
+        for node_name in expired:
+            self.heartbeat_last_seen_ns.pop(node_name)
+            self.heartbeats.pop(node_name, None)
+        if expired:
+            self.get_logger().warning('Heartbeat timeout: ' + ', '.join(sorted(expired)))
         watched_topics = [HEARTBEAT_TOPIC, UAV_ODOM_TOPIC, UAV_MAP_TILE_TOPIC, UAV_TARGET_TOPIC, DELAY_PROBE_TOPIC]
         parts = []
         warning_topics = []

@@ -1,6 +1,7 @@
 """Launch a heavier payload setup for QoS and transport stress tests."""
 
 from launch import LaunchDescription
+from launch.actions import SetEnvironmentVariable
 from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration
 from launch.substitutions import PathJoinSubstitution
@@ -28,6 +29,7 @@ def generate_launch_description() -> LaunchDescription:
             DeclareLaunchArgument("tile_width", default_value="128"),
             DeclareLaunchArgument("tile_height", default_value="128"),
             DeclareLaunchArgument("payload_scale", default_value="2.0"),
+            SetEnvironmentVariable("AG_QOS_CONFIG_PATH", qos_config),
             Node(package="ag_monitor", executable="qos_inspector", output="screen", parameters=[{"qos_config_path": qos_config}]),
             Node(
                 package="ag_mock_nodes",

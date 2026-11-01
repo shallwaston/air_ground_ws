@@ -2,11 +2,9 @@
 
 from __future__ import annotations
 
-from ag_network_tools.node_runner import run_node
-
-import rclpy
 from rclpy.node import Node
 
+from ag_network_tools.node_runner import run_node
 from ag_network_tools.topic_names import FRAME_MAP
 from ag_network_tools.topic_names import FRAME_UGV_ODOM
 from ag_network_tools.topic_names import TF_TOPIC

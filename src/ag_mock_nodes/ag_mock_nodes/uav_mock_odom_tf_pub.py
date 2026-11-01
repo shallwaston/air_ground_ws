@@ -2,40 +2,21 @@
 
 from __future__ import annotations
 
-from ag_network_tools.node_runner import run_node
-
 import math
 
-import rclpy
-from geometry_msgs.msg import Quaternion
 from geometry_msgs.msg import TransformStamped
 from nav_msgs.msg import Odometry
 from rclpy.node import Node
 from tf2_ros import TransformBroadcaster
 
+from ag_network_tools.node_runner import run_node
+from ag_network_tools.transforms import quaternion_from_euler
 from ag_network_tools.qos_profiles import get_qos_profile_for_topic
 from ag_network_tools.topic_names import FRAME_MAP
 from ag_network_tools.topic_names import FRAME_UAV_BASE
 from ag_network_tools.topic_names import TF_TOPIC
 from ag_network_tools.topic_names import UAV_ODOM_TOPIC
 
-
-def quaternion_from_euler(roll: float, pitch: float, yaw: float) -> Quaternion:
-    """Convert Euler angles to a ROS quaternion."""
-    qx = math.sin(roll / 2.0) * math.cos(pitch / 2.0) * math.cos(yaw / 2.0) - math.cos(roll / 2.0) * math.sin(
-        pitch / 2.0
-    ) * math.sin(yaw / 2.0)
-    qy = math.cos(roll / 2.0) * math.sin(pitch / 2.0) * math.cos(yaw / 2.0) + math.sin(roll / 2.0) * math.cos(
-        pitch / 2.0
-    ) * math.sin(yaw / 2.0)
-    qz = math.cos(roll / 2.0) * math.cos(pitch / 2.0) * math.sin(yaw / 2.0) - math.sin(roll / 2.0) * math.sin(
-        pitch / 2.0
-    ) * math.cos(yaw / 2.0)
-    qw = math.cos(roll / 2.0) * math.cos(pitch / 2.0) * math.cos(yaw / 2.0) + math.sin(roll / 2.0) * math.sin(
-        pitch / 2.0
-    ) * math.sin(yaw / 2.0)
-
-    return Quaternion(x=qx, y=qy, z=qz, w=qw)
 
 
 class UavMockOdomTfPub(Node):
