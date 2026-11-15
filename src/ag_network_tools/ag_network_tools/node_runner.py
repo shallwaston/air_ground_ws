@@ -27,38 +27,100 @@ class _RunContext(Context):
         self.stop_requested = True
 
 
+_signal_owner = None
+
+
 @contextmanager
 def _stop_signals(context: _RunContext):
+    """Retain every failure while unwinding this synchronous signal scope.
+
+    This is not a process-wide ownership protocol. Unknown native handlers or
+    concurrently changing signal owners remain outside the supported boundary.
+    """
+    global _signal_owner
+    if threading.current_thread() is not threading.main_thread():
+        raise RuntimeError('signal scope requires the main thread')
+    if _signal_owner is not None:
+        raise RuntimeError('nested run_node signal ownership is unsupported')
+    _signal_owner = context
     signals = (signal.SIGINT, signal.SIGTERM)
-    previous = {number: signal.getsignal(number) for number in signals}
-    native_options = get_current_signal_handlers_options()
-    previous_mask = signal.pthread_sigmask(signal.SIG_BLOCK, signals)
-    installed = []
+    previous = {}
+    native_options = None
+    incoming_mask = None
+    attempted = []
+    native_attempted = False
+    failure = None
+    errors = []
+    entered = False
 
     def request_stop(signum, frame):
         context.request_stop()
 
+    def attempt(function, *args):
+        try:
+            return function(*args)
+        except BaseException as exc:
+            errors.append(exc)
+            return None
+
     try:
         try:
-            # A caller may already own an rclpy context with native handlers.
-            # Suspend that process-wide layer too, then restore it on return.
-            uninstall_signal_handlers()
-            for number in signals:
-                signal.signal(number, request_stop)
-                installed.append(number)
+            previous = {number: signal.getsignal(number) for number in signals}
+            native_options = get_current_signal_handlers_options()
+            # Capture the old mask before a mutating operation can fail after
+            # taking effect. An empty set only queries this thread's mask.
+            incoming_mask = signal.pthread_sigmask(signal.SIG_BLOCK, ())
+            try:
+                signal.pthread_sigmask(signal.SIG_BLOCK, signals)
+                native_attempted = True
+                uninstall_signal_handlers()
+                for number in signals:
+                    # Register a rollback before the potentially mutating call.
+                    attempted.append(number)
+                    signal.signal(number, request_stop)
+            finally:
+                signal.pthread_sigmask(signal.SIG_SETMASK, incoming_mask)
+            entered = True
+            yield
+        except BaseException as exc:
+            failure = exc
         finally:
-            signal.pthread_sigmask(signal.SIG_SETMASK, previous_mask)
-        yield
+            if incoming_mask is not None:
+                # Preserve intentional mask changes made by the body, as the
+                # previous implementation did, without losing the entry mask
+                # if acquiring the teardown mask itself fails.
+                exit_mask = attempt(signal.pthread_sigmask, signal.SIG_BLOCK, ())
+                if exit_mask is None or not entered:
+                    exit_mask = incoming_mask
+                attempt(signal.pthread_sigmask, signal.SIG_BLOCK, signals)
+                conflict = False
+                if native_attempted:
+                    current_native = attempt(get_current_signal_handlers_options)
+                    if current_native not in (None, SignalHandlerOptions.NO):
+                        conflict = True
+                        errors.append(RuntimeError('native signal ownership changed during run_node'))
+                    if not conflict:
+                        attempt(uninstall_signal_handlers)
+                    for number in attempted:
+                        current = attempt(signal.getsignal, number)
+                        if current is request_stop:
+                            attempt(signal.signal, number, previous[number])
+                        elif current != previous[number]:
+                            conflict = True
+                            errors.append(RuntimeError('Python signal ownership changed during run_node'))
+                    if not conflict and native_options != SignalHandlerOptions.NO:
+                        attempt(install_signal_handlers, native_options)
+                attempt(signal.pthread_sigmask, signal.SIG_SETMASK, exit_mask)
     finally:
-        previous_mask = signal.pthread_sigmask(signal.SIG_BLOCK, signals)
-        try:
-            uninstall_signal_handlers()
-            for number in installed:
-                signal.signal(number, previous[number])
-            if native_options != SignalHandlerOptions.NO:
-                install_signal_handlers(native_options)
-        finally:
-            signal.pthread_sigmask(signal.SIG_SETMASK, previous_mask)
+        # A failed restore retains this scope's ownership: subsequent calls
+        # must refuse, rather than acquiring a process with uncertain state.
+        _signal_owner = context if errors else None
+    if errors:
+        if failure is not None:
+            errors.insert(0, failure)
+        raise BaseExceptionGroup('signal scope cleanup failed', errors)
+    if failure is not None:
+        raise failure.with_traceback(failure.__traceback__)
 
 
 def request_stop(node: Node) -> None:
@@ -132,6 +194,9 @@ def run_node(node_type: type[Node], args: list[str] | None = None) -> None:
     if not isinstance(node_type, type) or not issubclass(node_type, Node):
         raise TypeError('run_node requires a Node class accepting context=')
 
+    if _signal_owner is not None:
+        raise RuntimeError('nested run_node signal ownership is unsupported')
+
     context = _RunContext()
     node = None
     executor = None
@@ -165,18 +230,22 @@ def run_node(node_type: type[Node], args: list[str] | None = None) -> None:
         finally:
             errors = []
             if executor is not None:
-                try:
-                    if executor_ready:
+                if executor_ready:
+                    try:
                         if not executor.shutdown():
                             raise RuntimeError('executor did not finish shutdown')
-                    else:
-                        for name in ('_guard', '_sigint_gc'):
-                            guard = getattr(executor, name, None)
-                            if guard is not None:
+                    except BaseException as exc:
+                        errors.append(exc)
+                else:
+                    for name in ('_guard', '_sigint_gc'):
+                        guard = getattr(executor, name, None)
+                        if guard is not None:
+                            try:
                                 guard.destroy()
+                            except BaseException as exc:
+                                errors.append(exc)
+                            else:
                                 setattr(executor, name, None)
-                except BaseException as exc:
-                    errors.append(exc)
             if node is not None:
                 try:
                     _destroy_node(node)

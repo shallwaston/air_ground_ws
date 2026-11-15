@@ -1,0 +1,30 @@
+{
+  "borrowed_domain": 42,
+  "fixed_entry": "heartbeat_pub",
+  "namespace_exclusivity": "external verified supervisor lock and full process scan; no network-wide lease claim",
+  "no_new_signal_sender_reaper_or_domain_allocator": true,
+  "one_creator_pid_and_exact_main_thread": true,
+  "production_interface": "supervised creator API; no autonomous short-lived MVP CLI",
+  "profile": "m6-fixed-heartbeat-owned-session-v1",
+  "remote_ci_enforcement": "NOT DEPLOYED",
+  "resource_scope": "opaque strict Session and own unique evidence only",
+  "reviewed_source_base": "R8 28dbef150cadfcd902035dc0c9c6d1fd624e9055e5fd30366c8cb74f492bcbba",
+  "single_active_or_uncertain_mvp_per_interpreter": true,
+  "source_sha256": {
+    "__init__.py": "44bf7381ab6028b02ffd746df96425f6775c32f422d336538f45926571169e74",
+    "isolated_assets.py": "c6db42b197a7fb491c1a480647a3272c826a492cdc8b1766ae0192552abefa2b",
+    "isolated_bootstrap.py": "4285ddec5edafa9ff498662e4bf2d8fdddda539731b54857ec498c8a959fd949",
+    "isolated_entries.py": "42d1bc58220abc6c1115b99fbcbb203e983528b27bd3f09fd443785f5d650e6c",
+    "isolated_probe.py": "9dc74d2cfeabb835b03b1320377e9e1fc42da187036b109cf2a23dd94fc6e51d",
+    "isolated_resources.py": "5b74022d6166180e7574761f2f58c65a75572da081a9d087c57ee94f03845a2b",
+    "isolated_runner.py": "2e2a8dba9c1d85121b523914f950131b7d8ffd46761d3940607fd7dfc724b7d6",
+    "isolated_runtime.py": "4abdfec690405b8065839675abbd1e38694cdc5a60a99befac3d54b3c9973141",
+    "m6_fixed_heartbeat.py": "464560c6c474e6ed37fdc45b4437b150260428b85d7702d324439ab9c239e422",
+    "m6_owned_session.py": "e3e5ff39064cfed4f336cd63c7ffd7f1a16ff03e8f2e95ad17dc8dae93c95f15",
+    "node_runner.py": "6261934716b96410414c2c8aeae56ef303532b7201c365fdb583a93eda2d75cd",
+    "qos_profiles.py": "aabbc3da390557a718ec14fe8da7adf550927a131b94643e8fbaf140979fe901",
+    "strict_entry.py": "c5c8c2941ef8351ef8f5f2f82f29a8324c63baf3edc90a271e915f9f9814b761",
+    "topic_names.py": "b7fd17545034b67f241edc4b0f66c1e2a0e6fcc5565627bd70ef5eaf8014ddd3",
+    "transforms.py": "7fc6de3f5b2ea2b68e10cccd29b831a8645a614adb9e9d5ec560a87465883843"
+  }
+}
