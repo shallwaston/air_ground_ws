@@ -1,0 +1,2954 @@
+{
+  "executed_here_on_controlled_cloud_container_not_github_actions": true,
+  "release": "b7d8299e006c4e9fc9e75dfd0db5da32abb7a48f26bf997083b1400136b32e3b",
+  "policy": "dad0eb9f807aacc2039e29e53db2f43a539c11353de05a15dfcb38594b1a028c",
+  "original_r9_release": "7dc7ebc4a9a5c42f3dcbec6cf4e3bdfb240dcf16dac863370fee4c5e6fd5e8fa",
+  "one_trailing_lf_source_change_ast_equal": true,
+  "original_assertions_ids_and_rounds_unchanged": true,
+  "seven_package_build": {
+    "pass": true,
+    "package_count": 7,
+    "installed_console_count": 21,
+    "unique_candidate_install_prefixes": 7,
+    "raw_installation_json_sha256": "df3d76149920dc0f620fc1c541feadec8db003f7e8b42dae56b06da5145210bf"
+  },
+  "original_ros283": {
+    "pass": true,
+    "unique_original_ids": 283,
+    "cases": [
+      {
+        "class": "src.ag_system_tests.test.test_imports",
+        "name": "test_import_core_modules",
+        "seconds": "0.005",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_launch_smoke",
+        "name": "test_single_machine_launch_description_loads[single_machine_mock]",
+        "seconds": "0.019",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_launch_smoke",
+        "name": "test_single_machine_launch_description_loads[dual_machine_client]",
+        "seconds": "0.003",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_launch_smoke",
+        "name": "test_single_machine_launch_description_loads[dual_machine_server]",
+        "seconds": "0.004",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_launch_smoke",
+        "name": "test_single_machine_launch_description_loads[qos_stress_test]",
+        "seconds": "0.003",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_launch_smoke",
+        "name": "test_single_machine_launch_description_loads[rosbag_replay_test]",
+        "seconds": "0.004",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_launch_smoke",
+        "name": "test_future_adapter_launch_description_loads",
+        "seconds": "0.003",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_launch_smoke",
+        "name": "test_heartbeat_launch_smoke",
+        "seconds": "2.158",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_message_contracts",
+        "name": "test_interfaces_registered_for_cli_and_rosbag",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_message_contracts",
+        "name": "test_map_tile_fields_exist",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_message_contracts",
+        "name": "test_target_info_fields_exist",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_message_contracts",
+        "name": "test_heartbeat_fields_exist",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_message_contracts",
+        "name": "test_delay_probe_fields_exist",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_private_ownership_cleanup_order_and_repeated_runs",
+        "seconds": "0.003",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_repeated_stop_requests_do_not_close_a_running_callback",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_already_closed_context_is_safe_to_clean_again",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_partial_initialization_and_business_exceptions_propagate[context-before]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_partial_initialization_and_business_exceptions_propagate[context-after]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_partial_initialization_and_business_exceptions_propagate[executor]",
+        "seconds": "0.003",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_partial_initialization_and_business_exceptions_propagate[node-base]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_partial_initialization_and_business_exceptions_propagate[constructor]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_partial_initialization_and_business_exceptions_propagate[callback]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_ros_style_callback_error_is_never_suppressed[valid-context]",
+        "seconds": "0.003",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_ros_style_callback_error_is_never_suppressed[closed-context]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_cleanup_failures_remain_observable_and_preserve_business_error[cleanup-only-executor]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_cleanup_failures_remain_observable_and_preserve_business_error[cleanup-only-executor-false]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_cleanup_failures_remain_observable_and_preserve_business_error[cleanup-only-node-before]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_cleanup_failures_remain_observable_and_preserve_business_error[cleanup-only-node-after]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_cleanup_failures_remain_observable_and_preserve_business_error[cleanup-only-context]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_cleanup_failures_remain_observable_and_preserve_business_error[business-and-cleanup-executor]",
+        "seconds": "0.003",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_cleanup_failures_remain_observable_and_preserve_business_error[business-and-cleanup-executor-false]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_cleanup_failures_remain_observable_and_preserve_business_error[business-and-cleanup-node-before]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_cleanup_failures_remain_observable_and_preserve_business_error[business-and-cleanup-node-after]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_cleanup_failures_remain_observable_and_preserve_business_error[business-and-cleanup-context]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_all_cleanup_failures_and_original_error_are_retained",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_python_signal_stop_is_cooperative_at_owned_phases[int-context-init]",
+        "seconds": "0.664",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_python_signal_stop_is_cooperative_at_owned_phases[int-executor-init]",
+        "seconds": "0.685",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_python_signal_stop_is_cooperative_at_owned_phases[int-node-init]",
+        "seconds": "0.604",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_python_signal_stop_is_cooperative_at_owned_phases[int-spin]",
+        "seconds": "0.639",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_python_signal_stop_is_cooperative_at_owned_phases[int-node-destroy]",
+        "seconds": "0.601",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_python_signal_stop_is_cooperative_at_owned_phases[int-context-shutdown]",
+        "seconds": "0.593",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_python_signal_stop_is_cooperative_at_owned_phases[term-context-init]",
+        "seconds": "0.614",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_python_signal_stop_is_cooperative_at_owned_phases[term-executor-init]",
+        "seconds": "0.592",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_python_signal_stop_is_cooperative_at_owned_phases[term-node-init]",
+        "seconds": "0.602",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_python_signal_stop_is_cooperative_at_owned_phases[term-spin]",
+        "seconds": "0.611",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_python_signal_stop_is_cooperative_at_owned_phases[term-node-destroy]",
+        "seconds": "0.686",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_python_signal_stop_is_cooperative_at_owned_phases[term-context-shutdown]",
+        "seconds": "0.640",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_python_signal_stop_is_cooperative_at_owned_phases[mixed-context-init]",
+        "seconds": "0.623",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_python_signal_stop_is_cooperative_at_owned_phases[mixed-executor-init]",
+        "seconds": "0.660",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_python_signal_stop_is_cooperative_at_owned_phases[mixed-node-init]",
+        "seconds": "0.616",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_python_signal_stop_is_cooperative_at_owned_phases[mixed-spin]",
+        "seconds": "0.668",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_python_signal_stop_is_cooperative_at_owned_phases[mixed-node-destroy]",
+        "seconds": "0.638",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_python_signal_stop_is_cooperative_at_owned_phases[mixed-context-shutdown]",
+        "seconds": "0.622",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-arm_target_adapter_stub]",
+        "seconds": "0.003",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-arm_target_sink_stub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-fastlio2_adapter_stub]",
+        "seconds": "0.003",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-heartbeat_pub]",
+        "seconds": "0.003",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-hardware_bridge_stub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-map_2p5d_builder_stub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-nav2_adapter_stub]",
+        "seconds": "0.003",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-uav_mock_map_tile_pub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-uav_mock_odom_tf_pub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-uav_mock_target_pub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-ugv_map_tile_sub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-ugv_nav_sink_stub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-delay_probe_pub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-delay_probe_sub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-qos_inspector]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-system_monitor]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-topic_watchdog]",
+        "seconds": "0.003",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-ekf_adapter_stub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-frame_alignment_stub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-static_tf_loader]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[stop-tf_healthcheck]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-arm_target_adapter_stub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-arm_target_sink_stub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-fastlio2_adapter_stub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-heartbeat_pub]",
+        "seconds": "0.003",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-hardware_bridge_stub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-map_2p5d_builder_stub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-nav2_adapter_stub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-uav_mock_map_tile_pub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-uav_mock_odom_tf_pub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-uav_mock_target_pub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-ugv_map_tile_sub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-ugv_nav_sink_stub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-delay_probe_pub]",
+        "seconds": "0.003",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-delay_probe_sub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-qos_inspector]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-system_monitor]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-topic_watchdog]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-ekf_adapter_stub]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-frame_alignment_stub]",
+        "seconds": "0.003",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-static_tf_loader]",
+        "seconds": "0.003",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_actual_main_dispatch_uses_runner_contract[exception-tf_healthcheck]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_worker_thread_rejection_has_no_allocated_resources",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_invalid_factory_is_rejected_before_ownership[non-node-class]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_invalid_factory_is_rejected_before_ownership[factory]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_uncaught_child_exit_code_and_traceback[normal-0]",
+        "seconds": "0.615",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_uncaught_child_exit_code_and_traceback[business-1]",
+        "seconds": "0.626",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_uncaught_child_exit_code_and_traceback[cleanup-1]",
+        "seconds": "0.659",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_runner_contract",
+        "name": "test_uncaught_child_exit_code_and_traceback[business-cleanup-1]",
+        "seconds": "0.613",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[context-init-before-2-0]",
+        "seconds": "0.792",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[context-init-before-2-1]",
+        "seconds": "0.734",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[context-init-before-2-2]",
+        "seconds": "0.746",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[context-init-before-15-0]",
+        "seconds": "0.768",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[context-init-before-15-1]",
+        "seconds": "0.741",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[context-init-before-15-2]",
+        "seconds": "0.723",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[context-init-after-2-0]",
+        "seconds": "0.769",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[context-init-after-2-1]",
+        "seconds": "0.773",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[context-init-after-2-2]",
+        "seconds": "0.803",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[context-init-after-15-0]",
+        "seconds": "0.782",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[context-init-after-15-1]",
+        "seconds": "0.724",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[context-init-after-15-2]",
+        "seconds": "0.764",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[executor-init-2-0]",
+        "seconds": "0.720",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[executor-init-2-1]",
+        "seconds": "0.703",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[executor-init-2-2]",
+        "seconds": "0.737",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[executor-init-15-0]",
+        "seconds": "0.713",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[executor-init-15-1]",
+        "seconds": "0.714",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[executor-init-15-2]",
+        "seconds": "0.749",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[node-init-before-2-0]",
+        "seconds": "0.913",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[node-init-before-2-1]",
+        "seconds": "1.053",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[node-init-before-2-2]",
+        "seconds": "0.955",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[node-init-before-15-0]",
+        "seconds": "0.994",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[node-init-before-15-1]",
+        "seconds": "0.939",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[node-init-before-15-2]",
+        "seconds": "1.022",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[node-init-after-2-0]",
+        "seconds": "0.973",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[node-init-after-2-1]",
+        "seconds": "1.017",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[node-init-after-2-2]",
+        "seconds": "0.972",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[node-init-after-15-0]",
+        "seconds": "0.986",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[node-init-after-15-1]",
+        "seconds": "0.963",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[node-init-after-15-2]",
+        "seconds": "0.987",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[wait-2-0]",
+        "seconds": "1.109",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[wait-2-1]",
+        "seconds": "1.044",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[wait-2-2]",
+        "seconds": "1.031",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[wait-15-0]",
+        "seconds": "1.050",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[wait-15-1]",
+        "seconds": "1.087",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[wait-15-2]",
+        "seconds": "1.073",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[timer-2-0]",
+        "seconds": "0.980",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[timer-2-1]",
+        "seconds": "1.027",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[timer-2-2]",
+        "seconds": "0.903",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[timer-15-0]",
+        "seconds": "0.948",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[timer-15-1]",
+        "seconds": "1.007",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[timer-15-2]",
+        "seconds": "1.004",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[map-2-0]",
+        "seconds": "1.535",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[map-2-1]",
+        "seconds": "1.555",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[map-2-2]",
+        "seconds": "1.540",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[map-15-0]",
+        "seconds": "1.516",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[map-15-1]",
+        "seconds": "1.546",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[map-15-2]",
+        "seconds": "1.579",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[static-load-2-0]",
+        "seconds": "1.240",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[static-load-2-1]",
+        "seconds": "1.074",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[static-load-2-2]",
+        "seconds": "1.210",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[static-load-15-0]",
+        "seconds": "1.089",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[static-load-15-1]",
+        "seconds": "1.122",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[static-load-15-2]",
+        "seconds": "1.169",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[node-destroy-2-0]",
+        "seconds": "0.936",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[node-destroy-2-1]",
+        "seconds": "1.040",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[node-destroy-2-2]",
+        "seconds": "1.007",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[node-destroy-15-0]",
+        "seconds": "0.972",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[node-destroy-15-1]",
+        "seconds": "1.001",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[node-destroy-15-2]",
+        "seconds": "0.992",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[context-shutdown-2-0]",
+        "seconds": "1.028",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[context-shutdown-2-1]",
+        "seconds": "0.984",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[context-shutdown-2-2]",
+        "seconds": "1.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[context-shutdown-15-0]",
+        "seconds": "0.958",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[context-shutdown-15-1]",
+        "seconds": "0.966",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_signal_timing_matrix[context-shutdown-15-2]",
+        "seconds": "0.992",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_mock_nodes:arm_target_adapter_stub]",
+        "seconds": "1.099",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_mock_nodes:arm_target_sink_stub]",
+        "seconds": "1.123",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_mock_nodes:fastlio2_adapter_stub]",
+        "seconds": "1.109",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_mock_nodes:hardware_bridge_stub]",
+        "seconds": "1.042",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_mock_nodes:heartbeat_pub]",
+        "seconds": "1.109",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_mock_nodes:map_2p5d_builder_stub]",
+        "seconds": "1.056",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_mock_nodes:nav2_adapter_stub]",
+        "seconds": "1.124",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_mock_nodes:uav_mock_map_tile_pub]",
+        "seconds": "1.108",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_mock_nodes:uav_mock_odom_tf_pub]",
+        "seconds": "1.192",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_mock_nodes:uav_mock_target_pub]",
+        "seconds": "1.146",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_mock_nodes:ugv_map_tile_sub]",
+        "seconds": "1.224",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_mock_nodes:ugv_nav_sink_stub]",
+        "seconds": "1.214",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_monitor:delay_probe_pub]",
+        "seconds": "1.131",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_monitor:delay_probe_sub]",
+        "seconds": "1.053",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_monitor:qos_inspector]",
+        "seconds": "1.162",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_monitor:system_monitor]",
+        "seconds": "1.127",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_monitor:topic_watchdog]",
+        "seconds": "1.112",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_tf_tools:ekf_adapter_stub]",
+        "seconds": "1.103",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_tf_tools:frame_alignment_stub]",
+        "seconds": "1.179",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_tf_tools:static_tf_loader]",
+        "seconds": "1.176",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[2-ag_tf_tools:tf_healthcheck]",
+        "seconds": "1.228",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_mock_nodes:arm_target_adapter_stub]",
+        "seconds": "1.099",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_mock_nodes:arm_target_sink_stub]",
+        "seconds": "1.112",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_mock_nodes:fastlio2_adapter_stub]",
+        "seconds": "1.191",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_mock_nodes:hardware_bridge_stub]",
+        "seconds": "1.070",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_mock_nodes:heartbeat_pub]",
+        "seconds": "1.104",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_mock_nodes:map_2p5d_builder_stub]",
+        "seconds": "1.125",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_mock_nodes:nav2_adapter_stub]",
+        "seconds": "1.135",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_mock_nodes:uav_mock_map_tile_pub]",
+        "seconds": "1.140",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_mock_nodes:uav_mock_odom_tf_pub]",
+        "seconds": "1.138",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_mock_nodes:uav_mock_target_pub]",
+        "seconds": "1.083",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_mock_nodes:ugv_map_tile_sub]",
+        "seconds": "1.107",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_mock_nodes:ugv_nav_sink_stub]",
+        "seconds": "1.164",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_monitor:delay_probe_pub]",
+        "seconds": "1.068",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_monitor:delay_probe_sub]",
+        "seconds": "1.164",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_monitor:qos_inspector]",
+        "seconds": "1.142",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_monitor:system_monitor]",
+        "seconds": "1.184",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_monitor:topic_watchdog]",
+        "seconds": "1.107",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_tf_tools:ekf_adapter_stub]",
+        "seconds": "1.216",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_tf_tools:frame_alignment_stub]",
+        "seconds": "1.326",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_tf_tools:static_tf_loader]",
+        "seconds": "1.170",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_console_node_stops_cleanly[15-ag_tf_tools:tf_healthcheck]",
+        "seconds": "1.176",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_repeated_signals_keep_active_context_valid[int-burst-node-init-before]",
+        "seconds": "0.937",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_repeated_signals_keep_active_context_valid[int-burst-timer]",
+        "seconds": "1.039",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_repeated_signals_keep_active_context_valid[int-burst-map]",
+        "seconds": "1.540",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_repeated_signals_keep_active_context_valid[int-burst-static-load]",
+        "seconds": "1.240",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_repeated_signals_keep_active_context_valid[int-burst-node-destroy]",
+        "seconds": "0.966",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_repeated_signals_keep_active_context_valid[int-burst-context-shutdown]",
+        "seconds": "1.001",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_repeated_signals_keep_active_context_valid[term-burst-node-init-before]",
+        "seconds": "0.930",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_repeated_signals_keep_active_context_valid[term-burst-timer]",
+        "seconds": "0.984",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_repeated_signals_keep_active_context_valid[term-burst-map]",
+        "seconds": "1.513",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_repeated_signals_keep_active_context_valid[term-burst-static-load]",
+        "seconds": "1.099",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_repeated_signals_keep_active_context_valid[term-burst-node-destroy]",
+        "seconds": "1.050",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_repeated_signals_keep_active_context_valid[term-burst-context-shutdown]",
+        "seconds": "0.956",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_repeated_signals_keep_active_context_valid[mixed-burst-node-init-before]",
+        "seconds": "1.106",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_repeated_signals_keep_active_context_valid[mixed-burst-timer]",
+        "seconds": "1.124",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_repeated_signals_keep_active_context_valid[mixed-burst-map]",
+        "seconds": "1.711",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_repeated_signals_keep_active_context_valid[mixed-burst-static-load]",
+        "seconds": "1.206",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_repeated_signals_keep_active_context_valid[mixed-burst-node-destroy]",
+        "seconds": "0.995",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_repeated_signals_keep_active_context_valid[mixed-burst-context-shutdown]",
+        "seconds": "0.964",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_installed_entrypoint_set_is_complete",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_real_failures_propagate_and_release_resources[context-fail-before-UnknownROSArgsError]",
+        "seconds": "0.739",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_real_failures_propagate_and_release_resources[context-fail-after-context initialization defect]",
+        "seconds": "0.744",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_real_failures_propagate_and_release_resources[executor-fail-executor initialization defect]",
+        "seconds": "0.822",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_real_failures_propagate_and_release_resources[node-base-fail-base Node initialization defect]",
+        "seconds": "0.957",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_real_failures_propagate_and_release_resources[constructor-fail-constructor business defect]",
+        "seconds": "1.034",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_real_failures_propagate_and_release_resources[callback-fail-callback business defect]",
+        "seconds": "0.985",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_real_failures_propagate_and_release_resources[callback-rcl-callback RCL business defect]",
+        "seconds": "0.996",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_real_failures_propagate_and_release_resources[callback-rcl-closed-callback RCL business defect]",
+        "seconds": "0.959",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_real_failures_propagate_and_release_resources[cleanup-fail-callback business defect]",
+        "seconds": "1.066",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_real_failures_propagate_and_release_resources[cleanup-fail-before-callback business defect]",
+        "seconds": "1.008",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_other_context_and_python_handlers_survive",
+        "seconds": "0.065",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_tf_one_shot_uses_managed_stop_request",
+        "seconds": "2.267",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_callers_native_signal_layer_is_restored",
+        "seconds": "0.957",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_node_shutdown",
+        "name": "test_direct_stop_keeps_default_context_reinitializable",
+        "seconds": "0.009",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_odometry_semantics",
+        "name": "test_odometry_twist_matches_pose_derivative_in_child_frame[0.0]",
+        "seconds": "0.034",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_odometry_semantics",
+        "name": "test_odometry_twist_matches_pose_derivative_in_child_frame[4.0]",
+        "seconds": "0.008",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_odometry_semantics",
+        "name": "test_odometry_twist_matches_pose_derivative_in_child_frame[10.0]",
+        "seconds": "0.008",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_monitor_expires_heartbeats_with_paused_sim_time",
+        "seconds": "0.519",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_report_endpoints_use_report_qos_and_partial_defaults",
+        "seconds": "0.031",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_qos_cache_is_private_and_reloads_edits",
+        "seconds": "0.003",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_invalid_qos_is_rejected[data0]",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_invalid_qos_is_rejected[data1]",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_invalid_qos_is_rejected[data2]",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_invalid_qos_is_rejected[data3]",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_invalid_qos_is_rejected[data4]",
+        "seconds": "0.001",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_invalid_qos_is_rejected[data5]",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_invalid_qos_is_rejected[data6]",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_keep_all_zero_depth_and_missing_explicit_config",
+        "seconds": "0.001",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_malformed_qos_mapping[[]]",
+        "seconds": "0.001",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_malformed_qos_mapping[topics: []]",
+        "seconds": "0.001",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_malformed_qos_mapping[topics: {foo: []}]",
+        "seconds": "0.001",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_invalid_static_tf_rejected[transforms0]",
+        "seconds": "0.011",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_invalid_static_tf_rejected[transforms1]",
+        "seconds": "0.013",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_invalid_static_tf_rejected[transforms2]",
+        "seconds": "0.013",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_invalid_static_tf_rejected[transforms3]",
+        "seconds": "0.014",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_invalid_static_tf_rejected[transforms4]",
+        "seconds": "0.013",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_invalid_static_tf_rejected[transforms5]",
+        "seconds": "0.012",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_invalid_static_tf_rejected[transforms6]",
+        "seconds": "0.011",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_invalid_static_tf_rejected[transforms7]",
+        "seconds": "0.010",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_shared_quaternion_is_normalized[angles0]",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_shared_quaternion_is_normalized[angles1]",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_shared_quaternion_is_normalized[angles2]",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_runtime_regressions",
+        "name": "test_qos_yaml_copies_match_defaults",
+        "seconds": "0.004",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_safe_optimization_logic",
+        "name": "test_mock_tile_layers_preserve_legacy_values[1-1-0.0]",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_safe_optimization_logic",
+        "name": "test_mock_tile_layers_preserve_legacy_values[3-5-1.0]",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_safe_optimization_logic",
+        "name": "test_mock_tile_layers_preserve_legacy_values[64-64-0.45]",
+        "seconds": "0.002",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_safe_optimization_logic",
+        "name": "test_mock_tile_layers_preserve_legacy_values[256-256--3.2]",
+        "seconds": "0.022",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_safe_optimization_logic",
+        "name": "test_mock_tile_layers_preserve_legacy_values[7-2-10000.15]",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_safe_optimization_logic",
+        "name": "test_mock_tile_layers_reject_invalid_dimensions[0-1]",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_safe_optimization_logic",
+        "name": "test_mock_tile_layers_reject_invalid_dimensions[1-0]",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_safe_optimization_logic",
+        "name": "test_mock_tile_layers_reject_invalid_dimensions[-1-5]",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_safe_optimization_logic",
+        "name": "test_monotonic_liveness_age_and_stale_nodes",
+        "seconds": "0.000",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_single_machine_integration",
+        "name": "test_single_machine_messages_tf_custom_qos_and_shutdown",
+        "seconds": "14.559",
+        "status": "PASS"
+      },
+      {
+        "class": "src.ag_system_tests.test.test_single_machine_integration",
+        "name": "test_transient_local_map_delivered_to_late_subscriber",
+        "seconds": "0.010",
+        "status": "PASS"
+      }
+    ],
+    "host89_and_native141_are_subsets": true,
+    "release": "b7d8299e006c4e9fc9e75dfd0db5da32abb7a48f26bf997083b1400136b32e3b"
+  },
+  "r9_unique68": [
+    {
+      "id": "R9-UNIT-normal",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-before-session",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-created-before-registration",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-partial-registration",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-ready-missing",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-ready-context",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-entry-mismatch",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-release-mismatch",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-early-exit",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-partial-factory-receipt",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-identity-mismatch",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-foreign-reaper",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-wrong-thread",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-wrong-creator-thread",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-concurrent-close",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-repeat-close",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-stop-failure",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-business-multiple-cleanup",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-borrowed-domain",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-borrowed-context",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-file-open-failure",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-file-close-failure",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-journal-write-failure",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-nonzero-child",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-timeout-ownership",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-second-child",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-repeat-acquire",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-unapproved-entry",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-after-release",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-false-close-success",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-missing-raw-wait",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-repeat-stop",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-receipt-consumed",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-UNIT-none-release-pin",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": false
+    },
+    {
+      "id": "R9-ACQUISITION-stderr-open",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-ACQUISITION-diagnostic-and-seal",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-ACQUISITION-receipt-reuse",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-ACQUISITION-second-pipe",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-GATE-allowed",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-GATE-legacy-import",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-GATE-dynamic-import",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-GATE-numeric-signal",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-GATE-second-reaper",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-GATE-native-handler",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-GATE-new-thread",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-GATE-borrowed-shutdown",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-GATE-borrowed-close",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-GATE-domainpool",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-GATE-exception-alias",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-GATE-builtin-dynamic",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-GATE-second-factory",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-GATE-wrong-entry",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-GATE-missing-receipt",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-POLICY-positive",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-POLICY-registry-tamper",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-POLICY-policy-tamper",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-POLICY-backend-tamper",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-POLICY-unsafe-permission",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-POLICY-symlink-source",
+      "status": "PASS",
+      "actual_test_worker_exit": null,
+      "native_ros": false,
+      "execution_kind": "in-process assertions; no separate per-case process",
+      "containing_suite_actual_exit_code": 0
+    },
+    {
+      "id": "R9-NATIVE-production-heartbeat",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": true
+    },
+    {
+      "id": "R9-NATIVE-FAULT-ready-loss",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": true
+    },
+    {
+      "id": "R9-NATIVE-FAULT-birth-mismatch",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": true
+    },
+    {
+      "id": "R9-NATIVE-FAULT-foreign-reaper-ignore",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": true
+    },
+    {
+      "id": "R9-NATIVE-FAULT-file-open",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": true
+    },
+    {
+      "id": "R9-NATIVE-FAULT-child-nonzero",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": true
+    },
+    {
+      "id": "R9-NATIVE-FAULT-foreign-reaper-takeover",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": true
+    },
+    {
+      "id": "R9-NATIVE-FAULT-signal-timeout",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": true
+    },
+    {
+      "id": "R9-NATIVE-FAULT-evidence-close",
+      "status": "PASS",
+      "actual_test_worker_exit": 0,
+      "native_ros": true
+    }
+  ],
+  "heartbeat_wire": {
+    "topic": "/system/heartbeat",
+    "messages": [
+      {
+        "type": "ag_interfaces/msg/Heartbeat",
+        "node_name": "r7_strict_heartbeat",
+        "role": "r7-isolated",
+        "status": 1,
+        "detail": "alive; seq=0",
+        "frame_id": "",
+        "stamp_ns": 1794785688199166225
+      },
+      {
+        "type": "ag_interfaces/msg/Heartbeat",
+        "node_name": "r7_strict_heartbeat",
+        "role": "r7-isolated",
+        "status": 1,
+        "detail": "alive; seq=1",
+        "frame_id": "",
+        "stamp_ns": 1794785688242865117
+      }
+    ],
+    "requested_qos": {
+      "depth": 20,
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE"
+    },
+    "publisher_observed_qos": {
+      "topic": "/system/heartbeat",
+      "depth": 20,
+      "reliability": "1",
+      "durability": "2"
+    }
+  },
+  "real_production_factory_unpatched": true,
+  "direct_child_raw_wait_status": 0,
+  "child_identity": {
+    "birth": {
+      "pid": 3344,
+      "ppid": 3320,
+      "pgid": 3344,
+      "sid": 3344,
+      "starttime": 4945355,
+      "state": "S",
+      "uids": [
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "namespace": "pid:[4026532218]",
+      "exe": "/usr/bin/python3.12",
+      "exe_dev": 27,
+      "exe_ino": 1726791,
+      "argv": [
+        "/usr/bin/python3.12",
+        "-I",
+        "-S",
+        "-B",
+        "/proc/self/fd/20",
+        "29",
+        "30",
+        "33"
+      ]
+    },
+    "nonce_sha256": "0bd7a03de266007026548cb16d2142eb3f05f8fe4e386b91dd6afc6ee69e7fb4",
+    "entry": "heartbeat_pub",
+    "release": "b7d8299e006c4e9fc9e75dfd0db5da32abb7a48f26bf997083b1400136b32e3b"
+  },
+  "native_fault8": [
+    {
+      "id": "R9-NATIVE-FAULT-ready-loss",
+      "status": "PASS",
+      "seconds": 6.910142417000316,
+      "release_manifest": "b7d8299e006c4e9fc9e75dfd0db5da32abb7a48f26bf997083b1400136b32e3b",
+      "fault_injection": true,
+      "normal_child_acceptance": false,
+      "actual_exception_chains": [
+        "Traceback (most recent call last):\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py\", line 20, in expected\n    try:function()\n        ^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_fixed_heartbeat.py\", line 11, in acquire_fixed_heartbeat\n    def acquire_fixed_heartbeat(self):return self.registry.acquire_fixed_heartbeat()\n                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 168, in acquire_fixed_heartbeat\n    return self.close(primary_error=primary)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 295, in close\n    self._raise_errors(primary_error);return copy.deepcopy(self._cached)\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 235, in _raise_errors\n    if len(all_errors)==1 and not self._close_errors:raise all_errors[0].with_traceback(all_errors[0].__traceback__)\n                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 159, in acquire_fixed_heartbeat\n    received=create_session('heartbeat_pub',self.output/'strict-child',expected_manifest_sha256=self.release_pin,acquisition_receipt=self._receipt)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/strict_entry.py\", line 68, in create_session\n    session.authenticate_birth();session.admit();session.await_ready(start=False)\n                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/isolated_runner.py\", line 344, in await_ready\n    if kind in ('REFUSED','ERROR','RESULT'):raise ProtocolError('child failed before READY: '+kind)\n                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nag_network_tools.isolated_runner.ProtocolError: child failed before READY: RESULT\n"
+      ],
+      "operator_cleanup_separate_from_verdict": [],
+      "actual_test_worker_returncode": 0,
+      "actual_test_worker_raw_wait_status": 0,
+      "argv": [
+        "/usr/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py",
+        "ready-loss",
+        "/workspace/air-ground-r10-20261115T223236Z-5lmud416/runtime/native-r10-release2/mvp-faults/ready-loss"
+      ],
+      "started_utc": "2026-11-15T23:34:49.716347+00:00",
+      "ended_utc": "2026-11-15T23:34:56.725304+00:00",
+      "total_seconds": 7.008985266002128
+    },
+    {
+      "id": "R9-NATIVE-FAULT-birth-mismatch",
+      "status": "PASS",
+      "seconds": 0.5057870330056176,
+      "release_manifest": "b7d8299e006c4e9fc9e75dfd0db5da32abb7a48f26bf997083b1400136b32e3b",
+      "fault_injection": true,
+      "normal_child_acceptance": false,
+      "actual_exception_chains": [
+        "Traceback (most recent call last):\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py\", line 20, in expected\n    try:function()\n        ^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_fixed_heartbeat.py\", line 11, in acquire_fixed_heartbeat\n    def acquire_fixed_heartbeat(self):return self.registry.acquire_fixed_heartbeat()\n                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 168, in acquire_fixed_heartbeat\n    return self.close(primary_error=primary)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 295, in close\n    self._raise_errors(primary_error);return copy.deepcopy(self._cached)\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 235, in _raise_errors\n    if len(all_errors)==1 and not self._close_errors:raise all_errors[0].with_traceback(all_errors[0].__traceback__)\n                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 159, in acquire_fixed_heartbeat\n    received=create_session('heartbeat_pub',self.output/'strict-child',expected_manifest_sha256=self.release_pin,acquisition_receipt=self._receipt)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/strict_entry.py\", line 68, in create_session\n    session.authenticate_birth();session.admit();session.await_ready(start=False)\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/isolated_runner.py\", line 334, in authenticate_birth\n    self.observation.grant(ack)\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/isolated_runner.py\", line 119, in grant\n    with self.lock:return self._grant_locked(receipt)\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/isolated_runner.py\", line 128, in _grant_locked\n    if current[key]!=reported[key]: raise AdmissionError('private receipt identity mismatch: '+key)\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nag_network_tools.isolated_runner.AdmissionError: private receipt identity mismatch: sid\n"
+      ],
+      "operator_cleanup_separate_from_verdict": [],
+      "actual_test_worker_returncode": 0,
+      "actual_test_worker_raw_wait_status": 0,
+      "argv": [
+        "/usr/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py",
+        "birth-mismatch",
+        "/workspace/air-ground-r10-20261115T223236Z-5lmud416/runtime/native-r10-release2/mvp-faults/birth-mismatch"
+      ],
+      "started_utc": "2026-11-15T23:34:56.725574+00:00",
+      "ended_utc": "2026-11-15T23:34:57.341457+00:00",
+      "total_seconds": 0.6159024089938612
+    },
+    {
+      "id": "R9-NATIVE-FAULT-foreign-reaper-ignore",
+      "status": "PASS",
+      "seconds": 0.43855066299875034,
+      "release_manifest": "b7d8299e006c4e9fc9e75dfd0db5da32abb7a48f26bf997083b1400136b32e3b",
+      "fault_injection": true,
+      "normal_child_acceptance": false,
+      "actual_exception_chains": [
+        "Traceback (most recent call last):\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py\", line 20, in expected\n    try:function()\n        ^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_fixed_heartbeat.py\", line 11, in acquire_fixed_heartbeat\n    def acquire_fixed_heartbeat(self):return self.registry.acquire_fixed_heartbeat()\n                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 168, in acquire_fixed_heartbeat\n    return self.close(primary_error=primary)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 295, in close\n    self._raise_errors(primary_error);return copy.deepcopy(self._cached)\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 235, in _raise_errors\n    if len(all_errors)==1 and not self._close_errors:raise all_errors[0].with_traceback(all_errors[0].__traceback__)\n                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 159, in acquire_fixed_heartbeat\n    received=create_session('heartbeat_pub',self.output/'strict-child',expected_manifest_sha256=self.release_pin,acquisition_receipt=self._receipt)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/strict_entry.py\", line 63, in create_session\n    IsolatedSession.__init__(session,policy,output,entry=entry,ros_args=tuple(ENTRIES[entry]['args']))\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py\", line 11, in __init__\n    def __init__(self,*args,**kwargs):raw_backend.append(self);super().__init__(*args,**kwargs)\n                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/isolated_runner.py\", line 229, in __init__\n    if signal.getsignal(signal.SIGCHLD)!=signal.SIG_DFL: raise AdmissionError('foreign SIGCHLD/reaper unsupported')\n                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nag_network_tools.isolated_runner.AdmissionError: foreign SIGCHLD/reaper unsupported\n"
+      ],
+      "operator_cleanup_separate_from_verdict": [],
+      "actual_test_worker_returncode": 0,
+      "actual_test_worker_raw_wait_status": 0,
+      "argv": [
+        "/usr/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py",
+        "foreign-reaper-ignore",
+        "/workspace/air-ground-r10-20261115T223236Z-5lmud416/runtime/native-r10-release2/mvp-faults/foreign-reaper-ignore"
+      ],
+      "started_utc": "2026-11-15T23:34:57.341832+00:00",
+      "ended_utc": "2026-11-15T23:34:57.907813+00:00",
+      "total_seconds": 0.565999759004626
+    },
+    {
+      "id": "R9-NATIVE-FAULT-file-open",
+      "status": "PASS",
+      "seconds": 0.021757088994490914,
+      "release_manifest": "b7d8299e006c4e9fc9e75dfd0db5da32abb7a48f26bf997083b1400136b32e3b",
+      "fault_injection": true,
+      "normal_child_acceptance": false,
+      "actual_exception_chains": [
+        "Traceback (most recent call last):\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py\", line 20, in expected\n    try:function()\n        ^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_fixed_heartbeat.py\", line 11, in acquire_fixed_heartbeat\n    def acquire_fixed_heartbeat(self):return self.registry.acquire_fixed_heartbeat()\n                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 168, in acquire_fixed_heartbeat\n    return self.close(primary_error=primary)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 295, in close\n    self._raise_errors(primary_error);return copy.deepcopy(self._cached)\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 235, in _raise_errors\n    if len(all_errors)==1 and not self._close_errors:raise all_errors[0].with_traceback(all_errors[0].__traceback__)\n                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 157, in acquire_fixed_heartbeat\n    self._journal=_EvidenceJournal(self.output);self._journal.open();self._emit('journal-owned')\n                                                ^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 61, in open\n    self.directory.mkdir(mode=0o700,parents=True,exist_ok=False)\n  File \"/usr/lib/python3.12/pathlib.py\", line 1313, in mkdir\n    os.mkdir(self, mode)\nPermissionError: [Errno 13] Permission denied: '/workspace/air-ground-r10-20261115T223236Z-5lmud416/runtime/native-r10-release2/mvp-faults/file-open/read-only/owned'\n"
+      ],
+      "operator_cleanup_separate_from_verdict": [],
+      "actual_test_worker_returncode": 0,
+      "actual_test_worker_raw_wait_status": 0,
+      "argv": [
+        "/usr/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py",
+        "file-open",
+        "/workspace/air-ground-r10-20261115T223236Z-5lmud416/runtime/native-r10-release2/mvp-faults/file-open"
+      ],
+      "started_utc": "2026-11-15T23:34:57.908214+00:00",
+      "ended_utc": "2026-11-15T23:34:58.022636+00:00",
+      "total_seconds": 0.11444124999979977
+    },
+    {
+      "id": "R9-NATIVE-FAULT-child-nonzero",
+      "status": "PASS",
+      "seconds": 1.899654073997226,
+      "release_manifest": "b7d8299e006c4e9fc9e75dfd0db5da32abb7a48f26bf997083b1400136b32e3b",
+      "fault_injection": true,
+      "normal_child_acceptance": false,
+      "actual_exception_chains": [
+        "Traceback (most recent call last):\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py\", line 20, in expected\n    try:function()\n        ^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_fixed_heartbeat.py\", line 16, in close\n    def close(self,*,primary_error=None):return self.registry.close(primary_error=primary_error)\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 295, in close\n    self._raise_errors(primary_error);return copy.deepcopy(self._cached)\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 235, in _raise_errors\n    if len(all_errors)==1 and not self._close_errors:raise all_errors[0].with_traceback(all_errors[0].__traceback__)\n                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py\", line 20, in expected\n    try:function()\n        ^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_fixed_heartbeat.py\", line 15, in wait\n    def wait(self,timeout=10):return self.registry.wait(timeout)\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 203, in wait\n    return self._wait(timeout)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 196, in _wait\n    if code!=0 or raw!=0 or not report['accepted']:raise ChildExitError(code,raw,report)\n                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nag_network_tools.m6_owned_session.ChildExitError: owned child nonzero/unaccepted exit: 1 raw=256\n",
+        "Traceback (most recent call last):\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py\", line 20, in expected\n    try:function()\n        ^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_fixed_heartbeat.py\", line 16, in close\n    def close(self,*,primary_error=None):return self.registry.close(primary_error=primary_error)\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 295, in close\n    self._raise_errors(primary_error);return copy.deepcopy(self._cached)\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 235, in _raise_errors\n    if len(all_errors)==1 and not self._close_errors:raise all_errors[0].with_traceback(all_errors[0].__traceback__)\n                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py\", line 20, in expected\n    try:function()\n        ^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_fixed_heartbeat.py\", line 15, in wait\n    def wait(self,timeout=10):return self.registry.wait(timeout)\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 203, in wait\n    return self._wait(timeout)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 196, in _wait\n    if code!=0 or raw!=0 or not report['accepted']:raise ChildExitError(code,raw,report)\n                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nag_network_tools.m6_owned_session.ChildExitError: owned child nonzero/unaccepted exit: 1 raw=256\n"
+      ],
+      "operator_cleanup_separate_from_verdict": [],
+      "injection": "closed only this test-owned original private command pipe; actual child protocol failure, no Node/QoS source change",
+      "actual_test_worker_returncode": 0,
+      "actual_test_worker_raw_wait_status": 0,
+      "argv": [
+        "/usr/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py",
+        "child-nonzero",
+        "/workspace/air-ground-r10-20261115T223236Z-5lmud416/runtime/native-r10-release2/mvp-faults/child-nonzero"
+      ],
+      "started_utc": "2026-11-15T23:34:58.023093+00:00",
+      "ended_utc": "2026-11-15T23:35:00.001264+00:00",
+      "total_seconds": 1.978187982000236
+    },
+    {
+      "id": "R9-NATIVE-FAULT-foreign-reaper-takeover",
+      "status": "PASS",
+      "seconds": 1.9776161129993852,
+      "release_manifest": "b7d8299e006c4e9fc9e75dfd0db5da32abb7a48f26bf997083b1400136b32e3b",
+      "fault_injection": true,
+      "normal_child_acceptance": false,
+      "actual_exception_chains": [
+        "Traceback (most recent call last):\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py\", line 20, in expected\n    try:function()\n        ^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_fixed_heartbeat.py\", line 15, in wait\n    def wait(self,timeout=10):return self.registry.wait(timeout)\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 203, in wait\n    return self._wait(timeout)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 193, in _wait\n    code=self._session.wait(timeout);report=self._report_strict();raw=report['raw_wait_status']\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/strict_entry.py\", line 46, in wait\n    def wait(self,timeout=10):return self._session.wait(timeout)\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/isolated_runner.py\", line 381, in wait\n    code=self.process.wait(timeout=remaining)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/subprocess.py\", line 1264, in wait\n    return self._wait(timeout=timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/subprocess.py\", line 2036, in _wait\n    (pid, sts) = self._try_wait(os.WNOHANG)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/isolated_runner.py\", line 85, in _try_wait\n    return os.waitpid(self.pid,wait_flags)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nChildProcessError: [Errno 10] No child processes\n",
+        "  + Exception Group Traceback (most recent call last):\n  |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py\", line 20, in expected\n  |     try:function()\n  |         ^^^^^^^^^^\n  |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_fixed_heartbeat.py\", line 16, in close\n  |     def close(self,*,primary_error=None):return self.registry.close(primary_error=primary_error)\n  |                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 295, in close\n  |     self._raise_errors(primary_error);return copy.deepcopy(self._cached)\n  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 236, in _raise_errors\n  |     group=BaseExceptionGroup('MVP operation and independent cleanup failed',all_errors);group.owned_registry=self;raise group\n  |                                                                                                                   ^^^^^^^^^^^\n  | ExceptionGroup: MVP operation and independent cleanup failed (4 sub-exceptions)\n  +-+---------------- 1 ----------------\n    | Traceback (most recent call last):\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py\", line 20, in expected\n    |     try:function()\n    |         ^^^^^^^^^^\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_fixed_heartbeat.py\", line 15, in wait\n    |     def wait(self,timeout=10):return self.registry.wait(timeout)\n    |                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 203, in wait\n    |     return self._wait(timeout)\n    |            ^^^^^^^^^^^^^^^^^^^\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 193, in _wait\n    |     code=self._session.wait(timeout);report=self._report_strict();raw=report['raw_wait_status']\n    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/strict_entry.py\", line 46, in wait\n    |     def wait(self,timeout=10):return self._session.wait(timeout)\n    |                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/isolated_runner.py\", line 381, in wait\n    |     code=self.process.wait(timeout=remaining)\n    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    |   File \"/usr/lib/python3.12/subprocess.py\", line 1264, in wait\n    |     return self._wait(timeout=timeout)\n    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    |   File \"/usr/lib/python3.12/subprocess.py\", line 2036, in _wait\n    |     (pid, sts) = self._try_wait(os.WNOHANG)\n    |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/isolated_runner.py\", line 85, in _try_wait\n    |     return os.waitpid(self.pid,wait_flags)\n    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    | ChildProcessError: [Errno 10] No child processes\n    +---------------- 2 ----------------\n    | Traceback (most recent call last):\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 271, in close\n    |     try:self._session.abort_failed_supervision('MVP failed supervision cleanup, never normal acceptance')\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/strict_entry.py\", line 49, in abort_failed_supervision\n    |     def abort_failed_supervision(self,reason):return self._session.abort(reason)\n    |                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/isolated_runner.py\", line 391, in abort\n    |     return self.wait(timeout=timeout)\n    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/isolated_runner.py\", line 381, in wait\n    |     code=self.process.wait(timeout=remaining)\n    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    |   File \"/usr/lib/python3.12/subprocess.py\", line 1264, in wait\n    |     return self._wait(timeout=timeout)\n    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    |   File \"/usr/lib/python3.12/subprocess.py\", line 2036, in _wait\n    |     (pid, sts) = self._try_wait(os.WNOHANG)\n    |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/isolated_runner.py\", line 85, in _try_wait\n    |     return os.waitpid(self.pid,wait_flags)\n    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    | ChildProcessError: [Errno 10] No child processes\n    +---------------- 3 ----------------\n    | Traceback (most recent call last):\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 278, in close\n    |     else:raise UnresolvedResponsibility('live/unknown direct child retains ownership')\n    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    | ag_network_tools.m6_owned_session.UnresolvedResponsibility: live/unknown direct child retains ownership\n    +---------------- 4 ----------------\n    | ag_network_tools.m6_owned_session.UnresolvedResponsibility: strict Session closure is not proven\n    +------------------------------------\n"
+      ],
+      "operator_cleanup_separate_from_verdict": [
+        "known reference objects closed only after actual external reap; cached MVP UNKNOWN verdict unchanged"
+      ],
+      "foreign_reaper_actual_wait": {
+        "pid": 3423,
+        "raw_status": 0,
+        "not_trusted_as_mvp_wait_status": true,
+        "kernel_do_wait_barrier": true
+      },
+      "actual_test_worker_returncode": 0,
+      "actual_test_worker_raw_wait_status": 0,
+      "argv": [
+        "/usr/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py",
+        "foreign-reaper-takeover",
+        "/workspace/air-ground-r10-20261115T223236Z-5lmud416/runtime/native-r10-release2/mvp-faults/foreign-reaper-takeover"
+      ],
+      "started_utc": "2026-11-15T23:35:00.001669+00:00",
+      "ended_utc": "2026-11-15T23:35:02.072042+00:00",
+      "total_seconds": 2.0703891859957366
+    },
+    {
+      "id": "R9-NATIVE-FAULT-signal-timeout",
+      "status": "PASS",
+      "seconds": 6.980355316998612,
+      "release_manifest": "b7d8299e006c4e9fc9e75dfd0db5da32abb7a48f26bf997083b1400136b32e3b",
+      "fault_injection": true,
+      "normal_child_acceptance": false,
+      "actual_exception_chains": [
+        "Traceback (most recent call last):\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py\", line 20, in expected\n    try:function()\n        ^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py\", line 73, in <lambda>\n    adapter.request_stop();error=expected(lambda:adapter.wait(0.2));expected(lambda:adapter.close(primary_error=error));report=adapter.get_cleanup_report()\n                                                 ^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_fixed_heartbeat.py\", line 15, in wait\n    def wait(self,timeout=10):return self.registry.wait(timeout)\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 203, in wait\n    return self._wait(timeout)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 193, in _wait\n    code=self._session.wait(timeout);report=self._report_strict();raw=report['raw_wait_status']\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/strict_entry.py\", line 46, in wait\n    def wait(self,timeout=10):return self._session.wait(timeout)\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/isolated_runner.py\", line 377, in wait\n    self.errors.append('child completion deadline exceeded');raise DeadlineError('child completion deadline')\n                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nag_network_tools.isolated_runner.DeadlineError: child completion deadline\n",
+        "  + Exception Group Traceback (most recent call last):\n  |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py\", line 20, in expected\n  |     try:function()\n  |         ^^^^^^^^^^\n  |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py\", line 73, in <lambda>\n  |     adapter.request_stop();error=expected(lambda:adapter.wait(0.2));expected(lambda:adapter.close(primary_error=error));report=adapter.get_cleanup_report()\n  |                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_fixed_heartbeat.py\", line 16, in close\n  |     def close(self,*,primary_error=None):return self.registry.close(primary_error=primary_error)\n  |                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 295, in close\n  |     self._raise_errors(primary_error);return copy.deepcopy(self._cached)\n  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 236, in _raise_errors\n  |     group=BaseExceptionGroup('MVP operation and independent cleanup failed',all_errors);group.owned_registry=self;raise group\n  |                                                                                                                   ^^^^^^^^^^^\n  | ExceptionGroup: MVP operation and independent cleanup failed (4 sub-exceptions)\n  +-+---------------- 1 ----------------\n    | Traceback (most recent call last):\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py\", line 20, in expected\n    |     try:function()\n    |         ^^^^^^^^^^\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py\", line 73, in <lambda>\n    |     adapter.request_stop();error=expected(lambda:adapter.wait(0.2));expected(lambda:adapter.close(primary_error=error));report=adapter.get_cleanup_report()\n    |                                                  ^^^^^^^^^^^^^^^^^\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_fixed_heartbeat.py\", line 15, in wait\n    |     def wait(self,timeout=10):return self.registry.wait(timeout)\n    |                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 203, in wait\n    |     return self._wait(timeout)\n    |            ^^^^^^^^^^^^^^^^^^^\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 193, in _wait\n    |     code=self._session.wait(timeout);report=self._report_strict();raw=report['raw_wait_status']\n    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/strict_entry.py\", line 46, in wait\n    |     def wait(self,timeout=10):return self._session.wait(timeout)\n    |                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/isolated_runner.py\", line 377, in wait\n    |     self.errors.append('child completion deadline exceeded');raise DeadlineError('child completion deadline')\n    |                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    | ag_network_tools.isolated_runner.DeadlineError: child completion deadline\n    +---------------- 2 ----------------\n    | Traceback (most recent call last):\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 271, in close\n    |     try:self._session.abort_failed_supervision('MVP failed supervision cleanup, never normal acceptance')\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/strict_entry.py\", line 49, in abort_failed_supervision\n    |     def abort_failed_supervision(self,reason):return self._session.abort(reason)\n    |                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/isolated_runner.py\", line 391, in abort\n    |     return self.wait(timeout=timeout)\n    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/isolated_runner.py\", line 377, in wait\n    |     self.errors.append('child completion deadline exceeded');raise DeadlineError('child completion deadline')\n    |                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    | ag_network_tools.isolated_runner.DeadlineError: child completion deadline\n    +---------------- 3 ----------------\n    | Traceback (most recent call last):\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 278, in close\n    |     else:raise UnresolvedResponsibility('live/unknown direct child retains ownership')\n    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    | ag_network_tools.m6_owned_session.UnresolvedResponsibility: live/unknown direct child retains ownership\n    +---------------- 4 ----------------\n    | ag_network_tools.m6_owned_session.UnresolvedResponsibility: strict Session closure is not proven\n    +------------------------------------\n"
+      ],
+      "operator_cleanup_separate_from_verdict": [
+        {
+          "manual_known_capability_after_verdict": true,
+          "returncode": 0,
+          "raw_wait_status": 0,
+          "cached_mvp_verdict_not_rewritten": true
+        }
+      ],
+      "fixture_signal_audit": [
+        {
+          "number": 19,
+          "reason": "test-only scheduler suspension, actual timeout fault",
+          "identity": {
+            "pid": 3439,
+            "ppid": 3438,
+            "pgid": 3439,
+            "sid": 3439,
+            "starttime": 4946929,
+            "state": "S",
+            "uids": [
+              1000,
+              1000,
+              1000,
+              1000
+            ],
+            "namespace": "pid:[4026532218]",
+            "exe": "/usr/bin/python3.12",
+            "exe_dev": 27,
+            "exe_ino": 1726791,
+            "argv": [
+              "/usr/bin/python3.12",
+              "-I",
+              "-S",
+              "-B",
+              "/proc/self/fd/7",
+              "16",
+              "17",
+              "20"
+            ]
+          },
+          "same_existing_authenticated_pidfd": true,
+          "no_numeric_fallback": true
+        },
+        {
+          "number": 18,
+          "reason": "test-only resumption after failed/quarantined verdict",
+          "identity": {
+            "pid": 3439,
+            "ppid": 3438,
+            "pgid": 3439,
+            "sid": 3439,
+            "starttime": 4946929,
+            "state": "T",
+            "uids": [
+              1000,
+              1000,
+              1000,
+              1000
+            ],
+            "namespace": "pid:[4026532218]",
+            "exe": "/usr/bin/python3.12",
+            "exe_dev": 27,
+            "exe_ino": 1726791,
+            "argv": [
+              "/usr/bin/python3.12",
+              "-I",
+              "-S",
+              "-B",
+              "/proc/self/fd/7",
+              "16",
+              "17",
+              "20"
+            ]
+          },
+          "same_existing_authenticated_pidfd": true,
+          "no_numeric_fallback": true
+        }
+      ],
+      "actual_test_worker_returncode": 0,
+      "actual_test_worker_raw_wait_status": 0,
+      "argv": [
+        "/usr/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py",
+        "signal-timeout",
+        "/workspace/air-ground-r10-20261115T223236Z-5lmud416/runtime/native-r10-release2/mvp-faults/signal-timeout"
+      ],
+      "started_utc": "2026-11-15T23:35:02.072497+00:00",
+      "ended_utc": "2026-11-15T23:35:09.161892+00:00",
+      "total_seconds": 7.089413612004137
+    },
+    {
+      "id": "R9-NATIVE-FAULT-evidence-close",
+      "status": "PASS",
+      "seconds": 1.9194452459996683,
+      "release_manifest": "b7d8299e006c4e9fc9e75dfd0db5da32abb7a48f26bf997083b1400136b32e3b",
+      "fault_injection": true,
+      "normal_child_acceptance": false,
+      "actual_exception_chains": [
+        "  + Exception Group Traceback (most recent call last):\n  |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py\", line 20, in expected\n  |     try:function()\n  |         ^^^^^^^^^^\n  |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_fixed_heartbeat.py\", line 16, in close\n  |     def close(self,*,primary_error=None):return self.registry.close(primary_error=primary_error)\n  |                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 295, in close\n  |     self._raise_errors(primary_error);return copy.deepcopy(self._cached)\n  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 236, in _raise_errors\n  |     group=BaseExceptionGroup('MVP operation and independent cleanup failed',all_errors);group.owned_registry=self;raise group\n  |                                                                                                                   ^^^^^^^^^^^\n  | ExceptionGroup: MVP operation and independent cleanup failed (2 sub-exceptions)\n  +-+---------------- 1 ----------------\n    | Traceback (most recent call last):\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/src/ag_network_tools/ag_network_tools/m6_owned_session.py\", line 284, in close\n    |     try:self._journal.close()\n    |         ^^^^^^^^^^^^^^^^^^^^^\n    |   File \"/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py\", line 82, in fail\n    |     original(journal);journal.closed=False;journal.uncertain=True;raise OSError('native worker injected uncertain journal-close outcome')\n    |                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    | OSError: native worker injected uncertain journal-close outcome\n    +---------------- 2 ----------------\n    | ag_network_tools.m6_owned_session.UnresolvedResponsibility: journal closure is not proven; object retired without retry\n    +------------------------------------\n"
+      ],
+      "operator_cleanup_separate_from_verdict": [],
+      "actual_test_worker_returncode": 0,
+      "actual_test_worker_raw_wait_status": 0,
+      "argv": [
+        "/usr/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate-final/validation/m6_mvp1/native_fault_worker.py",
+        "evidence-close",
+        "/workspace/air-ground-r10-20261115T223236Z-5lmud416/runtime/native-r10-release2/mvp-faults/evidence-close"
+      ],
+      "started_utc": "2026-11-15T23:35:09.162413+00:00",
+      "ended_utc": "2026-11-15T23:35:11.182810+00:00",
+      "total_seconds": 2.020416120001755
+    }
+  ],
+  "phases": [
+    {
+      "pass": true,
+      "phase": "build",
+      "started_utc": "2026-11-15T23:31:06.207648+00:00",
+      "ended_utc": "2026-11-15T23:31:40.736621+00:00",
+      "seconds": 34.52898006600299,
+      "exact_r9_source_and_release": "b7d8299e006c4e9fc9e75dfd0db5da32abb7a48f26bf997083b1400136b32e3b",
+      "github_native_ci": "NOT DEPLOYED",
+      "standalone_g5": "NOT EXECUTED",
+      "gate_receipt_is_not_independent_process_proof": true
+    },
+    {
+      "pass": true,
+      "phase": "collect",
+      "started_utc": "2026-11-15T23:31:41.066543+00:00",
+      "ended_utc": "2026-11-15T23:31:43.419889+00:00",
+      "seconds": 2.3533409329975257,
+      "exact_r9_source_and_release": "b7d8299e006c4e9fc9e75dfd0db5da32abb7a48f26bf997083b1400136b32e3b",
+      "github_native_ci": "NOT DEPLOYED",
+      "standalone_g5": "NOT EXECUTED",
+      "gate_receipt_is_not_independent_process_proof": true
+    },
+    {
+      "pass": true,
+      "phase": "regress",
+      "started_utc": "2026-11-15T23:31:43.754115+00:00",
+      "ended_utc": "2026-11-15T23:34:44.245492+00:00",
+      "seconds": 180.49137863699434,
+      "exact_r9_source_and_release": "b7d8299e006c4e9fc9e75dfd0db5da32abb7a48f26bf997083b1400136b32e3b",
+      "github_native_ci": "NOT DEPLOYED",
+      "standalone_g5": "NOT EXECUTED",
+      "gate_receipt_is_not_independent_process_proof": true
+    },
+    {
+      "pass": true,
+      "phase": "mvp-positive",
+      "started_utc": "2026-11-15T23:34:44.599672+00:00",
+      "ended_utc": "2026-11-15T23:34:48.613088+00:00",
+      "seconds": 4.013411935993645,
+      "exact_r9_source_and_release": "b7d8299e006c4e9fc9e75dfd0db5da32abb7a48f26bf997083b1400136b32e3b",
+      "github_native_ci": "NOT DEPLOYED",
+      "standalone_g5": "NOT EXECUTED",
+      "gate_receipt_is_not_independent_process_proof": true
+    },
+    {
+      "pass": true,
+      "phase": "mvp-faults",
+      "started_utc": "2026-11-15T23:34:48.982270+00:00",
+      "ended_utc": "2026-11-15T23:35:11.197326+00:00",
+      "seconds": 22.21505435799918,
+      "exact_r9_source_and_release": "b7d8299e006c4e9fc9e75dfd0db5da32abb7a48f26bf997083b1400136b32e3b",
+      "github_native_ci": "NOT DEPLOYED",
+      "standalone_g5": "NOT EXECUTED",
+      "gate_receipt_is_not_independent_process_proof": true
+    }
+  ],
+  "raw_log_sha256": {
+    "collect-original283.stdout": "62362d85ea549ce6667d2d8d82c4d74ad96c2480de868ac922f27e17beae6154",
+    "native-negative8.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "seven-package-build.stdout": "45380d23ab823bfaea5b7b06f6a12da8c29bbd15ff4c1e1a74929eb43817c19e",
+    "production-heartbeat.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-negative8.stdout": "e2fbc7cfb8ca0c397a554bc129144145b201098f9efac54c0c5e4b7ea1f0a9da",
+    "installation-check.stdout": "e8d9a9efb279a5e6f80010f71e46c83208116b6999d21248dd71d10a4466e745",
+    "original-native283.stdout": "077a811d0dff9becbe826f1ff7806969e0070c9263e1488ec86d00ae307fb112",
+    "original-native283.stderr": "8e6cf64597b90a2672d95acc0a3c7c598402f7123ff1da4316cda6b65f79a2fa",
+    "production-heartbeat.stdout": "f0c6b7d0f9eabb59c705ac153b1935535d9656d4807876a777e3cc8817b2d888",
+    "seven-package-build.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "installation-check.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-regression.xml": "c942030b383878f41e87b38ab6245b9dff0f148c8cb1b05ce305b543835ed3ef",
+    "collect-original283.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mvp-faults/foreign-reaper-ignore.stdout": "ba89a1ff859a1c9317ccd590443faf1572c54438d0e780af232b46b3801d5036",
+    "mvp-faults/evidence-close.stdout": "91bfbcba22c43427a294e641ac2df930fee59f9d00d6404c30f308094871d400",
+    "mvp-faults/ready-loss.stdout": "4d2a63d7d2c3e913148052d4c67d8af1ba3c5541720e9cddd81d44db34b996eb",
+    "mvp-faults/child-nonzero.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mvp-faults/ready-loss.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mvp-faults/birth-mismatch.stdout": "f23f269956d33bc15fa3280b7f2431b8ed999ac2f486a6b832237c62cf2e9e2c",
+    "mvp-faults/foreign-reaper-takeover.stdout": "5e80cfdd09ba2c546846c45b68e1d69f2632ee56cc4665af0ab6713ed44ca269",
+    "mvp-faults/foreign-reaper-takeover.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mvp-faults/file-open.stdout": "b1c7d5c9744efa5b1aa9bbbe8333e3a0c6e4c518a60155f9bcdfff266059f189",
+    "mvp-faults/birth-mismatch.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mvp-faults/foreign-reaper-ignore.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mvp-faults/child-nonzero.stdout": "fb55ca28a88cb6949329f4b66ba1705d7e49e77b50a0357eefd67fc5ca0def33",
+    "mvp-faults/evidence-close.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mvp-faults/signal-timeout.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mvp-faults/signal-timeout.stdout": "2d09e23a102a153cde985042f62c234f13dad87ab69c66c8af97d7558ed1700f",
+    "mvp-faults/file-open.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "actual_source_276_sha256": {
+    ".gitignore": "7f4d317202a693e720cd9f1bf8660ae98cf88af212ca830c8cd7f2daf3a71267",
+    "README.md": "dd4ddbf12675a99d5457c91e5e33bf0c3b7912896e939de934536a625a2d6a06",
+    "artifacts/stage2_runs/preflight_smoke/acceptance_snippet.md": "82a965493f67724b3b47d1d5402333952e516c6f173ed526aac0e58b61386100",
+    "artifacts/stage2_runs/preflight_smoke/capture_status.txt": "bd1e37e73b0c84482096588c3bbd30ee27971145364387175500fb54206bcd1e",
+    "artifacts/stage2_runs/preflight_smoke/date.txt": "d4d46275d8a291500c48f99142395af4e694d15eebd2cb07b252ad05acc5aadf",
+    "artifacts/stage2_runs/preflight_smoke/hostname.txt": "2e9d6ea5ce4be933cd0b2cea5ae191ff97af4f7b5d2e6ece109f9cb75abe4a5c",
+    "artifacts/stage2_runs/preflight_smoke/ip_a.txt": "5ead3c5dfbbe01b4bdba75c6a58fa7a988af5aa0054aabb65337c5cc4f93edb4",
+    "artifacts/stage2_runs/preflight_smoke/ros2_node_list.txt": "b37a003bd09c055e75f82a3648dabff29834fd62f30c6f5ac8cd4a1d0c91c0f8",
+    "artifacts/stage2_runs/preflight_smoke/ros2_topic_list.txt": "480467ad8a0d8685acb3b4c98ed50d09e71dd3e3857a71c6950447a9e427c409",
+    "artifacts/stage2_runs/preflight_smoke/ros_env_summary.txt": "ca7a0d4cfb87bc35ea959b284c46e485eb91947dd181fc78e94e959232a76494",
+    "artifacts/stage2_runs/preflight_smoke/uname_a.txt": "9cddb52bd1b58380be597153582726c890c3b545a1b92674dbabf23c8dbd7bc3",
+    "artifacts/stage2_runs/single_machine_baseline_check/acceptance_snippet.md": "47e831a6b3a977f9031bec46c012f544628e781b4ca287e9ba68d539e0c3be07",
+    "artifacts/stage2_runs/single_machine_baseline_check/capture_status.txt": "9f0fd45df4fae5d8745cc3d55df481e21ffd10015164b33d9e1af17904c6b944",
+    "artifacts/stage2_runs/single_machine_baseline_check/date.txt": "245bcbe60b38276c4a68c7647fbf020d7142952413ce8a3407242c4f3569b75f",
+    "artifacts/stage2_runs/single_machine_baseline_check/hostname.txt": "fc8e3be62b165a148077048425997b1b616c40559df3fb168f4d5e71b077cacb",
+    "artifacts/stage2_runs/single_machine_baseline_check/ip_a.txt": "869fda36d8e3b4d5b242f2d168146d6ab86e036a383c573f8cbc82e11a531805",
+    "artifacts/stage2_runs/single_machine_baseline_check/ros2_node_list.txt": "fd89b7a8993ca734126fb830212ef7d15e95bb8e7cdcb20ea78273645acd4262",
+    "artifacts/stage2_runs/single_machine_baseline_check/ros2_topic_list.txt": "f3ad08a96ef43adbe8afe0a6c4c845e28b34a109f67be2fc9dbf1fc15d207614",
+    "artifacts/stage2_runs/single_machine_baseline_check/ros_env_summary.txt": "cc0c8b4cb487eef48cdd7da039a987fb6f3eb968623ba426c857091c109c399d",
+    "artifacts/stage2_runs/single_machine_baseline_check/uav_map_tile_bw.txt": "d54d947ef56d02c9068010c6a49a206e088a1c80183fd5ac8324bff6d185e1cd",
+    "artifacts/stage2_runs/single_machine_baseline_check/uav_odom_hz.txt": "4bc2a13546cd0e045386a0f217644e6e9eca7cbcbdf10c10ff3061a59f3a2f26",
+    "artifacts/stage2_runs/single_machine_baseline_check/uav_targets_current_once.txt": "2b2c162e0ced0d0223d809b0279ebe487ff1134802cc1ab8bfd90fb91e948ad8",
+    "artifacts/stage2_runs/single_machine_baseline_check/uname_a.txt": "a0ca75472610b3f8c03fb9b1c61e0688974387c9757ae79954604ace1c7d5802",
+    "config/chrony/README_chrony.md": "65c50b3cd9577a68bd3397e06f7d62095c6b982d38f5ef7d682aea6c908a96ad",
+    "config/chrony/chrony_client.conf": "3b0efa519e325f8f1f2abc07d075b9d5357b02580b39cfc576878f5440cd63b4",
+    "config/chrony/chrony_server.conf": "34282405360afa1d582d6c62a84d76946101fc5eb4a407e80ac1d2546e671df6",
+    "config/fastdds/README_fastdds.md": "67bea049f382769ea5c7fed0983c52fc7fa4b253777a589d4f04a07d422e9086",
+    "config/fastdds/fastdds_profiles.xml": "4e0f5d9c607c58c91a730f075efbf4f2ac1f5194e487f6014fbe3da0b083b477",
+    "config/qos/qos_profiles.yaml": "5f9932798de50a5547f56995e1a36e9a559224028280597f9d6affa6c5e52659",
+    "docs/01_quick_start.md": "0c83856598dc705a6082072127ecebd61056e788701c3f2f43eac7a7f325a6c9",
+    "docs/02_architecture.md": "a69044b1ffb5bdcbf911b8b1fea2d26dda3c32a2006132316adfdafcd6e06620",
+    "docs/03_debug_playbook.md": "788f3cab03fa09087fe88d97b53bc3db206606e9dcfd3e3850df687bdfd13928",
+    "docs/04_interface_contracts.md": "8a45f4abc607f1f24ec04701609131ea07bc24d20d440771f4759f314d1ac245",
+    "docs/05_qos_strategy.md": "b56e2d0a45ab582d500603dccc05ede399250050c4b3a3d6579b71a837cde7ae",
+    "docs/06_fastdds_discovery_server.md": "efd1cb1316f3f5a010701fbbc29dc206bacc4f10e37c21e04f6fe66bd2d9626e",
+    "docs/07_chrony_setup.md": "6511657cc61cc5512f7dec419158a571bcc06bb139d836464fdccb01ea19946b",
+    "docs/08_wifi6_weak_network_test.md": "7741638d19729142df09e2fe2c8e723acb14be59719f94832adcd10c2d64c280",
+    "docs/09_rosbag_workflow.md": "eec20789d13c1e7f11747eb6eff9562ae2902933bb21809e2cb843068a94c2ae",
+    "docs/10_migration_to_jetson.md": "dab193fb008e92e0d8e8192326c653b19c7e5e7957bf8e891a2925f553d56d19",
+    "docs/11_future_integration_points.md": "d537d0659d842c71fb90e085d3b192f245cba70da3f09c8355cc8d129fbcdd94",
+    "docs/12_dual_machine_wired_test.md": "d2b3d1bd0407438d3287c2bc20c8e4e1108f7466cc348dc8a8c58a83e0c5d0eb",
+    "docs/13_dual_machine_default_discovery_smoke.md": "3b0f580920ece67155a43d4722522c19d88c605ceae9499c9285211b178141b7",
+    "docs/14_stage2_rosbag_workflow.md": "59404248faf26422719a5bb8683cf41064182fa1e99af361d315c6ded3906551",
+    "docs/15_dual_machine_discovery_server_smoke.md": "57d2e18cee7b0b3db0f7aacf63ecbf2468193c5c55adb808f1b4f5839f8e626d",
+    "docs/16_stage2_real_execution_order.md": "21fbabd4155b194012c00ab60694ee5bb9ce00ad0db026ea5d13b6f1f128f972",
+    "docs/17_stage2_evidence_submission.md": "cc9947665a2f8f0feaa27e34660fb8fe5e3794ddc99f14b3d89b699f63b74dc9",
+    "docs/18_stage2_logged_execution.md": "40ebfeefc3f89aa415905ade81488aa8b30a1cb9236274636e4befd1ad67e1a8",
+    "docs/19_stage2_bundle_workflow.md": "ec6bdc7c47824fd8582d431e7d4db8b4d79939128868732121e58bc748b6b68e",
+    "docs/20_stage2_run_initialization.md": "9e5957ceb29c7509b0673b838ca815722d4b786c6303194a4e0924759c5e3d79",
+    "docs/21_stage2_bundle_validation.md": "c0ecc15e74c6d11da6cbf26c72a651cd94d525937103b048763b17f710204090",
+    "docs/25_safe_optimization_round1.md": "a64e3e60c89c9cedacb073f0eb539c274678925c7cb4ab167f2072a43ee10630",
+    "docs/26_runtime_optimization_review.md": "2e2fc49e7ac97a102bbe456d46dd924161a78d7f04bd47e7cebadecc7ad489df",
+    "docs/27_independent_premerge_audit.md": "83b416ef3e31f79b57b92d0b267e1e5029e6d77e215c26978626d293e2d3bce9",
+    "docs/28_sigterm_lifecycle_round2.md": "8585a5de48307d6ebaecdb0353b3d2b7bb8660b4311be08e9417cad65c0eda1f",
+    "docs/29_r1_verified_baseline.md": "2ffbbf45a5e144756def040c11e73dd4217be6c66bc9fa4f8c61f62035b7a8c3",
+    "docs/acceptance_stage1.md": "3f74fe7b4a180a3caece9ed6ec520992bed011acc932af7508fadcf9bbdf95f3",
+    "docs/acceptance_stage2_template.md": "5866735c174fe49248b9fec6bffe7a1a0bb6e6c77de47cba1d3778d65720c04c",
+    "docs/acceptance_stage3_template.md": "8e4b1ddcf0acab402f511f6a6b2f2796e84d78aee812b3576ac1f49e4c2e826e",
+    "docs/benchmarks/jazzy_map_results.json": "9a03f5b603a9394dac7540918f08ca099c74e098b89bee404069895e7e192b22",
+    "docs/validation/r1-baseline/evidence-index.json": "f834b136cb6c4688455d2413e267f7151dc5093a956a93afe7ee3c2a890aae00",
+    "docs/validation/r7-strict-isolated/build-and-call.md": "34a428ef4363d84d3abbb2893df007ce88763a89f00dd429477391cc2184f0f7",
+    "docs/validation/r7-strict-isolated/production-contract.md": "37a38f135aa5189d449a71c49fdcebc5631e4a97b5df03d3b6fcf0cb106b8e11",
+    "docs/validation/r7-strict-isolated/traceability.md": "b6794f7fd3305297732f53c0bc9a100eac871bfaec486ac2387dde4f680af016",
+    "docs/validation/r8-g1/deployment-runbook.md": "cb71c7e59db37d960c63f1dd5b58d7d16d72e3c17df4f8e55d238f1c20aa93eb",
+    "docs/validation/r8-g1/mvp-contract.md": "303a1d7be82facbea98c87b4d147a4e2c162d38a34dba28b651ef2ccda6843ac",
+    "docs/validation/r9-mvp1/local-ci-and-revalidation.md": "c6892b509531fa8393a2c5baff1eec7dc2a012ecaadf420241d9549d76f00469",
+    "docs/validation/r9-mvp1/owned-session-contract.md": "b5780ae081a8c7d1f2cc0301c4d97cbc00cd000af999f21b92a6832b14a2ea9c",
+    "docs/validation/round2/README.md": "f59d94c691ffa2b5c05f11d90b41bfb6f542bead15592d8c4b5f3f53f7f3712d",
+    "docs/validation/round2/colcon-build.log": "191e5bf858c3e6359472428560e3dea267f7b3688a4409d3694f901c0d824183",
+    "docs/validation/round2/colcon-test.log": "e0911c12cbf7bd6916402450752fd9f1b59fdad2d29ad3bea286f37732cd8d18",
+    "docs/validation/round2/foreign-executor.log": "a9a097e1fc6f4e7cbccc404440b781f04eb7523f7ecdb445054ea7840f486c1c",
+    "docs/validation/round2/lifecycle-summary.json": "98720cfb927fb59bd323702b98bb3a3a60509c2fdbd88f76afb4da7f9782ba1a",
+    "docs/validation/round2/mock-launch.log": "c8476cd16f92401236986c659e5ee359590507c27045dc5d1effdf3de9aba40d",
+    "docs/validation/round2/mock-smoke.log": "f0af9b17d4e54c8d0cb899e0879490a8e3d0e81f366f98d48a5bba43fe3038d8",
+    "docs/validation/round2/pytest.log": "31c9b252e7c6bbf2930b218ff94efe86fdaa5b210f2d2d559a6e5415fc1f86df",
+    "docs/validation/round2/stress.log": "c495af09a5707f4f36ac9dcf56fa2c81df4110a57fc1cfbfd54874566092eba6",
+    "docs/validation/round2/test-result.log": "11144f42bb5d9a50280321be00ffa394796e5c259fb2f63cb1c0e4346382c85b",
+    "env/discovery_server.env.example": "b91f63b60a12fb7ddbcfa61eafd53891b3e2badb4a99f902a162d3c23a8f6b02",
+    "env/machine_a_default.env.example": "18465db557dafc41d73b861cf8a9cf830c0be9f04430b3a3f56770b1376470f7",
+    "env/machine_b_default.env.example": "859691bc859cffd8af9cd4c6b0d804b413de9a812c765dd94131778e0b03def9",
+    "scripts/apply_netem.sh": "d8626ea68c71ccffe4874a40a8acd2659be000f1d75f112689540ee8c83cc20f",
+    "scripts/benchmark_mock_tile.py": "6cb9d72d8d53fe502ac12f2983a34025b357b0e6cc68afbec2e719bc05ec2481",
+    "scripts/build_ws.sh": "340f78d6332159120bee9b1d1d715d9dfb9cc9b45b1e3a209252ca840ad1e43d",
+    "scripts/check_bw.sh": "ea6353adafad6952a24fd310034a3890b3c5c9d2c5acf619533ea85ed9529684",
+    "scripts/check_chrony.sh": "8204051f580703c9a0adf215852b3a29635e7eeab969b681ab9c30f2044e2ced",
+    "scripts/check_delay.sh": "dc54782e2f39ade110c051621dd1f90b82fd792bb84ac30c2d9370c4e0c036a3",
+    "scripts/check_hz.sh": "7800034bfabbee3aa7ae60bac50d0a8f1ed19fb1678c4a4ea16c69737bb1432f",
+    "scripts/check_m6_mvp_admission.py": "80fc2ad27ab152cd27313e9531dcf8a75acb9d07d781f0ccd11653f2455018f2",
+    "scripts/check_tf.sh": "0c614a1c0eaea82bf26d5dbc916c8c3a19f9a079f5ab3709553929174dd00fc5",
+    "scripts/check_topics.sh": "ffc4fa94c6aa6110cbe7fcc230afcaeb11cd5de763f22c300af0394e56cff669",
+    "scripts/clear_netem.sh": "f449dd85d40022bc411ead74d13d847961b4a27d4dca696cbdb27f3575de1954",
+    "scripts/collect_stage2_evidence.sh": "2ea58f516a0c34addd037abcb2d6ddca81cdae16e2c68186bee8b844d42eb44e",
+    "scripts/create_stage2_bundle.sh": "6b121f4673f94db691e991a5ee5e787ba339845cf7c76c4c908549bbf548e6f3",
+    "scripts/dual_machine_client_logged.sh": "305f73be88cc2b95e5893b11ac92bfa093572d0c4fb53f57493da1a5d0beb422",
+    "scripts/dual_machine_client_smoke.sh": "cd2baa074cce992dc414851c9fff35f2650b19c2b4b093272f4a329c6ca1dfb5",
+    "scripts/dual_machine_server_logged.sh": "dcb052ba56ea970a4707fe0cd5fc2ad634eaf589b57d4700aac08e5d5a7df068",
+    "scripts/dual_machine_server_smoke.sh": "05665822eb37c42298c7e6b6273cc8a54f8aa50819be7d70d92cbe8c7cce1f6a",
+    "scripts/init_stage2_run.sh": "c14bd2ea678b059317f05af0be56417184bf6bf041067038a9da8de05110edff",
+    "scripts/iperf_udp_client.sh": "dafe560ba224a6e5c04d7f1493d42da15a2b09b9fc8dcf18b850c6cf908df693",
+    "scripts/iperf_udp_server.sh": "e7ead01ae80731d4dcc0b3269e061838abe2fefac5f3b72fcbbebe676a924963",
+    "scripts/net_baseline_check.sh": "835eaf0a29d7216ec11f18966595f5dc136042be39939ecb2c9ec03bb73ef5c2",
+    "scripts/prepare_dual_machine_env.sh": "3660d9f89f51049644b48b7a6c1d558a107df9e96c4c360db89e34b4ca3ff0ec",
+    "scripts/prepare_strict_assets.py": "7729458b5d9c6d4d4bfa7350ad5e9253e9c3695d4964e4f462554341ff5a30f2",
+    "scripts/record_rosbag.sh": "34713f6dc17f3bae067ed6dc70bd03b18dc2a114ea670c0dadf0c211f11c50e5",
+    "scripts/replay_rosbag.sh": "3abf5c05343b83a7305d5f57dea751c911855c8182795644b2da4e66a8fce373",
+    "scripts/rosbag_play_stage2.sh": "eb42d8a9d8f98ac76f385400479f1108d4cf0264542486328d75399f67ffbac7",
+    "scripts/rosbag_record_stage2.sh": "99e7fe0464c1d16cf3ef87681ae233ac24237637c31e97ff85487aefeb795ccb",
+    "scripts/run_client_discovery.sh": "79344dcce0ff5f4807bd53bbeb6a11250e2b3c84301956da381476a0356c0109",
+    "scripts/run_server_discovery.sh": "bc730973bf277be9402c0975df0ab12191af412f3303fb6bfa6677a0f0bb90e1",
+    "scripts/run_single_machine.sh": "99f8b3b6bdb37b971697f9a56857a6c27a1814b75521804b704e97d5389ebfe5",
+    "scripts/run_with_log_capture.sh": "b53e2c197d176c382c5f0fdb0c2f7d07270b6cb17aab1df7eedb51753c781285",
+    "scripts/source_ws.sh": "a142054ea7222403b8b81dfc9610d74954a178ad19b354bde707f2dab44b5a4f",
+    "scripts/stage2_acceptance_check.sh": "11398a8443c9a2efccf057519850c2a6a2fc5800d65f6baf5121442ac03e8895",
+    "scripts/stage2_acceptance_logged.sh": "fd2dabd8364d0e398e6e41494e78d7446909bb5137bd35e49f276c60ddca0f30",
+    "scripts/stage2_env_helpers.sh": "f93173dcbdddee236f7ed21ac6fbb0d7d78bda82e9d79b1a9a6f57695fb448c4",
+    "scripts/validate_dual_machine_topics.sh": "4a89d2a3c4e666c6fd8435c2c22fdb820e77a2308c09c49aa39ffa6590e7cdf8",
+    "scripts/validate_stage2_bundle.sh": "a3c48314bfbb574771b2361da806d6ff51c6d6041f3a5d9ca804ecfaca2dc0a2",
+    "src/ag_bringup/__pycache__/setup.cpython-312.pyc": "95a2d146644e6d97312e67cd17946e8e5a846fb04dfc1564ca9dc75a19f6f3c1",
+    "src/ag_bringup/ag_bringup/__init__.py": "dbf94e140be1494633b9ca0ac67a32bc0a1ca1a750b998bcb1c18a71d51dee8d",
+    "src/ag_bringup/ag_bringup/__pycache__/__init__.cpython-312.pyc": "43a92f0890721508814681b2828fc87725d55e1b0b6b41809b1f5ec3059780ec",
+    "src/ag_bringup/config/qos_profiles.yaml": "9c9a4a948817c8ff7257c0fecaea4557fe01841b8b92fb0fa1fe53b6cc113d1a",
+    "src/ag_bringup/config/static_transforms.yaml": "dfd70ef3f394ae3007603cf94182e11aae5d55f318f3869d675e29bf9f7e4f8c",
+    "src/ag_bringup/launch/__pycache__/dual_machine_client.launch.cpython-312.pyc": "f3c3bb979aa24e8a19703722b48b2d42e0a77ccb9010d49d3262aa5eddf9f475",
+    "src/ag_bringup/launch/__pycache__/dual_machine_server.launch.cpython-312.pyc": "7ade249228c066067de19e2ff56fd5875049275ccea735dfd991ec477473f298",
+    "src/ag_bringup/launch/__pycache__/future_adapters_stub.launch.cpython-312.pyc": "27792bd3b32b8f2bca904bde46bce7fb02fc6d744672099365913dde125a5d95",
+    "src/ag_bringup/launch/__pycache__/qos_stress_test.launch.cpython-312.pyc": "e5b6d6a598a08a4f485fb98354e2cb533f466d6c4404288adae2a5ed77becbcc",
+    "src/ag_bringup/launch/__pycache__/rosbag_replay_test.launch.cpython-312.pyc": "41cb24fe4bac06879c0681e21b35eae340bbf604d73982ee43b7e0d06e3b3d94",
+    "src/ag_bringup/launch/__pycache__/single_machine_mock.launch.cpython-312.pyc": "452b771b071daaee2957bfa66273d874c1f160ce4331f4f22a8de2f55f725a3d",
+    "src/ag_bringup/launch/dual_machine_client.launch.py": "91ccf7a96af1a68676c6357fe5d79be603f3dfff0eb90a12d08c05a8cfabf4c7",
+    "src/ag_bringup/launch/dual_machine_server.launch.py": "4b33921e326840bd4d4274fd8c0aee69075d15a9e880a4c4d4fadc3a000324fa",
+    "src/ag_bringup/launch/future_adapters_stub.launch.py": "a6f1a56bad6c8f4ec2b043f7731362b21cd70d1cf81e339f0e7263498fd0a34c",
+    "src/ag_bringup/launch/qos_stress_test.launch.py": "de064b811c02efbbb9c6c71f595cf18370eea4177b4aaa217e8905f25771c2f5",
+    "src/ag_bringup/launch/rosbag_replay_test.launch.py": "0ced58847a5a2fc0f4c7b32d9a12096414c839163a6c1628c0a4d7f0aa2a00ef",
+    "src/ag_bringup/launch/single_machine_mock.launch.py": "800aa1d16cb4bf4b1431ae4ffa6432280673cb159aca731b564647932825d2b7",
+    "src/ag_bringup/package.xml": "8abe4015c2927febe8f2b41d15be15c7bcd8a0f8782f5c5058cad3ef0906c0c4",
+    "src/ag_bringup/resource/ag_bringup": "69f7aa18c2a5cecd2042f9844a484c464cb5d074428a4afd6e157ec7b8d24e8a",
+    "src/ag_bringup/setup.cfg": "a8afdaf45138467da992158a3b8d7d695f28246749e043f67c83a433f8199a8a",
+    "src/ag_bringup/setup.py": "00f478d4bd0af648f353e3bb3e5e9c245a7fa8838b9afaedf3438a62a7345a32",
+    "src/ag_interfaces/CMakeLists.txt": "cbd9b5bd8221211c916f74c10546ca2cbe3982a4499641ee00314d7abc3cff84",
+    "src/ag_interfaces/msg/DelayProbe.msg": "ee4b5b998c0eeeb6ed8c4a7290000f46660de4895226e3377bcb2c5744eb2ff4",
+    "src/ag_interfaces/msg/Heartbeat.msg": "398b7ead80d1eb6fa84b4024804faf5d8555236355b6680cd0a7b8e961f56eb9",
+    "src/ag_interfaces/msg/MapTile.msg": "c72333681a4fb2648aae295480766d1ee06b543efe2269b8d10b1224cf2affd9",
+    "src/ag_interfaces/msg/TargetInfo.msg": "809365ff59132e8a620c589849b2741497946f312af76e051c13fd1f58639a3a",
+    "src/ag_interfaces/package.xml": "affbed360b318304c3264bdf1b81070a024d88c5e971313193b40125b7c90e94",
+    "src/ag_mock_nodes/__pycache__/setup.cpython-312.pyc": "9a610e8fc0f399058700e230a7953f01d6989858a54f0e8591849951705344d0",
+    "src/ag_mock_nodes/ag_mock_nodes/__init__.py": "013a7b8d3add80527c2ff8ca5017272cb0fc65d50dff3b817e09aad3f18304e5",
+    "src/ag_mock_nodes/ag_mock_nodes/__pycache__/__init__.cpython-312.pyc": "8cc7789940c47e7abd66563dbd7896550c463f30885fa952739df3948f6f1958",
+    "src/ag_mock_nodes/ag_mock_nodes/__pycache__/arm_target_adapter_stub.cpython-312.pyc": "cb7692c149fcdce1f218d2dea08a6f4115e7dc4f3792a581772061cf1b37c007",
+    "src/ag_mock_nodes/ag_mock_nodes/__pycache__/arm_target_sink_stub.cpython-312.pyc": "fed5703550290c3f4ab60a058343a274f0c59b9d9244de71734ac81dfa28efc4",
+    "src/ag_mock_nodes/ag_mock_nodes/__pycache__/fastlio2_adapter_stub.cpython-312.pyc": "ec5d6f297156fceae6775b7a942a01a9422793d460ac5d51a0e6357c624d2033",
+    "src/ag_mock_nodes/ag_mock_nodes/__pycache__/hardware_bridge_stub.cpython-312.pyc": "71554a46f1458c2c8e8df592348d9c8efee3935b7af69ecc8ec08ee05edddf0c",
+    "src/ag_mock_nodes/ag_mock_nodes/__pycache__/heartbeat_pub.cpython-312.pyc": "15f657c0f36eba3a8d4c92ec75fe4aaff26a6c815a2d521622deeb19a754ee14",
+    "src/ag_mock_nodes/ag_mock_nodes/__pycache__/map_2p5d_builder_stub.cpython-312.pyc": "78d99152edca52782f70c472bdddf5925f1cda5d18062b19d71696d8ea815f5a",
+    "src/ag_mock_nodes/ag_mock_nodes/__pycache__/nav2_adapter_stub.cpython-312.pyc": "869237f1548d9a249d5c291f2f4bb53413956c3c8f231a0f6705fae5a87a5434",
+    "src/ag_mock_nodes/ag_mock_nodes/__pycache__/uav_mock_map_tile_pub.cpython-312.pyc": "f2f5edb8214ffaa2baa12df34d03a2887fa436f9d1819c82d91c00cc5529ff5b",
+    "src/ag_mock_nodes/ag_mock_nodes/__pycache__/uav_mock_odom_tf_pub.cpython-312.pyc": "776b30f4fb13262b09a514167ab0899cca78c2559eec4d2005f4f8b91409aef8",
+    "src/ag_mock_nodes/ag_mock_nodes/__pycache__/uav_mock_target_pub.cpython-312.pyc": "a77f0bfc245643e2911188b75faa3bffb40d69e7ed4cecf3918b3dcc345d3d91",
+    "src/ag_mock_nodes/ag_mock_nodes/__pycache__/ugv_map_tile_sub.cpython-312.pyc": "dfed9bcb2d35d2b00ed7aafd736d646030296e311e823964ac5fe793ded08ec9",
+    "src/ag_mock_nodes/ag_mock_nodes/__pycache__/ugv_nav_sink_stub.cpython-312.pyc": "ff2f1b74870889ca5695f8d75b7ec8aac2308865ce2fc221a96b26f685ddfd7e",
+    "src/ag_mock_nodes/ag_mock_nodes/arm_target_adapter_stub.py": "a0dbde8b3e2c5c4c5fe1f5a8cc7eeab26cbb8450b96467b9083bb61065593e3f",
+    "src/ag_mock_nodes/ag_mock_nodes/arm_target_sink_stub.py": "7217e53083b7a92c60fa0ee900284a662894fd5b1fa2ed0258e9887119a8ddd3",
+    "src/ag_mock_nodes/ag_mock_nodes/fastlio2_adapter_stub.py": "aad538a1b237594cf9ac3f2cff17bc006129f1e631347017a8da081aeb83bce0",
+    "src/ag_mock_nodes/ag_mock_nodes/hardware_bridge_stub.py": "8234838ad1c6f9ebb4c1e2ee82133534a9ed3b1706b9c4c50f2f9fe7b51a1a79",
+    "src/ag_mock_nodes/ag_mock_nodes/heartbeat_pub.py": "ced183b0cbe327cbd400502ecb6b2dbea539322a750179276da35999e7a7b79c",
+    "src/ag_mock_nodes/ag_mock_nodes/map_2p5d_builder_stub.py": "2f96e7d4def442161040d1e44bb5e9a788735ea8714fe04f0140bba4c0396c27",
+    "src/ag_mock_nodes/ag_mock_nodes/mock_tile_math.py": "6d97efa9086a3084081df39dc9de7e9a4cf4e0254b116d7ae1257a9163bfc1af",
+    "src/ag_mock_nodes/ag_mock_nodes/nav2_adapter_stub.py": "224d7b76862fe4ce8dabb41c5dabe56424e48d70f24767f4216ce9ef1974aa5b",
+    "src/ag_mock_nodes/ag_mock_nodes/uav_mock_map_tile_pub.py": "bc5fd970d9f3dbd9014a1b05a5b08f745da91218b3a1fe76218400598ab0175a",
+    "src/ag_mock_nodes/ag_mock_nodes/uav_mock_odom_tf_pub.py": "d6d6ebbf1020c40cef46ade77bd8ad2ebc293566ad838701ece2d0168d661c16",
+    "src/ag_mock_nodes/ag_mock_nodes/uav_mock_target_pub.py": "7d0cf86f0693a75a8135ac95ee5361fc9bf3699de111fa6e16359290323a7c93",
+    "src/ag_mock_nodes/ag_mock_nodes/ugv_map_tile_sub.py": "a7c90a6ecad6b6419d5f55689bf7b251e3bd9d48636139bfe3d4f5b4a619615b",
+    "src/ag_mock_nodes/ag_mock_nodes/ugv_nav_sink_stub.py": "c2c2947f66e2c189ea4908caeb2e98892f9bfb2f1ac3e205d81293c725ecc582",
+    "src/ag_mock_nodes/package.xml": "265d29cc0b74e6c0241054501a286d01828fac3668444833f22a370e01fb395b",
+    "src/ag_mock_nodes/resource/ag_mock_nodes": "240da964b95aad2fce080d53d2829af79cc9494a3a44ca197f9b790d41139698",
+    "src/ag_mock_nodes/setup.cfg": "1e5ec5c4af6b372378ef953d1ca2616dce73748a173b053faeac4d5cf0c12ad7",
+    "src/ag_mock_nodes/setup.py": "0e23057991bfcaad6466ae120b0e2b8fc1c4daaf8f4b470e0db850f8e277eca9",
+    "src/ag_monitor/__pycache__/setup.cpython-312.pyc": "04a3fa830aa35a2856d1c945b18d6a985f8b73b0cc0bbb7574c63149e8000e86",
+    "src/ag_monitor/ag_monitor/__init__.py": "79aa3965a65a380ee7b11f970b5cf2e0e1e46ee5daf1c1b91167f6c6cc3b6554",
+    "src/ag_monitor/ag_monitor/__pycache__/__init__.cpython-312.pyc": "e7adedca0981e4028004574294b689b7c754dc3b8a4efc7e298fb406c86c10c8",
+    "src/ag_monitor/ag_monitor/__pycache__/delay_probe_pub.cpython-312.pyc": "79506ffdffd59da030daa6249bcc1f4d627e4a3412949d0713cfe7b58a73c808",
+    "src/ag_monitor/ag_monitor/__pycache__/delay_probe_sub.cpython-312.pyc": "389f6b5b8a7c03d66d6ff26280d0a74a2b0551de3929500fec7227eece28c93f",
+    "src/ag_monitor/ag_monitor/__pycache__/qos_inspector.cpython-312.pyc": "ca6636603362da734bcc4fa34526dea9824290594e3b1977fe2fa7e4ddabb5a4",
+    "src/ag_monitor/ag_monitor/__pycache__/system_monitor.cpython-312.pyc": "6d5f61f71b5048edec6d5e62693e7f1ba052e80debb94fbd630147f4c342b903",
+    "src/ag_monitor/ag_monitor/__pycache__/topic_watchdog.cpython-312.pyc": "4ac70ab24c457ad1fe3340213e30aaa1d2cd13dbab6bee13d8443662c7a4752c",
+    "src/ag_monitor/ag_monitor/delay_probe_pub.py": "48f4987636c246f1612c6cd757f698d0b88bf766405fc3dedb343f7ba43d8569",
+    "src/ag_monitor/ag_monitor/delay_probe_sub.py": "3949814fb10980fc9e3262e905bfe14b88bf0e0245e12752d7100e630b69ab3c",
+    "src/ag_monitor/ag_monitor/health_logic.py": "dfed177c98431d47845b7c91efc5e40f5283bb90419394954e53b4e2f2ca8c61",
+    "src/ag_monitor/ag_monitor/qos_inspector.py": "cd3237cecd183835d8caa3baab99f8e25385bfa01a9641434b5c264f511ca0fd",
+    "src/ag_monitor/ag_monitor/system_monitor.py": "28cf92b32e9f7b36a0ead7ea89b130b24ece611bbb7f0f9f874710d27307422f",
+    "src/ag_monitor/ag_monitor/topic_watchdog.py": "7fffdcbdf7a856fefa9815bb73387701ebeea648bf98c2993586a14352d41654",
+    "src/ag_monitor/package.xml": "a42ad37ab4b41eed5fa52f5c4a5e63007edd201fdafd338ac9f21e1cf3149300",
+    "src/ag_monitor/resource/ag_monitor": "8b76f18019331e47443431fb05c42a50fda3ede36dc1a65fc41e62e151ce7611",
+    "src/ag_monitor/setup.cfg": "b7db0f6abd71f9afccd08e287d1aae4ef8993d9db5a6e033e2f33e828a01cafb",
+    "src/ag_monitor/setup.py": "4c903dceb41cdb9bde5b0138cb4d1038d97d4a843602ef12edcf0cec333bb872",
+    "src/ag_network_tools/__pycache__/setup.cpython-312.pyc": "7a145b9b4ce0bbbb99db1ec7584f6a71f121519a35124788e9858e275e3e5ba1",
+    "src/ag_network_tools/ag_network_tools/__init__.py": "44bf7381ab6028b02ffd746df96425f6775c32f422d336538f45926571169e74",
+    "src/ag_network_tools/ag_network_tools/__pycache__/__init__.cpython-312.pyc": "52b43c947a64cf590d8f6883b38661dab3e8f65ed61dbcf4722b388c8161dd5b",
+    "src/ag_network_tools/ag_network_tools/__pycache__/qos_profiles.cpython-312.pyc": "96471369d8d44953805280f7181391e960f1c88386f48850ee35201507180f85",
+    "src/ag_network_tools/ag_network_tools/__pycache__/topic_names.cpython-312.pyc": "73f7a4e2b990c0bdd5fcd3ec3a6ecb43a3117bf68ccdedab6695712a7797caf5",
+    "src/ag_network_tools/ag_network_tools/_m6_mvp_policy.json": "dad0eb9f807aacc2039e29e53db2f43a539c11353de05a15dfcb38594b1a028c",
+    "src/ag_network_tools/ag_network_tools/isolated_assets.py": "c6db42b197a7fb491c1a480647a3272c826a492cdc8b1766ae0192552abefa2b",
+    "src/ag_network_tools/ag_network_tools/isolated_bootstrap.py": "4285ddec5edafa9ff498662e4bf2d8fdddda539731b54857ec498c8a959fd949",
+    "src/ag_network_tools/ag_network_tools/isolated_entries.py": "42d1bc58220abc6c1115b99fbcbb203e983528b27bd3f09fd443785f5d650e6c",
+    "src/ag_network_tools/ag_network_tools/isolated_probe.py": "9dc74d2cfeabb835b03b1320377e9e1fc42da187036b109cf2a23dd94fc6e51d",
+    "src/ag_network_tools/ag_network_tools/isolated_resources.py": "5b74022d6166180e7574761f2f58c65a75572da081a9d087c57ee94f03845a2b",
+    "src/ag_network_tools/ag_network_tools/isolated_runner.py": "2e2a8dba9c1d85121b523914f950131b7d8ffd46761d3940607fd7dfc724b7d6",
+    "src/ag_network_tools/ag_network_tools/isolated_runtime.py": "4abdfec690405b8065839675abbd1e38694cdc5a60a99befac3d54b3c9973141",
+    "src/ag_network_tools/ag_network_tools/m6_fixed_heartbeat.py": "464560c6c474e6ed37fdc45b4437b150260428b85d7702d324439ab9c239e422",
+    "src/ag_network_tools/ag_network_tools/m6_owned_session.py": "e3e5ff39064cfed4f336cd63c7ffd7f1a16ff03e8f2e95ad17dc8dae93c95f15",
+    "src/ag_network_tools/ag_network_tools/node_runner.py": "6261934716b96410414c2c8aeae56ef303532b7201c365fdb583a93eda2d75cd",
+    "src/ag_network_tools/ag_network_tools/qos_profiles.py": "aabbc3da390557a718ec14fe8da7adf550927a131b94643e8fbaf140979fe901",
+    "src/ag_network_tools/ag_network_tools/strict_dependency_gate.py": "070bc0a1e75a794f4bc1d560bea37cd04150edf30e9c713e2e25f72557061b1b",
+    "src/ag_network_tools/ag_network_tools/strict_entry.py": "c5c8c2941ef8351ef8f5f2f82f29a8324c63baf3edc90a271e915f9f9814b761",
+    "src/ag_network_tools/ag_network_tools/topic_names.py": "b7fd17545034b67f241edc4b0f66c1e2a0e6fcc5565627bd70ef5eaf8014ddd3",
+    "src/ag_network_tools/ag_network_tools/transforms.py": "7fc6de3f5b2ea2b68e10cccd29b831a8645a614adb9e9d5ec560a87465883843",
+    "src/ag_network_tools/package.xml": "02869433a60ddd07d4c350acbe69980ddf157f4a806f40441377391b579b85fd",
+    "src/ag_network_tools/resource/ag_network_tools": "06043cf3bef1d976c88e0ed89dd7d7625284468774e0a4e7be06747216cb455c",
+    "src/ag_network_tools/scripts/ag_strict_isolated": "4bc27a18e848f4096de031bf10291b5154dac86e3fa08e8c1d9d346fc77fefd7",
+    "src/ag_network_tools/setup.cfg": "bb7423c7915ef2aec7636f80ba2753c3ef216018f1702a2964da187908630a74",
+    "src/ag_network_tools/setup.py": "ab61960f42e92c59b14031c894eef074b45f863a2a7f92f31547802c30c28eb6",
+    "src/ag_system_tests/__pycache__/setup.cpython-312.pyc": "d807bca9f27b28abd3095b369fcacb2bbbc77ddbd24870186d121cc88bc58439",
+    "src/ag_system_tests/ag_system_tests/__init__.py": "0c7124671f3df5e94b8d9f121ab3cb48e8a0d777959f42c3ed36c4c60aee0c6d",
+    "src/ag_system_tests/ag_system_tests/__pycache__/__init__.cpython-312.pyc": "a0934e7f0d124e462f8e2c0103121cebc58376d58bac8b1385c2894d4b527091",
+    "src/ag_system_tests/package.xml": "2739ca3011112f3ab53899f0a47a299b2683ed92f356dc9d7dd10ba39758ad9e",
+    "src/ag_system_tests/resource/ag_system_tests": "5ffa8bc338325dc3aad112a716211140f586587689728074dba60e7d93d9b9c5",
+    "src/ag_system_tests/setup.cfg": "4d008bd87e2837635d0e1da21d829bd6bf3e30a714f16b9cf858e67fd60a6a1c",
+    "src/ag_system_tests/setup.py": "864136530c84d10ab4fad7175251d59247f3e9041c9f3f04313f7aca1b40fd80",
+    "src/ag_system_tests/test/__pycache__/test_imports.cpython-312.pyc": "de7dd0e21ab203eba6881e5dacab3d22e95e4f12cee161b8a1acecd3ce68ad6e",
+    "src/ag_system_tests/test/__pycache__/test_launch_smoke.cpython-312.pyc": "0c7010e083b3b9014ec31c530e0f84e2581b8b6973d406a4942d95fa658d9dcf",
+    "src/ag_system_tests/test/__pycache__/test_message_contracts.cpython-312.pyc": "d6c821c47080535697d00fa878681c9fc6af5ea1437bcb65441c14f5ad92085f",
+    "src/ag_system_tests/test/shutdown_probe.py": "c95156f2b922a87cb2390c847177e0171e7c9d7664ff1776fd572a9b299930cf",
+    "src/ag_system_tests/test/test_imports.py": "8210c69f572d5c6cf9df6042bd1eb00d53e871d660bdcfbc20d42964a61727b0",
+    "src/ag_system_tests/test/test_launch_smoke.py": "45789c984b8bddd68934f8afb4ae4472823f743f85b9545c90f8b88dc23b8180",
+    "src/ag_system_tests/test/test_message_contracts.py": "420062cc9b9daa5894df65658f03378f195a8bc71af86c2681947a8ef37bde6e",
+    "src/ag_system_tests/test/test_node_runner_contract.py": "7f738c21febc0fa3b05611a2e4c7fe5722cb4b3d2a47161c2f22ac87608d1b18",
+    "src/ag_system_tests/test/test_node_shutdown.py": "f5fad964982c02a70752099a0fee08ec4a7db36c5c6daab74fc9042bed4b122a",
+    "src/ag_system_tests/test/test_odometry_semantics.py": "a1387eaee68d849007945ba7cfa6800a9f5bce9e335c5fd78821ad0c4ac3842b",
+    "src/ag_system_tests/test/test_runtime_regressions.py": "379cbef73b621337efffd7d617ea18f9d671480c7d4c89ab3e2f2d7e7fdcea12",
+    "src/ag_system_tests/test/test_safe_optimization_logic.py": "d988c8b67eae876f7f4adaba2241425f4744c7a2f85af37ad30d675833bd1a0f",
+    "src/ag_system_tests/test/test_single_machine_integration.py": "01d51275848218f04e5bc9594f43666c83c7f528ced506d41ea3fd38f7573a11",
+    "src/ag_tf_tools/__pycache__/setup.cpython-312.pyc": "6f86116c6dd1520b84fa129642c78a3053a8fa39d8ac9b1273f6742876688af9",
+    "src/ag_tf_tools/ag_tf_tools/__init__.py": "40c3e4bbef5788163f12ae0e9edce72b17f67dd9316dd74bc6b7724626baf5af",
+    "src/ag_tf_tools/ag_tf_tools/__pycache__/__init__.cpython-312.pyc": "dad611bdfb6592dcd94f9b91dfbf229417b6dcb462bca2ba615b306acd9f159c",
+    "src/ag_tf_tools/ag_tf_tools/__pycache__/ekf_adapter_stub.cpython-312.pyc": "6b11f7d446fad607814afabbd63d185a9c5a0c298ea2b152e6343eb84e727e42",
+    "src/ag_tf_tools/ag_tf_tools/__pycache__/frame_alignment_stub.cpython-312.pyc": "5338aed92eb23ce7a4d4ba689e17bfe03da9d8f88f77475389aa1031c1875513",
+    "src/ag_tf_tools/ag_tf_tools/__pycache__/static_tf_loader.cpython-312.pyc": "ae960e96d1e24921a11ffd5b764bf45b6b9001d673caf5c822d163f290352a30",
+    "src/ag_tf_tools/ag_tf_tools/__pycache__/tf_healthcheck.cpython-312.pyc": "85c157553223adc1de186b38b16cc9a027d8a82e02827e4ee2ba8de9537449aa",
+    "src/ag_tf_tools/ag_tf_tools/ekf_adapter_stub.py": "79bee6fc3bf805a80a4b9d80d73da9ae57ed5858605cf5b704007c1b91924028",
+    "src/ag_tf_tools/ag_tf_tools/frame_alignment_stub.py": "3c42dc003c4533a96ebefcf2a835f21da9383623b47eaceeb26062c3ebe0d1f0",
+    "src/ag_tf_tools/ag_tf_tools/static_tf_loader.py": "40764145f271412d4742be829e1e02b1f250714048cede901eabc07af918d335",
+    "src/ag_tf_tools/ag_tf_tools/tf_healthcheck.py": "e67de41db79105e4da30ed1afa344237ba6e336d072e92a77f0c109f6076b64c",
+    "src/ag_tf_tools/package.xml": "d1753169fc0d672911c75ad68502f71cb48ab12b8d04335b2b8113b6c49d65b4",
+    "src/ag_tf_tools/resource/ag_tf_tools": "becca49660499bef6d46f13a9725c1c59d0a58554b9ba3770f9caf431bd26e4b",
+    "src/ag_tf_tools/setup.cfg": "72d1b5c751c471595f3f4e86547d6e414396b7537aa47280b871b8d03073caff",
+    "src/ag_tf_tools/setup.py": "abf21cbc7f4baf7bdfc208f47234a9d90802e4a8073bc317199fc43c02496e3d",
+    "validation/m6_mvp1/native_fault_worker.py": "57c0d52c607dc290a993e197baf19337ae0512a6406d198a888b49f875cbed22",
+    "validation/m6_mvp1/native_heartbeat.py": "aed9ba442753543948c2a2a12dad47bb180c8c2bdd1f0604c2ff49c5d3694634",
+    "validation/m6_mvp1/run_native_faults.py": "366460a458afa0ced03735a2e3e8fd454aebb8ac5033df4a8088de3fed7d3f85",
+    "validation/m6_mvp1/run_unit.py": "3735aae1c33519afa45a364cfa9ce683e8682649df3aa7fa38802632a2c0f2ba",
+    "validation/m6_mvp1/test_acquisition_receipt.py": "c918367ab2d95dd44d4060bcd128472d83ed981f012d7014277590467ac4fe3a",
+    "validation/m6_mvp1/test_dependency_review.py": "39c2fe45b2fde597ea054982ac3865cd9dafb8fc0a6a6252f5c67116ca2cec01",
+    "validation/m6_mvp1/test_pipe_receipt.py": "43063af7fc53bf0007f3a48a763b6869373569cfd18f0ae5054d34462ea49885",
+    "validation/m6_mvp1/test_policy_identity.py": "c750739b522dfb46f1b80665caff97e957278f06eab3e0bcfcb9f0f68e39ecb3",
+    "validation/m6_mvp1/unit_worker.py": "58b188e1304a3576b7de638792e829afb20b77162e66803c50d5ca128e058181",
+    "src/ag_network_tools/ag_network_tools/strict_assets/ag_interfaces_s__rosidl_typesupport_c.so": "9256a60d4f879c444c7ffc57872ded9f1dc02459a6d88ac15969f82ea57d413d",
+    "src/ag_network_tools/ag_network_tools/strict_assets/libag_interfaces__rosidl_generator_c.so": "f769157fe2550e1992a4bfd5acf7efe4974e4b660058d0af27a24918fe2265ba",
+    "src/ag_network_tools/ag_network_tools/strict_assets/libag_interfaces__rosidl_generator_py.so": "144edfffa85a30838d033335d2bc959a510f347bac055a2be2534db60042bb31",
+    "src/ag_network_tools/ag_network_tools/strict_assets/libag_interfaces__rosidl_typesupport_c.so": "9ca310c9865befb84b946784746e777242a61fddeb09fdfcfea2f372129f105d",
+    "src/ag_network_tools/ag_network_tools/strict_assets/libag_interfaces__rosidl_typesupport_fastrtps_c.so": "32a695ed03732081ea53fc3c3e4ef54c9baa3d0ffcfb947cc541d353e282b30f",
+    "src/ag_network_tools/ag_network_tools/strict_assets/libag_interfaces__rosidl_typesupport_introspection_c.so": "04fec81b403d58c6be8d184b587621575d35f9f721556c1660b495b6912c7fab",
+    "src/ag_network_tools/ag_network_tools/strict_assets/manifest.json": "b7d8299e006c4e9fc9e75dfd0db5da32abb7a48f26bf997083b1400136b32e3b",
+    "src/ag_network_tools/ag_network_tools/strict_assets/probe.c": "92ebe3a230c6cbd02c7649dce2dd6210ae74d641c978e7cc65defa85360aab24",
+    "src/ag_network_tools/ag_network_tools/strict_assets/probe.so": "e80a858ecb3d120c40ae167705be8dcd04df0556644853f602e8e75ad3a0f838",
+    "src/ag_network_tools/ag_network_tools/strict_assets/source.zip": "42d484b0201d5215834ef0e9973f23ac404b2c2bfac4a23a6012e334db2fc5e8",
+    "src/ag_network_tools/ag_network_tools/_strict_asset_pin.py": "a15e1ccad9ba8a2dab2a50e34acc52cddf9564802498d770274d3773aa560bd5",
+    "src/ag_network_tools/ag_network_tools/_strict_launcher_generated/ag_strict_isolated": "f65c5388b0eed3fe002399d53aecc78657c1b560577ca68be6d65828b21c4086"
+  },
+  "original21_targets": {
+    "ag_bringup": [],
+    "ag_mock_nodes": [
+      "arm_target_adapter_stub = ag_mock_nodes.arm_target_adapter_stub:main",
+      "arm_target_sink_stub = ag_mock_nodes.arm_target_sink_stub:main",
+      "fastlio2_adapter_stub = ag_mock_nodes.fastlio2_adapter_stub:main",
+      "heartbeat_pub = ag_mock_nodes.heartbeat_pub:main",
+      "hardware_bridge_stub = ag_mock_nodes.hardware_bridge_stub:main",
+      "map_2p5d_builder_stub = ag_mock_nodes.map_2p5d_builder_stub:main",
+      "nav2_adapter_stub = ag_mock_nodes.nav2_adapter_stub:main",
+      "uav_mock_map_tile_pub = ag_mock_nodes.uav_mock_map_tile_pub:main",
+      "uav_mock_odom_tf_pub = ag_mock_nodes.uav_mock_odom_tf_pub:main",
+      "uav_mock_target_pub = ag_mock_nodes.uav_mock_target_pub:main",
+      "ugv_map_tile_sub = ag_mock_nodes.ugv_map_tile_sub:main",
+      "ugv_nav_sink_stub = ag_mock_nodes.ugv_nav_sink_stub:main"
+    ],
+    "ag_monitor": [
+      "delay_probe_pub = ag_monitor.delay_probe_pub:main",
+      "delay_probe_sub = ag_monitor.delay_probe_sub:main",
+      "qos_inspector = ag_monitor.qos_inspector:main",
+      "system_monitor = ag_monitor.system_monitor:main",
+      "topic_watchdog = ag_monitor.topic_watchdog:main"
+    ],
+    "ag_network_tools": [],
+    "ag_system_tests": [],
+    "ag_tf_tools": [
+      "ekf_adapter_stub = ag_tf_tools.ekf_adapter_stub:main",
+      "frame_alignment_stub = ag_tf_tools.frame_alignment_stub:main",
+      "static_tf_loader = ag_tf_tools.static_tf_loader:main",
+      "tf_healthcheck = ag_tf_tools.tf_healthcheck:main"
+    ]
+  },
+  "container_restored_exited": true,
+  "no_source_pins_changed_during_tests": true,
+  "historical72_66_73_not_reexecuted_as_r10_results": true,
+  "native_ros_ci": "NOT DEPLOYED",
+  "g5": "NOT EXECUTED",
+  "legacy_s1": "BLOCKED/UNCHANGED",
+  "production_acceptance": "INCOMPLETE"
+}

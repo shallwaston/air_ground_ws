@@ -1,0 +1,62 @@
+#!/usr/bin/python3 -IS
+"""Bound installed bootstrap. No ambient ROS/Python overlay imports."""
+import ast,hashlib,json,os,stat,sys
+import importlib.abc,importlib.util
+sys.dont_write_bytecode=True
+from pathlib import Path
+
+BOUND_MANIFEST_SHA256='b7d8299e006c4e9fc9e75dfd0db5da32abb7a48f26bf997083b1400136b32e3b'
+def digest(data):return hashlib.sha256(data).hexdigest()
+def regular(path):
+    s=path.lstat()
+    if not stat.S_ISREG(s.st_mode) or s.st_nlink!=1 or s.st_uid not in (0,os.geteuid()) or s.st_mode&0o022:raise RuntimeError('untrusted installed release file')
+    return path.read_bytes()
+
+def load_verified_package():
+    if not (sys.flags.isolated and sys.flags.no_site and sys.flags.ignore_environment):raise RuntimeError('fixed -IS entry required before imports')
+    if Path(__file__).name!='ag_strict_isolated':raise RuntimeError('unapproved entry alias')
+    if len(BOUND_MANIFEST_SHA256)!=64:raise RuntimeError('installed release pin was not generated')
+    prefix=Path(__file__).absolute().parents[2];site=prefix/'lib/python3.12/site-packages';package=site/'ag_network_tools'
+    if not package.is_dir():
+        link=site/'ag-network-tools.egg-link';lines=regular(link).decode().splitlines()
+        if len(lines)!=2 or lines[1]!='.' or not Path(lines[0]).is_absolute():raise RuntimeError('unreviewed package binding')
+        package=Path(lines[0])/'ag_network_tools'
+    package=package.resolve(strict=True)
+    for directory in [package,package/'strict_assets']:
+        s=directory.stat()
+        if s.st_uid not in (0,os.geteuid()) or s.st_mode&0o022:raise RuntimeError('unsafe bound package directory')
+    raw=regular(package/'strict_assets/manifest.json');manifest=json.loads(raw)
+    if digest(raw)!=BOUND_MANIFEST_SHA256:raise RuntimeError('wrong workspace/release overlay')
+    pin=ast.parse(regular(package/'_strict_asset_pin.py'))
+    if len(pin.body)!=1 or not isinstance(pin.body[0],ast.Assign) or ast.literal_eval(pin.body[0].value)!=BOUND_MANIFEST_SHA256:raise RuntimeError('release pin mismatch')
+    sources={}
+    for name,expected in manifest['network_sources'].items():
+        if Path(name).name!=name:raise RuntimeError('invalid source identity path')
+        data=regular(package/name)
+        if digest(data)!=expected:raise RuntimeError('bound source identity mismatch')
+        sources[name]=data
+    if any(n=='ag_network_tools' or n.startswith('ag_network_tools.') for n in sys.modules):raise RuntimeError('package imported before source admission')
+    class VerifiedSources(importlib.abc.MetaPathFinder,importlib.abc.Loader):
+        def find_spec(self,fullname,path=None,target=None):
+            if fullname!='ag_network_tools' and not fullname.startswith('ag_network_tools.'):return None
+            name='__init__.py' if fullname=='ag_network_tools' else fullname.removeprefix('ag_network_tools.')+'.py'
+            if '/' in name or name not in sources or name=='node_runner.py':raise ImportError('unapproved parent package import')
+            spec=importlib.util.spec_from_loader(fullname,self,origin=str(package/name),is_package=fullname=='ag_network_tools')
+            spec.loader_state=name;return spec
+        def create_module(self,spec):return None
+        def exec_module(self,module):
+            name=module.__spec__.loader_state;module.__file__=str(package/name)
+            if module.__spec__.submodule_search_locations is not None:module.__path__=[]
+            exec(compile(sources[name],module.__file__,'exec'),module.__dict__)
+    sys.meta_path.insert(0,VerifiedSources())
+    return {'package':package,'manifest_sha256':BOUND_MANIFEST_SHA256}
+
+def launch():
+    verified=load_verified_package()
+    from ag_network_tools.strict_entry import main
+    return main(expected_manifest_sha256=verified['manifest_sha256'])
+
+if __name__=='__main__':
+    try:raise SystemExit(launch())
+    except (RuntimeError,OSError,ValueError) as error:
+        sys.stderr.write('R8 strict entry admission refused: '+str(error)+'\n');raise SystemExit(77)

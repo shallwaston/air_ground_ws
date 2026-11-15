@@ -1,0 +1,69 @@
+{
+  "reviewed": true,
+  "reason": "default complete staged Git diff check found one extra blank line at EOF; do not weaken whitespace gate or silently retain an inconsistent R9 release pin",
+  "origin_r9_release": "7dc7ebc4a9a5c42f3dcbec6cf4e3bdfb240dcf16dac863370fee4c5e6fd5e8fa",
+  "origin_r9_policy": "57bdb2f6e763310228d22f277ee606b934c9db07306523c4ff911a56ac4dc3c2",
+  "r10_release": "b7d8299e006c4e9fc9e75dfd0db5da32abb7a48f26bf997083b1400136b32e3b",
+  "r10_policy": "dad0eb9f807aacc2039e29e53db2f43a539c11353de05a15dfcb38594b1a028c",
+  "source_ast_equal_except_reviewed_policy_hash_constant": true,
+  "only_business_source_change": "remove exactly one trailing LF in m6_fixed_heartbeat.py; AST identical",
+  "changed_zip_members": [
+    "ag_network_tools/m6_fixed_heartbeat.py",
+    "ag_network_tools/strict_dependency_gate.py"
+  ],
+  "native_binaries_and_entry_presets_unchanged": true,
+  "approved_delta": [
+    {
+      "path": "src/ag_network_tools/ag_network_tools/_m6_mvp_policy.json",
+      "before_sha256": "57bdb2f6e763310228d22f277ee606b934c9db07306523c4ff911a56ac4dc3c2",
+      "after_sha256": "dad0eb9f807aacc2039e29e53db2f43a539c11353de05a15dfcb38594b1a028c",
+      "before_bytes": 2116,
+      "after_bytes": 2116
+    },
+    {
+      "path": "src/ag_network_tools/ag_network_tools/m6_fixed_heartbeat.py",
+      "before_sha256": "249fc66261e4c7580daca4b71bc3e190ed752c9efd35fc60b8fd5a3f08fd8035",
+      "after_sha256": "464560c6c474e6ed37fdc45b4437b150260428b85d7702d324439ab9c239e422",
+      "before_bytes": 989,
+      "after_bytes": 988
+    },
+    {
+      "path": "src/ag_network_tools/ag_network_tools/strict_dependency_gate.py",
+      "before_sha256": "11705db9c0fe79afe4a19085373416af0be08f5c7648bc8f0d2fd3783c4c1a68",
+      "after_sha256": "070bc0a1e75a794f4bc1d560bea37cd04150edf30e9c713e2e25f72557061b1b",
+      "before_bytes": 15932,
+      "after_bytes": 15932
+    },
+    {
+      "path": "src/ag_network_tools/ag_network_tools/strict_assets/manifest.json",
+      "before_sha256": "7dc7ebc4a9a5c42f3dcbec6cf4e3bdfb240dcf16dac863370fee4c5e6fd5e8fa",
+      "after_sha256": "b7d8299e006c4e9fc9e75dfd0db5da32abb7a48f26bf997083b1400136b32e3b",
+      "before_bytes": 19351,
+      "after_bytes": 19351
+    },
+    {
+      "path": "src/ag_network_tools/ag_network_tools/strict_assets/source.zip",
+      "before_sha256": "21a5ce103e1aeb95218509cc55776197e5fb6260a77453b7a2178b19f8d133ae",
+      "after_sha256": "42d484b0201d5215834ef0e9973f23ac404b2c2bfac4a23a6012e334db2fc5e8",
+      "before_bytes": 174389,
+      "after_bytes": 174388
+    },
+    {
+      "path": "src/ag_network_tools/ag_network_tools/_strict_asset_pin.py",
+      "before_sha256": "a9488c5f07a02f7e581fa32e730e10698d9b0722073d8958de045c644466e8a4",
+      "after_sha256": "a15e1ccad9ba8a2dab2a50e34acc52cddf9564802498d770274d3773aa560bd5",
+      "before_bytes": 85,
+      "after_bytes": 85
+    },
+    {
+      "path": "src/ag_network_tools/ag_network_tools/_strict_launcher_generated/ag_strict_isolated",
+      "before_sha256": "0468c763d712a0848c2697cc56704fa292dc683cfb0fec5177a894e580009d8e",
+      "after_sha256": "f65c5388b0eed3fe002399d53aecc78657c1b560577ca68be6d65828b21c4086",
+      "before_bytes": 4007,
+      "after_bytes": 4007
+    }
+  ],
+  "r9_originals_and_prior_r10_7dc_candidate_preserved": "/workspace/air-ground-r10-20261115T223236Z-5lmud416/candidate",
+  "automatic_repin_to_hide_mismatch": false,
+  "new_native_validation_required": true
+}

@@ -6,3 +6,11 @@ __pycache__/
 .vscode/
 artifacts/
 env/*.env
+
+# Generated, verified strict deployment capsule; source recipe is versioned.
+src/ag_network_tools/ag_network_tools/strict_assets/
+src/ag_network_tools/ag_network_tools/.strict-assets-*/
+src/ag_network_tools/ag_network_tools/_strict_asset_pin.py
+
+# Generated R8 bound isolated launcher
+src/ag_network_tools/ag_network_tools/_strict_launcher_generated/

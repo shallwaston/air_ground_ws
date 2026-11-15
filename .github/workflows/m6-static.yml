@@ -1,0 +1,101 @@
+name: M6 static admission
+
+on:
+  push:
+    branches: [m6/strict-heartbeat-mvp1]
+  pull_request:
+    branches: [r2/r1-verified-baseline]
+
+permissions:
+  contents: read
+
+jobs:
+  static-admission:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact event revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1, verified official tag
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          clean: false
+          submodules: false
+          lfs: false
+          set-safe-directory: false
+          allow-unsafe-pr-checkout: false
+      - name: Run non-ROS checks without privileges, network or credentials
+        id: sandbox
+        shell: bash
+        run: |
+          set -euo pipefail
+          stage=$(mktemp -d /tmp/m6-static.XXXXXXXX)
+          echo "stage=$stage" >> "$GITHUB_OUTPUT"
+          sudo /usr/bin/install -d -m 0755 "$stage/input" "$stage/output"
+          sudo /usr/bin/cp -a --no-preserve=ownership -- "$GITHUB_WORKSPACE/." "$stage/input/"
+          sudo /usr/bin/chown -hR root:root "$stage/input"
+          sudo /usr/bin/chmod 0755 "$stage"
+          sudo /usr/bin/chown 65532:65532 "$stage/output"
+          sudo /usr/bin/install -d -o 65532 -g 65532 -m 0700 "$stage/output/home" "$stage/output/tmp"
+          # Only these literal setup commands run as root. Repository code runs
+          # after UID/capability drop in a fresh PID/mount/network namespace.
+          sudo /usr/bin/unshare --mount --net --pid --fork --mount-proc --propagation private \
+            /bin/sh -eu -c '
+              /usr/bin/mount -t tmpfs -o nosuid,nodev,noexec,mode=0755 m6-ci-run /run
+              exec /usr/bin/setpriv --reuid=65532 --regid=65532 --clear-groups \
+                --bounding-set=-all --inh-caps=-all --ambient-caps=-all --no-new-privs \
+                /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 \
+                HOME="$2/home" TMPDIR="$2/tmp" \
+                /usr/bin/python3 -I -B "$1/scripts/ci/m6_static.py" \
+                  --source-root "$1" --output-root "$2/check" --ci-required-sandbox
+            ' m6-static "$stage/input" "$stage/output"
+      - name: Export bounded evidence without trusting output symlinks
+        if: ${{ always() && steps.sandbox.outputs.stage != '' }}
+        shell: bash
+        env:
+          STAGE: ${{ steps.sandbox.outputs.stage }}
+        run: |
+          set -euo pipefail
+          umask 077
+          mkdir -m 0700 "$STAGE/export"
+          # The reader stays unprivileged. The host uploader receives one new
+          # host-owned regular JSON, never an untrusted path tree or symlink.
+          sudo /usr/bin/setpriv --reuid=65532 --regid=65532 --clear-groups \
+            --bounding-set=-all --inh-caps=-all --ambient-caps=-all --no-new-privs \
+            /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 /usr/bin/python3 -I -S -B -c '
+          # R10_EXPORT_BEGIN
+          import json,os,stat,sys
+          fd=os.open(sys.argv[1],os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK)
+          try:
+              before=os.fstat(fd)
+              assert stat.S_ISREG(before.st_mode) and before.st_uid==os.geteuid() and before.st_nlink==1
+              assert 0<before.st_size<=5*1024*1024
+              parts=[]
+              while True:
+                  block=os.read(fd,65536)
+                  if not block:break
+                  parts.append(block)
+                  assert sum(map(len,parts))<=5*1024*1024
+              after=os.fstat(fd)
+              assert (before.st_dev,before.st_ino,before.st_size,before.st_mtime_ns)==(after.st_dev,after.st_ino,after.st_size,after.st_mtime_ns)
+          finally:
+              os.close(fd)
+          data=b"".join(parts)
+          assert len(data)==before.st_size
+          value=json.loads(data)
+          assert isinstance(value,dict) and isinstance(value.get("summary"),dict)
+          assert type(value["summary"].get("pass")) is bool
+          assert value["summary"].get("native_ros_tests")=="NOT EXECUTED"
+          sys.stdout.write(json.dumps(value,ensure_ascii=True)+"\n")
+          # R10_EXPORT_END
+          ' "$STAGE/output/check/ci-artifact.json" > "$STAGE/export/ci-artifact.json"
+      - name: Retain raw static results and command exits
+        if: ${{ always() && steps.sandbox.outputs.stage != '' }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2, verified official tag
+        with:
+          name: m6-static-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ steps.sandbox.outputs.stage }}/export/ci-artifact.json
+          if-no-files-found: error
+          retention-days: 14
+          overwrite: false
+          include-hidden-files: false
